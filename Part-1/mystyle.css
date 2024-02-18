@@ -1,0 +1,10 @@
+#parallax-image{ 
+    background-image: url(Images/Man-Pic.jpg);
+    background-attachment: fixed;
+    
+  }
+  div{  
+    border-style: dotted;
+    border-color: red;
+    border-width: 1em;
+  }
