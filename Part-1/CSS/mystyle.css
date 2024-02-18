@@ -1,0 +1,36 @@
+body{
+  padding: 0;
+  margin: auto;
+  width: 95%;
+}
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    div{
+      border: 1px solid black;
+      background-color: rgb(68, 70, 68);
+      width: 40vh;
+      height: 85vh;
+      margin: 5px;
+      h2{
+        color: white;
+      }
+    }
+    div:nth-child(odd) {
+      background-color: gray;
+      height: 91vh;
+    }
+  }
+@media screen and (max-width: 767px) {
+  .display{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    div{
+      width: 50vh;
+      height: 5px;
+    }
+  }
+}
