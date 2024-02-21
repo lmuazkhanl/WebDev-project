@@ -1,117 +1,112 @@
 <!DOCTYPE html>
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Cloth</title>
-	<link rel="stylesheet" href="CSS/mystyle.css" />
-	<link rel="icon" type="image/x-icon" href="images/logo.ico" />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloth</title>
+  <link rel="stylesheet" href="CSS/mystyle.css" />
+  <link rel="icon" type="image/x-icon" href="images/logo.ico" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
 </head>
 
 <body>
-	<header>
-		<nav>
-			<ul>
-				<li><img src="images/logo.png" alt="logo for navbar with the word Cloth" width="100%"></li>
-				<li>Man</li>
-				<li>Woman</li>
-				<li>About</li>
-				<li>Contact</li>
-			</ul>
+  <header>
+    <nav class="nav container">
+      <a href="#" class="nav__logo"><img src="images/logo.png" alt="logo" /></a>
 
-		</nav>
-	</header>
+      <div class="nav_menu" id="nav-menu">
+        <ul>
+          <li><a href="#" class="nav_link">Man</a></li>
+          <li><a href="#" class="nav_link">Woman</a></li>
+          <li><a href="#" class="nav_link">About</a></li>
+          <li><a href="#" class="nav_link">Contact</a></li>
+        </ul>
 
-	<main>
+        <i class="fas fa-times nav_close"></i>
+      </div>
 
-		<section class="banner-sideshow"></section>
+      <div class="nav-buttons">
+        <i class="fas fa-search nav_search" id="search-btn"></i>
+        <i class="fas fa-user nav_login" id="login-btn"></i>
+        <i class="fas fa-bars nav_toggle"></i>
+      </div>
+    </nav>
+  </header>
 
+  <main>
+    <section class="banner-sideshow"></section>
 
-		<section class="display">
-			<div>
-				<h2>
-					Hoodie
-				</h2>
-			</div>
-			<div>
-				<h2>
-					Sweatshirt
-				</h2>
-			</div>
-			<div>
-				<h2>
-					Pants
-				</h2>
-			</div>
-			<div>
-				<h2>
-					Shoes
-				</h2>
-			</div>
-			<div>
-				<h2>
-					Accessories
-				</h2>
-			</div>
-		</section>
+    <section class="display">
+      <div>
+        <h2>Hoodie</h2>
+      </div>
+      <div>
+        <h2>Sweatshirt</h2>
+      </div>
+      <div>
+        <h2>Pants</h2>
+      </div>
+      <div>
+        <h2>Shoes</h2>
+      </div>
+      <div>
+        <h2>Accessories</h2>
+      </div>
+    </section>
 
-		<div class="paralax-container">
-			<div class="image">
-				<img src="Images/man-women.jpg" alt="picture" width=>
-			</div>
-			<div class="image-text">
-				<h1>About Us</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium reprehenderit, beatae
-					repudiandae
-					minus molestiae nisi saepe sint atque consequuntur inventore et! Deserunt cupiditate officiis
-					asperiores!
-					Possimus placeat quo deserunt nihil!
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium reprehenderit, beatae
-					repudiandae
-					minus molestiae nisi saepe sint atque consequuntur inventore et! Deserunt cupiditate officiis
-					asperiores!
-					Possimus placeat quo deserunt nihil!Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Accusantium reprehenderit, beatae repudiandae
-					minus molestiae nisi saepe sint atque consequuntur inventore et! Deserunt cupiditate officiis
-					asperiores!
-					Possimus placeat quo deserunt nihil!
-				</p>
-				<br>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium reprehenderit, beatae
-					repudiandae
-					minus molestiae nisi saepe sint atque consequuntur inventore et! Deserunt cupiditate officiis
-					asperiores!
-					Possimus placeat quo deserunt nihil!
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium reprehenderit, beatae
-					repudiandae
-					minus molestiae nisi saepe sint atque consequuntur inventore et! Deserunt cupiditate officiis
-					asperiores!
-					Possimus placeat quo deserunt nihil!Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Accusantium reprehenderit, beatae repudiandae
-					minus molestiae nisi saepe sint atque consequuntur inventore et! Deserunt cupiditate officiis
-					asperiores!
-					Possimus placeat quo deserunt nihil!
-				</p>
-				<br>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium reprehenderit, beatae
-					repudiandae
-					minus molestiae nisi saepe sint atque consequuntur inventore et! Deserunt cupiditate officiis
-					asperiores!
-					Possimus placeat quo deserunt nihil!
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium reprehenderit, beatae
-					repudiandae
-					minus molestiae nisi saepe sint atque consequuntur inventore et! Deserunt cupiditate officiis
-					asperiores!
-					Possimus placeat quo deserunt nihil!Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Accusantium reprehenderit, beatae repudiandae
-					minus molestiae nisi saepe sint atque consequuntur inventore et! Deserunt cupiditate officiis
-					asperiores!
-					Possimus placeat quo deserunt nihil!
-				</p>
-			</div>
-		</div>
-	</main>
+    <div class="paralax-container">
+      <div class="image">
+        <img src="Images/man-women.jpg" alt="picture" width=>
+      </div>
+      <div class="image-text">
+        <h1>About Us</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+          reprehenderit, beatae repudiandae minus molestiae nisi saepe sint
+          atque consequuntur inventore et! Deserunt cupiditate officiis
+          asperiores! Possimus placeat quo deserunt nihil! Lorem ipsum dolor sit
+          amet, consectetur adipisicing elit. Accusantium reprehenderit, beatae
+          repudiandae minus molestiae nisi saepe sint atque consequuntur
+          inventore et! Deserunt cupiditate officiis asperiores! Possimus
+          placeat quo deserunt nihil!Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Accusantium reprehenderit, beatae repudiandae minus
+          molestiae nisi saepe sint atque consequuntur inventore et! Deserunt
+          cupiditate officiis asperiores! Possimus placeat quo deserunt nihil!
+        </p>
+        <br />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+          reprehenderit, beatae repudiandae minus molestiae nisi saepe sint
+          atque consequuntur inventore et! Deserunt cupiditate officiis
+          asperiores! Possimus placeat quo deserunt nihil! Lorem ipsum dolor sit
+          amet, consectetur adipisicing elit. Accusantium reprehenderit, beatae
+          repudiandae minus molestiae nisi saepe sint atque consequuntur
+          inventore et! Deserunt cupiditate officiis asperiores! Possimus
+          placeat quo deserunt nihil!Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Accusantium reprehenderit, beatae repudiandae minus
+          molestiae nisi saepe sint atque consequuntur inventore et! Deserunt
+          cupiditate officiis asperiores! Possimus placeat quo deserunt nihil!
+        </p>
+        <br />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+          reprehenderit, beatae repudiandae minus molestiae nisi saepe sint
+          atque consequuntur inventore et! Deserunt cupiditate officiis
+          asperiores! Possimus placeat quo deserunt nihil! Lorem ipsum dolor sit
+          amet, consectetur adipisicing elit. Accusantium reprehenderit, beatae
+          repudiandae minus molestiae nisi saepe sint atque consequuntur
+          inventore et! Deserunt cupiditate officiis asperiores! Possimus
+          placeat quo deserunt nihil!Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Accusantium reprehenderit, beatae repudiandae minus
+          molestiae nisi saepe sint atque consequuntur inventore et! Deserunt
+          cupiditate officiis asperiores! Possimus placeat quo deserunt nihil!
+        </p>
+      </div>
+    </div>
+  </main>
 
-	<footer></footer>
+  <footer></footer>
 </body>
