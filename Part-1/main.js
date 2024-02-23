@@ -14,3 +14,7 @@ navToggle.addEventListener("click", () => {
 navClose.addEventListener("click", () => {
   navLinks.classList.remove("show_menu");
 });
+
+/*
+  Slidehow Banner
+*/
