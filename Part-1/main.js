@@ -18,3 +18,4 @@ navClose.addEventListener("click", () => {
 /*
   Slidehow Banner
 */
+/* still need to figure out javascript for the slideshow banner */
