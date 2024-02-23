@@ -3,6 +3,7 @@
 }
 
 body {
+
   outline: auto;
   margin: auto;
 
@@ -19,7 +20,7 @@ body {
     /* background-color of header matches logo and there is a box shadow */
     /* background-color: rgb(242, 241, 238); */
     background-color: white;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5); */
 
     nav {
       display: flex;
