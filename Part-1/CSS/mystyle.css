@@ -237,20 +237,39 @@ body {
   outline: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 90vh;
+  grid-template-rows: 80vh;
   margin-top: 10px;
   grid-gap: 0.4rem;
 
+  .men_hoodie{
+    background-image: url(../Images/hoodies/men_shirt2.webp);
+  }
+  .men_sweatshirt{
+    background-image: url(../Images/sweatshirts/men_shirt.webp);
+  }
+  .men_pants{
+    background-image: url(../Images/pants/men_pant1.webp);
+  }
+  .men_shoes{
+    background-image: url(../Images/shoes/men_shoes1.jpg);
+  }
+  .men_accessories{
+    background-image: url(../Images/accessories/men_bag.webp);
+  }
+
   div {
     border: 1px solid black;
-    background-color: rgb(68, 70, 68);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     h2 {
-      color: white;
+      color: black;
       text-align: center;
-      /* font-family: Poppins; */
+      padding: 15px;
       writing-mode: vertical-rl;
       transform: rotate(180deg);
+      font-weight: bold;
     }
   }
 }
