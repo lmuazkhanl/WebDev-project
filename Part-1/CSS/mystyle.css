@@ -193,7 +193,7 @@ body {
   }
   
   
-  .paralax-text{
+  #paralax-text{
       font-size: 2rem;
       padding: 2rem;
       background-color: #333;
