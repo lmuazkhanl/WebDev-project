@@ -233,13 +233,14 @@ body {
 
 /* TWO TYPES OF CODE ARE THERE - BOTH ARE WORKING */
 /* CODE BELOW IS CODED ACCORDING TO BIG SCREEN */
-.display {
-  outline: auto;
+.display , .women_cards{
+  /* outline: auto; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 80vh;
+  grid-template-rows: 75vh;
   margin-top: 10px;
   grid-gap: 0.4rem;
+  padding: 20px;
 
   .men_hoodie{
     background-image: url(../Images/hoodies/men_shirt2.webp);
@@ -256,9 +257,26 @@ body {
   .men_accessories{
     background-image: url(../Images/accessories/men_bag.webp);
   }
+  /* -------------------------------------------------------------- */
+  .women_hoodie{
+    background-image: url(../Images/hoodies/White-Hoodie.jpg);
+  }
+  .women_sweatshirt{
+    background-image: url(../Images/sweatshirts/women_shirt.webp);
+  }
+  .women_pants{
+    background-image: url(../Images/pants/men_pant1.webp);
+  }
+  .women_shoes{
+    background-image: url(../Images/shoes/women_shoe.webp);
+  }
+  .women_accessories{
+    background-image: url(../Images/accessories/earings.webp);
+  }
 
   div {
     border: 1px solid black;
+    background-color: aquamarine;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -317,7 +335,7 @@ body {
 
 /*  */
 @media screen and (max-width: 767px) {
-  .display {
+  .display, .women_cards {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
