@@ -184,6 +184,7 @@ body {
       background-color: #fb923c;
       padding: 2rem;
       font-size: x-large;
+      font-family: 'Apple Chancery', cursive;
   }
   .title:hover{
       background-color: #c2410c;
@@ -199,7 +200,9 @@ body {
       background-color: #333;
       color: white;
       line-height: 1.5;
+      font-family: Didot, serif;
       h1{
+          font-family: 'Times New Roman', Times, serif;
           text-align: center;
       }
   }
