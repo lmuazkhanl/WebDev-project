@@ -296,6 +296,8 @@ ul li a:hover{
 .links a:hover{
   color: #4d4f55;
   background-color: #06b6d4;
+  transition-duration: 0.5s;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 @media screen and (max-width:740px) {
