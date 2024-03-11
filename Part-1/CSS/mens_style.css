@@ -1,188 +1,190 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-  
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
-    margin: auto;
+  margin: auto;
+  background-color: white;
+
+  /* navbar is designed for big screen first to make implementation of the collapse simpler */
+  header {
+    /* keep header fixed at top and fill the entire width */
+    position: sticky;
+    width: 100%;
+    max-height: 20vh;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    /* background-color of header matches logo and there is a box shadow */
+    /* background-color: rgb(242, 241, 238); */
     background-color: white;
-  
-    /* navbar is designed for big screen first to make implementation of the collapse simpler */
-    header {
-      /* keep header fixed at top and fill the entire width */
-      position: sticky;
-      width: 100%;
-      max-height: 20vh;
-  
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 999;
-  
-      /* background-color of header matches logo and there is a box shadow */
-      /* background-color: rgb(242, 241, 238); */
-      background-color: white;
-      /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5); */
-  
-      nav {
-        display: flex;
-  
-        justify-content: space-between;
-        align-items: center;
-  
-        padding-right: 1rem;
-  
-        .logo_img {
-          /* margin: 2px; */
-          width: 100px;
-  
-          height: 100px;
-          justify-self: stretch;
-          align-self: stretch;
-          margin-left: 10px;
-  
-          transition: color 0.4s;
-        }
-  
-        .logo_img:hover {
-          opacity: 80%;
-        }
-  
-        .nav_links {
-          ul {
-            display: flex;
-            list-style: none;
-  
-            gap: 3rem;
-  
-            li {
-              /* justify-self: stretch; */
-  
-              a {
-                text-decoration: none;
-                font-size: 20px;
-                color: black;
-              }
-  
-              a:hover {
-                color: grey;
-  
-                /* have common code for transition */
-                transition: color 0.4s;
-              }
+    /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5); */
+
+    nav {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+
+      padding-right: 1rem;
+
+      .logo_img {
+        /* margin: 2px; */
+        width: 100px;
+
+        height: 100px;
+        justify-self: stretch;
+        align-self: stretch;
+        margin-left: 10px;
+
+        transition: color 0.4s;
+      }
+
+      .logo_img:hover {
+        opacity: 80%;
+      }
+
+      .nav_links {
+        ul {
+          display: flex;
+          list-style: none;
+
+          gap: 3rem;
+
+          li {
+            /* justify-self: stretch; */
+
+            a {
+              text-decoration: none;
+              font-size: 20px;
+              color: black;
+            }
+
+            a:hover {
+              color: grey;
+
+              /* have common code for transition */
+              transition: color 0.4s;
             }
           }
         }
-  
-        /* style div with buttons such as search, div) */
-        .nav_buttons {
-          display: flex;
-          align-items: center;
-          gap: 1.2rem;
-        }
-  
-        /* style all icons in the nav */
-        .nav_button {
-          cursor: pointer;
-          transition: fill 0.4s;
-          border: auto;
-  
-          width: 30px;
-        }
-  
-        .cart_button {
-          width: 36px;
-        }
-  
-        .nav_button:hover {
-          fill: gray;
-        }
       }
-    }
-}
-.content{
-    display: grid;
-    grid-template-columns: 200px auto;
-    grid-template-areas: "aside content";
-    grid-gap:  1.5rem;
-}
-.sideNav{
-    grid-area: aside;
-    margin: 10px;
-}
-.container{
-    grid-area: content;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px,1fr));
-    grid-gap: 20px;
 
-}
-.all{
-    width: 240px;
-    height: 360px;
-    background-size: cover;
-    background-color: brown;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: end;
+      /* style div with buttons such as search, div) */
+      .nav_buttons {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+      }
 
-    .text{
-        width: 100%;
-        height: 20%;
-        background-color: white;
-        
-        display: grid;
-        grid-template-columns: auto 50px;
-        h2{
-            padding-top: 10px;
-            padding-left: 10px;
+      /* style all icons in the nav */
+      .nav_button {
+        cursor: pointer;
+        transition: fill 0.4s;
+        border: auto;
 
-        }
-        h4{
-            padding-top: 5px;
-            padding-left: 10px;
-            color: rgb(119, 117, 117);
-            font-family: Archivo expanded, sans-serif;
-        }
-    }
-    .cart_button {
         width: 30px;
-        padding-top: 40%;
       }
+
+      .cart_button {
+        width: 36px;
+      }
+
+      .nav_button:hover {
+        fill: gray;
+      }
+    }
+  }
 }
-.hoodie{
+
+.content {
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-areas: "aside content";
+  grid-gap: 1.5rem;
+}
+.sideNav {
+  grid-area: aside;
+  margin: 10px;
+}
+.container {
+  padding: 5px;
+  grid-area: content;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 10px;
+}
+
+.all {
+  min-width: 200px;
+  min-height: 500px;
+  background-size: cover;
+  background-color: brown;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px; */
+  outline: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+
+  .text {
+    width: 100%;
+    height: 20%;
+    background-color: white;
+
+    display: grid;
+    grid-template-columns: auto 50px;
+    h2 {
+      padding-top: 10px;
+      padding-left: 10px;
+    }
+    h4 {
+      padding-top: 5px;
+      padding-left: 10px;
+      color: rgb(119, 117, 117);
+      font-family: Archivo expanded, sans-serif;
+    }
+  }
+  .cart_button {
+    width: 30px;
+    padding-top: 40%;
+  }
+}
+.hoodie {
   background-image: url(../Images/hoodies/men_shirt2.webp);
 }
-.pant{
+.pant {
   background-image: url(../Images/pants/men_pant1.webp);
 }
-.shirt{
+.shirt {
   background-image: url(../Images/hoodies/Man-Pic.jpg);
 }
-.bag{
+.bag {
   background-image: url(../Images/accessories/bag.webp);
 }
-.accessories{
+.accessories {
   background-image: url(../Images/accessories/side_bag.webp);
 }
-.jacket{
+.jacket {
   background-image: url(../Images/hoodies/jacket.webp);
 }
-.shoes{
+.shoes {
   background-image: url(../Images/shoes/men_shoes2.jpg);
 }
-.polo{    
+.polo {
   background-image: url(../Images/hoodies/men_cottonPolo.webp);
 }
 
-
 /* layout for bigger screen */
 @media screen and (min-width: 768px) {
-    /* hide the close buttona and collapse toggle button */
-    .toggle_button,
-    .close_button {
-      display: none;
-    }
+  /* hide the close buttona and collapse toggle button */
+  .toggle_button,
+  .close_button {
+    display: none;
   }
+}
