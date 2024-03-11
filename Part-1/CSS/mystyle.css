@@ -295,7 +295,7 @@ ul li a:hover{
 }
 .links a:hover{
   color: #4d4f55;
-  background-color: rgb(210, 120, 9);
+  background-color: #06b6d4;
 }
 
 @media screen and (max-width:740px) {
