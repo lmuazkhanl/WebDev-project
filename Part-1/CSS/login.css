@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: auto;
+  background-color: white;
+
+  /* navbar is designed for big screen first to make implementation of the collapse simpler */
+  header {
+    /* keep header fixed at top and fill the entire width */
+    position: sticky;
+    width: 100%;
+    max-height: 20vh;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    /* background-color of header matches logo and there is a box shadow */
+    /* background-color: rgb(242, 241, 238); */
+    background-color: white;
+    /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5); */
+
+    nav {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+
+      padding-right: 1rem;
+
+      .logo_img {
+        /* margin: 2px; */
+        width: 100px;
+
+        height: 100px;
+        justify-self: stretch;
+        align-self: stretch;
+        margin-left: 10px;
+
+        transition: color 0.4s;
+      }
+
+      .logo_img:hover {
+        opacity: 80%;
+      }
+
+      .nav_links {
+        ul {
+          display: flex;
+          list-style: none;
+
+          gap: 3rem;
+
+          li {
+            /* justify-self: stretch; */
+
+            a {
+              text-decoration: none;
+              font-size: 20px;
+              color: black;
+            }
+
+            a:hover {
+              color: grey;
+
+              /* have common code for transition */
+              transition: color 0.4s;
+            }
+          }
+        }
+      }
+
+      /* style div with buttons such as search, div) */
+      .nav_buttons {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+      }
+
+      /* style all icons in the nav */
+      .nav_button {
+        cursor: pointer;
+        transition: fill 0.4s;
+        border: auto;
+
+        width: 30px;
+      }
+
+      .cart_button {
+        width: 36px;
+      }
+
+      .nav_button:hover {
+        fill: gray;
+      }
+    }
+  }
+
+  main {
+    /* padding: 1rem; */
+
+    .banner_slideshow {
+      text-align: center;
+      margin: 1px 1rem;
+
+      /* display: flex;
+        flex-direction: column; */
+
+      outline: auto;
+
+      .slide {
+        display: flex;
+        flex-direction: column;
+
+        outline: auto;
+
+        width: 100%;
+        height: 100%;
+
+        video {
+          width: 100%;
+          max-height: 80vh;
+
+          /* stretch video */
+          object-fit: fill;
+        }
+
+        a {
+          text-align: center;
+
+          flex: 1;
+
+          color: white;
+          font-size: 24px;
+          background-color: black;
+
+          padding: 10px;
+
+          text-decoration: none;
+          transition: color 0.8s;
+        }
+
+        a:hover {
+          background-color: grey;
+        }
+      }
+    }
+  }
+}
+
+/* layout for bigger screen */
+@media screen and (min-width: 768px) {
+  /* hide the close buttona and collapse toggle button */
+  body {
+    transition: all ease-in 0.5s;
+  }
+  .toggle_button,
+  .close_button {
+    display: none;
+  }
+}
+
+/* small screen layout for the navbar */
+@media screen and (max-width: 767px) {
+  /* display the close buttona and collapse toggle button */
+  .toggle_button,
+  .close_button {
+    display: block;
+  }
+  nav {
+    .nav_links {
+      position: fixed;
+
+      /* absolute position set outside view */
+      top: -100%;
+
+      /* background-color: rgb(242, 241, 238); */
+      background-color: white;
+
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      transition: top 0.4s;
+
+      ul {
+        text-align: center;
+        flex-direction: column;
+        padding: 0;
+      }
+
+      .close_button {
+        position: absolute;
+        top: 3rem;
+        right: 1rem;
+      }
+    }
+
+    /* class added to .nav_links to bring it back to the top */
+    .show_menu {
+      top: 0;
+    }
+  }
+}

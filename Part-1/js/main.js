@@ -15,7 +15,3 @@ navClose.addEventListener("click", () => {
   navLinks.classList.remove("show_menu");
 });
 
-/*
-  Slidehow Banner
-*/
-/* still need to figure out javascript for the slideshow banner */
