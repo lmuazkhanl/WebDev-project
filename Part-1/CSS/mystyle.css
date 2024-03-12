@@ -240,7 +240,9 @@ body {
       height: 60vh;
       perspective: 70px;
       overflow-y:auto;
-      overflow-x: hidden;      
+      overflow-x: hidden;  
+      
+      
   }
   .paralax-wrapper::-webkit-scrollbar {
     display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
@@ -254,7 +256,7 @@ body {
       transform-style: preserve-3d;
       z-index: -1;
       margin: 0 15px; */
-      background-image: url(../Images/pexels-sobhan-joodi-3277350.jpg);
+      background-image: url("../Images/login/customer_login_background.jpg");
       position: relative;
       background-size: cover;
       background-position: center;
@@ -262,6 +264,8 @@ body {
       background-attachment: fixed;
       height: 100vh;
       position: relative;
+
+      margin: 20px;
 
   }
 
