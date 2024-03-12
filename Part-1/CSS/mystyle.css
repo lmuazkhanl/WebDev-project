@@ -108,7 +108,11 @@ body {
     justify-content: center;
     align-items: center;
 
-    background-color: rgba(0, 0, 0, 0.8); 
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out;
+  
+
+    transition: opacity 0.5s ease, height 0.5s ease;
 
     position: fixed;
     top: 0;
@@ -160,11 +164,26 @@ body {
         color: #555; /* Dark grey text on hover */
       }
     }
+
+    #search_close_button {
+      position: absolute;
+      fill: white;
+      width: 40px;
+
+      top: 28vh;
+      right: 10vw;
+    }
+
+    #search_close_button:hover {
+      fill: gray;
+    }
   }
 
-  /*  .search_hidden {
+   .search_hidden {
+    opacity: 0; /* Set opacity to 0 when hidden */
+    height: 0; /* Set height to 0 when hidden */
     display: none;
-  } */
+  }
 
   main {
     /* padding: 1rem; */
