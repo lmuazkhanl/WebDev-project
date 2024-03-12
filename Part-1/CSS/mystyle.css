@@ -18,7 +18,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 999;
+    z-index: 998;
 
     /* background-color of header matches logo and there is a box shadow */
     /* background-color: rgb(242, 241, 238); */
@@ -101,6 +101,90 @@ body {
     }
   }
 
+  .search_container {
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out;
+  
+
+    transition: opacity 0.5s ease, height 0.5s ease;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; /* Enable vertical scrolling */
+
+    .search_form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      padding: 50px;
+
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 5px;
+
+      width: 70vw;
+      height: 30vh;
+
+      svg {
+        position: absolute;
+        color: black;
+      }
+
+      input {
+        padding: 20px;
+        background-color: white;
+      }
+
+      .submit-button {
+        padding: 20px;
+        font-size: 16px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #333;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+
+        width: 80%;
+        align-self: center;
+      }
+
+      .submit-button:hover {
+        background-color: #f5f5f5; /* Light grey on hover */
+        color: #555; /* Dark grey text on hover */
+      }
+    }
+
+    #search_close_button {
+      position: absolute;
+      fill: white;
+      width: 40px;
+
+      top: 28vh;
+      right: 10vw;
+    }
+
+    #search_close_button:hover {
+      fill: gray;
+    }
+  }
+
+   .search_hidden {
+    opacity: 0; /* Set opacity to 0 when hidden */
+    height: 0; /* Set height to 0 when hidden */
+    display: none;
+  }
+
   main {
     /* padding: 1rem; */
 
@@ -156,9 +240,12 @@ body {
       height: 60vh;
       perspective: 10000rem;
       overflow-y:auto;
-      overflow-x: hidden;
+      overflow-x: hidden;      
   }
-  .paralax-header{
+  .paralax-wrapper::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+  }
+    .paralax-header {
       position: relative;
       display: flex;
       justify-content: center;
@@ -174,70 +261,70 @@ body {
   .background{
       position:absolute;
       height: 100%;
-      width:100%;
-      object-fit:cover;
+      width: 100%;
+      object-fit: cover;
       z-index: -1;
       opacity: 0.85;
       transform: translateZ(-10px) scale(2);
-  }
-  
-  .paralax-content{
+    }
+
+    .paralax-content {
       display: flex;
       flex-wrap: wrap;
       justify-content: start;
       align-items: start;
       flex-direction: column;
       background-color: rgba(155, 155, 155, 0.59);
-      opacity:0.5;
+      opacity: 0.5;
       margin-left: 10px;
       margin-right: 10px;
-      width:100%;
+      width: 100%;
       object-fit: cover;
       transform: translateZ(0px);
-      h1{
-          font-family:cursive;
-          font-size:xx-large;
-          /* font-weight: bolder; */
-          padding: 0.5rem 0.2rem 0.5rem 0.2rem;
-          margin-bottom:0.5rem;
-          margin-left: 1rem;
-
+      h1 {
+        font-family: cursive;
+        font-size: xx-large;
+        /* font-weight: bolder; */
+        padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+        margin-bottom: 0.5rem;
+        margin-left: 1rem;
       }
-      p{  
-          margin-bottom:0.5rem;
-          width: 85%;
-          font-size: large;
-          font-family: 'Arial Narrow', Arial, sans-serif;
-          line-height: 2;
-          padding: 0.5em 0rem 0.5rem 0.2rem;
-          margin-left: 1rem;
-          font-weight: 500;
-          
+      p {
+        margin-bottom: 0.5rem;
+        width: 85%;
+        font-size: large;
+        font-family: "Arial Narrow", Arial, sans-serif;
+        line-height: 2;
+        padding: 0.5em 0rem 0.5rem 0.2rem;
+        margin-left: 1rem;
+        font-weight: 500;
       }
-      .paralax-btn{
-          padding: 0.5rem;
-          border:none;
-          background-color: rgba(155, 155, 155, 0.59);
-          opacity: 0.8;
-          font-size: large;
-          margin: 0rem 0rem 1rem 1rem;
+      .paralax-btn {
+        padding: 0.5rem;
+        border: none;
+        background-color: rgba(155, 155, 155, 0.59);
+        opacity: 0.8;
+        font-size: large;
+        margin: 0rem 0rem 1rem 1rem;
       }
-  }
-  .paralax-btn:hover{
-      background-color:rgba(165, 85, 42, 0.9);
+    }
+    .paralax-btn:hover {
+      background-color: rgba(165, 85, 42, 0.9);
       transition-duration: 0.5s;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
       border-radius: 1rem;
-  }
-  .paralax-content:hover{
+    }
+    .paralax-content:hover {
       opacity: 100;
       transition-duration: 0.4s;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
       border-radius: 1rem;
   }
   }
 }
-
+/* START OF FOOTER STYLES */
 footer{
   display: flex;
   flex-wrap: wrap;
@@ -302,7 +389,7 @@ ul li a:hover{
   transition-duration: 0.5s;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-
+/* END OF FOOTER STYLES */
 @media screen and (max-width:740px) {
   .footer-col{
       width: 50%;
@@ -321,18 +408,17 @@ ul li a:hover{
       }
 }
 
+
 /* layout for bigger screen */
 @media screen and (min-width: 768px) {
   /* hide the close buttona and collapse toggle button */
-  body{
-    transition:all ease-in 0.5s;
-    }
+  body {
+    transition: all ease-in 0.5s;
+  }
   .toggle_button,
   .close_button {
     display: none;
   }
-   
-
 }
 
 /* small screen layout for the navbar */
@@ -458,6 +544,7 @@ ul li a:hover{
     }
   }
 }
+
 /* 
 .paralax-container {
   outline: auto;

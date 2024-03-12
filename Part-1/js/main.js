@@ -15,30 +15,27 @@ navClose.addEventListener("click", () => {
   navLinks.classList.remove("show_menu");
 });
 
-/* change background color in login page based on selectedvalue */
-document.addEventListener("DOMContentLoaded", function () {
-  const loginTypeSelect = document.getElementById("loginType");
-  const formContainer = document.querySelector(".form-container");
+/*
+    show and hide the search bar
+*/
+const searchContainer = document.querySelector(".search_container");
+ searchCloseButton = document.getElementById("search_close_button");
+ searchNavButton = document.querySelector("nav .search_button");
 
-  loginTypeSelect.addEventListener("change", function () {
-    const selectedValue = this.value;
-    let backgroundImage = "";
-
-    switch (selectedValue) {
-      case "customer":
-        backgroundImage =
-          'url("../Images/login/customer_login_background.jpg")';
-        break;
-      case "seller":
-        backgroundImage = 'url("../Images/login/seller_login_background.jpg")';
-        break;
-      case "admin":
-        backgroundImage = 'url("../Images/login/admin_login_background.jpg")';
-        break;
-      default:
-        backgroundImage = "";
-    }
-
-    formContainer.style.backgroundImage = backgroundImage;
-  });
+searchNavButton.addEventListener("click", () => {
+  searchContainer.classList.remove("search_hidden");
+  searchNavButton.style.fill = "white";
+  setTimeout(() => {
+    searchContainer.style.height = "100%";
+  }, 10);
 });
+
+searchCloseButton.addEventListener("click", () => {
+  searchContainer.style.height = "0";
+  searchNavButton.style.fill = "black";
+  setTimeout(() => {
+    searchContainer.classList.add("search_hidden");
+  }, 500);
+});
+
+
