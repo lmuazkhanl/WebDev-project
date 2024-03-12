@@ -166,7 +166,7 @@ body {
     }
 
     #search_close_button {
-      position: absolute;
+      position:absolute;
       fill: white;
       width: 40px;
 
@@ -238,7 +238,7 @@ body {
     /* CODE FOR PARALLAX EFFECT CSS */
     .paralax-wrapper{
       height: 60vh;
-      perspective: 10000rem;
+      perspective: 70px;
       overflow-y:auto;
       overflow-x: hidden;      
   }
@@ -246,14 +246,23 @@ body {
     display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
   }
     .paralax-header {
-      position: relative;
+      /* position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100%;
       transform-style: preserve-3d;
       z-index: -1;
-      margin: 0 15px;
+      margin: 0 15px; */
+      background-image: url(../Images/pexels-sobhan-joodi-3277350.jpg);
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      height: 100vh;
+      position: relative;
+
   }
   .paralax-wrapper::-webkit-scrollbar{
     display: none;
@@ -269,18 +278,31 @@ body {
     }
 
     .paralax-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: start;
-      align-items: start;
-      flex-direction: column;
-      background-color: rgba(155, 155, 155, 0.59);
-      opacity: 0.5;
+      /* 
+
+      object-fit: cover;
+      transform: translateZ(0px); */
+      /* width: 50%; */
+      width: 60%;
+      background-color: rgba(211, 209, 209, 0.59);
       margin-left: 10px;
       margin-right: 10px;
-      width: 100%;
-      object-fit: cover;
-      transform: translateZ(0px);
+      padding: 30px;
+      /* left: 20px; */
+      /* opacity: 0.5; */
+
+      display: flex;
+      /* flex-wrap: wrap; */
+      justify-content: center;
+      align-items: start;
+      flex-direction: column;
+
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+
       h1 {
         font-family: cursive;
         font-size: xx-large;
@@ -601,6 +623,11 @@ ul li a:hover{
       writing-mode: unset;
       transform: none;
     }
+  }
+  .paralax-header .paralax-content {
+    width: auto;
+    right: 20px;
+    left: 20px;
   }
 }
 
