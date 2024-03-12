@@ -3,7 +3,11 @@
     padding: 0;
     margin: 0;
   }
-  
+
+.ever{
+  background: url(../Images/hoodies/men_shirt2.webp);
+  background-size: cover;
+}
 body {
     margin: auto;
     background-color: white;
@@ -110,7 +114,7 @@ h1{
   font-size:xx-large;
 }
 h2{
-  color: brown;
+  color: rgb(15, 47, 227);
 }
 .information{
   padding-top: 20px;
@@ -171,7 +175,8 @@ h2{
   }
   
   button{
-      background-color: rgb(61, 61, 62);
+      /* background-color: rgb(61, 61, 62); */
+  /* background-image: url(../Images/hoodies/men_shirt2.webp); */
       color: white;
       border: none;
       text-align: center;

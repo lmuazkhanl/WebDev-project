@@ -153,8 +153,8 @@ body {
 
     /* CODE FOR PARALLAX EFFECT CSS */
     .paralax-wrapper{
-      height: 100vh;
-      perspective: 10px;
+      height: 60vh;
+      perspective: 10000rem;
       overflow-y:auto;
       overflow-x: hidden;
   }
@@ -168,8 +168,11 @@ body {
       z-index: -1;
       margin: 0 15px;
   }
+  .paralax-wrapper::-webkit-scrollbar{
+    display: none;
+  }
   .background{
-      position: absolute;
+      position:absolute;
       height: 100%;
       width:100%;
       object-fit:cover;
