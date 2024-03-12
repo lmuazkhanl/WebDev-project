@@ -264,9 +264,7 @@ body {
       position: relative;
 
   }
-  .paralax-wrapper::-webkit-scrollbar{
-    display: none;
-  }
+
   .background{
       position:absolute;
       height: 100%;
