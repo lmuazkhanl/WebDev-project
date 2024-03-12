@@ -237,7 +237,7 @@ body {
   }
   }
 }
-
+/* START OF FOOTER STYLES */
 footer{
   display: flex;
   flex-wrap: wrap;
@@ -302,7 +302,7 @@ ul li a:hover{
   transition-duration: 0.5s;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-
+/* END OF FOOTER STYLES */
 @media screen and (max-width:740px) {
   .footer-col{
       width: 50%;
