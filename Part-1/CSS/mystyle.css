@@ -239,9 +239,12 @@ body {
     .paralax-wrapper {
       height: 100vh;
       perspective: 10px;
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
+      overflow-y:auto;
+      overflow-x: hidden;      
+  }
+  .paralax-wrapper::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+  }
     .paralax-header {
       position: relative;
       display: flex;
@@ -315,7 +318,7 @@ body {
       box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
         0 17px 50px 0 rgba(0, 0, 0, 0.19);
       border-radius: 1rem;
-    }
+  }
   }
 }
 
