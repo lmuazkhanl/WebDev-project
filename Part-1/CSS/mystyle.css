@@ -255,9 +255,7 @@ body {
       z-index: -1;
       margin: 0 15px;
   }
-  .paralax-wrapper::-webkit-scrollbar{
-    display: none;
-  }
+
   .background{
       position:absolute;
       height: 100%;
