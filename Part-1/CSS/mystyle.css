@@ -353,7 +353,7 @@ footer{
   display: flex;
   flex-wrap: wrap;
   margin-top: auto;
-  background-color: #111827;
+  background-color: black;
   padding: 60px 10%;
 }
 ul{
@@ -367,7 +367,7 @@ ul{
   margin-bottom:30px;
   font-weight: 400;
   font-size: 20px;
-  color:#9ca3af;
+  color: gray;
   text-transform: capitalize;
 }
 .footer-col h4::before{
@@ -375,7 +375,7 @@ ul{
   position: absolute;
   left: 0;
   bottom: -6px;
-  background-color: #0369a1;
+  background-color: gray;
   height: 2px;
   width:55px;
 }
@@ -386,12 +386,12 @@ ul li a{
  display: block;
  font-size: 19px;
   text-transform: capitalize;
-  color:#4b5563;
+  color: white;
   text-decoration: none;
   transition: 0.4s;
 }
 ul li a:hover{
-  color: #f4f4f5;
+  color: gray;
   padding-left: 2px;
 }
 
