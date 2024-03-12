@@ -156,8 +156,11 @@ body {
       height: 100vh;
       perspective: 10px;
       overflow-y:auto;
-      overflow-x: hidden;
+      overflow-x: hidden;      
   }
+  .paralax-wrapper::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
   .paralax-header{
       position: relative;
       display: flex;
