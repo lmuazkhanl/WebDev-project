@@ -1,0 +1,30 @@
+{
+  "items": [
+    {
+      "name": "Striped Hoodie",
+      "sellername": "Magic Inc.",
+      "gender": "Male",
+      "type": "Hoodie",
+      "price": 35.99,
+      "image": "hoodie1.jpg",
+      "color": "Black/White",
+      "size": "Large",
+      "material": "Cotton",
+      "description": "Stylish striped hoodie for men, perfect for casual wear.",
+      "customers": []
+    },
+    {
+      "name": "Slim Fit Jeans",
+      "sellername": "Fantasy Traders",
+      "gender": "Female",
+      "type": "Pant",
+      "price": 49.99,
+      "image": "jeans1.jpg",
+      "color": "Blue",
+      "size": "Medium",
+      "material": "Denim",
+      "description": "Trendy slim fit jeans for women, perfect for any occasion.",
+      "customers": []
+    }
+  ]
+}
