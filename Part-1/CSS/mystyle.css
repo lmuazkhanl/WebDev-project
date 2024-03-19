@@ -719,3 +719,56 @@ div h2{
     }
 
 */
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Styles of sliding images */
+
+.sliding-images {
+  overflow: hidden;
+  padding: 40px 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+
+  .slide {
+    display: inline-block;
+    animation: 40s slide infinite linear;
+  }
+
+  .slide img {
+    height: 150px;
+    margin: 0 40px;
+  }
+}
+
+.sliding-images:before,
+.sliding-imagess:after {
+  position: absolute;
+  top: 0;
+  width: 400px;
+  height: 150%;
+  content: "";
+  z-index: 2;
+}
+
+.sliding-images:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.sliding-images:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.sliding-images:hover .slide {
+  animation-play-state: paused;
+}

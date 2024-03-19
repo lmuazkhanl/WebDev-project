@@ -102,82 +102,15 @@ body {
   }
 }
 
-.content {
+main {
   display: grid;
-  grid-template-columns: 200px auto;
+  grid-template-columns: 1fr 4fr;
   grid-template-areas: "aside content";
   grid-gap: 1.5rem;
 }
 .sideNav {
   grid-area: aside;
   margin: 10px;
-}
-.container {
-  grid-area: content;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px; */
-  justify-items: center;
-  grid-gap: 20px;
-  padding: 10px;
-}
-.all {
-  /* width: 240px; */
-  width: 100%;
-  height: 360px;
-  background-size: cover;
-  background-color: brown;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: end;
-
-  .text {
-    width: 100%;
-    height: 20%;
-    background-color: white;
-
-    display: grid;
-    grid-template-columns: auto 50px;
-    h2 {
-      padding-top: 10px;
-      padding-left: 10px;
-    }
-    h4 {
-      padding-top: 5px;
-      padding-left: 10px;
-      color: rgb(119, 117, 117);
-      font-family: Archivo expanded, sans-serif;
-    }
-  }
-  .cart_button {
-    width: 30px;
-    padding-top: 40%;
-  }
-}
-.hoodie {
-  background-image: url(../Images/hoodies/men_shirt2.webp);
-}
-.pant {
-  background-image: url(../Images/pants/men_pant1.webp);
-}
-.shirt {
-  background-image: url(../Images/hoodies/Man-Pic.jpg);
-}
-.bag {
-  background-image: url(../Images/accessories/bag.webp);
-}
-.accessories {
-  background-image: url(../Images/accessories/side_bag.webp);
-}
-.jacket {
-  background-image: url(../Images/hoodies/jacket.webp);
-}
-.shoes {
-  background-image: url(../Images/shoes/men_shoes2.jpg);
-}
-.polo {
-  background-image: url(../Images/hoodies/men_cottonPolo.webp);
 }
 
 footer {
