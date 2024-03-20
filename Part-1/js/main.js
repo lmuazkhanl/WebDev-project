@@ -17,7 +17,7 @@ navClose.addEventListener("click", () => {
 
 /*
     show and hide the search bar
-*/
+
 const searchContainer = document.querySelector(".search_container");
  searchCloseButton = document.getElementById("search_close_button");
  searchNavButton = document.querySelector("nav .search_button");
@@ -36,6 +36,4 @@ searchCloseButton.addEventListener("click", () => {
   setTimeout(() => {
     searchContainer.classList.add("search_hidden");
   }, 500);
-});
-
-
+});*/
