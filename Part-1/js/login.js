@@ -25,8 +25,73 @@ document.addEventListener("DOMContentLoaded", () => {
     formContainer.style.backgroundImage = backgroundImage;
   }
 
+  /* put data from users.json into localStorage */
+  async function fetchUserData() {
+    const response = await fetch("data/users.json");
+    const usersData = await response.json();
+    localStorage.setItem("users", JSON.stringify(usersData));
+
+    console.log(localStorage.getItem("users"));
+  }
+
+  fetchUserData();
+
   /* Implement Login Functionality */
-  const userType = document.querySelector("#loginType");
-  const username = document.querySelector("#username");
-  const password = document.querySelector("#password");
+
+  const loginForm = document.querySelector(".loginForm");
+
+  loginForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const userType = document.querySelector("#loginType").value;
+    const username = document.querySelector("#username").value.trim();
+    const password = document.querySelector("#password").value.trim();
+
+    const user = validateUser(username, password, userType);
+
+    if (user) {
+      loginUser(username, userType);
+    } else {
+      alert("Invalid username or password");
+    }
+  });
+
+  // Function to validate user credentials
+  function validateUser(username, password, userType) {
+    // get users from local storage
+    const users = JSON.parse(localStorage.getItem("users"));
+    // only one admin
+    if (
+      userType === "admin" &&
+      username === users.admin.username &&
+      password === users.admin.password
+    ) {
+      return true;
+    }
+    const userArray = users[userType + "s"]; // +"s" because customer will become customers
+    const user = userArray.find(
+      (user) => user.username === username && user.password === password
+    );
+    return user;
+  }
+
+  // Function to handle user login
+  function loginUser(username, userType) {
+    // create session
+    const session = {
+      username: username,
+      userType: userType,
+      loggedIn: true,
+    };
+    localStorage.setItem("session", JSON.stringify(session));
+
+    // redirect to differnet locations based on the userType
+    if (userType === "customer") {
+      window.location.href = "mens_section.html";
+    } else if (userType === "seller") {
+      window.location.href = "seller-dashboard.html";
+    } else if (userType === "admin") {
+      window.location.href = "searchItems.html";
+    }
+  }
 });
