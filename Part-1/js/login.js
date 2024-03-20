@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const user = validateUser(username, password, userType);
 
         if (user) {
-            loginUser(username, userType);
+            loginUser(username, userType, user.money_balance);
         } else {
             alert("Invalid username or password");
         }
@@ -69,12 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Function to handle user login
-    function loginUser(username, userType) {
+    function loginUser(username, userType, moneyBalance) {
         // create session
         const session = {
             username: username,
             userType: userType,
             loggedIn: true,
+            money_balance: moneyBalance,
         };
         localStorage.setItem("session", JSON.stringify(session));
 
