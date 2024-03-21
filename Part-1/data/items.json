@@ -11,7 +11,11 @@
             "size": "Large",
             "material": "Cotton",
             "description": "Stylish striped hoodie for men, perfect for casual wear.",
-            "quantity": 50
+            "quantity": 50,
+            "purchaseHistory": [
+                { "customer": "john", "quantity": 2 },
+                { "customer": "jane", "quantity": 4 }
+            ]
         },
         {
             "name": "Slim Fit Jeans Hoodie",
@@ -24,7 +28,28 @@
             "size": "Medium",
             "material": "Denim",
             "description": "Trendy slim fit jeans for women, perfect for any occasion.",
-            "quantity": 50
+            "quantity": 50,
+            "purchaseHistory": [
+                { "customer": "john", "quantity": 9 },
+                { "customer": "jane", "quantity": 3 }
+            ]
+        },
+        {
+            "name": "Striped Hoodie",
+            "sellername": "Fantasy Traders",
+            "gender": "Male",
+            "type": "Hoodie",
+            "price": 35.99,
+            "image": "Images/hoodies/Black-Hoodie.jpg",
+            "color": "Black/White",
+            "size": "Large",
+            "material": "Cotton",
+            "description": "Stylish striped hoodie for men, perfect for casual wear.",
+            "quantity": 50,
+            "purchaseHistory": [
+                { "customer": "john", "quantity": 2 },
+                { "customer": "jane", "quantity": 4 }
+            ]
         }
     ]
 }

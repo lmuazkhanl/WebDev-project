@@ -6,8 +6,7 @@
             "name": "John",
             "surname": "Doe",
             "shipping_address": "123 Glitter St",
-            "money_balance": 1000,
-            "purchased_items": []
+            "money_balance": 1000
         },
         {
             "username": "jane",
@@ -15,13 +14,12 @@
             "name": "Jane",
             "surname": "Smith",
             "shipping_address": "456 Sunshine Ave",
-            "money_balance": 1500,
-            "purchased_items": []
+            "money_balance": 1500
         }
     ],
     "sellers": [
         {
-            "username": "magic_inc",
+            "username": "Magic Inc.",
             "password": "abracadabra",
             "company_name": "Magic Inc.",
             "bank_account": {
@@ -30,7 +28,7 @@
             }
         },
         {
-            "username": "fantasy_traders",
+            "username": "Fantasy Traders",
             "password": "mythical321",
             "company_name": "Fantasy Traders",
             "bank_account": {

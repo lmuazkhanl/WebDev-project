@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <title>CLOTH - Seller Dashboard</title>
-
+        <link rel="stylesheet" href="CSS/product-grid.css" />
         <link rel="stylesheet" href="CSS/mystyle.css" />
         <link rel="stylesheet" href="CSS/seller_dashboard.css" />
         <link rel="icon" type="image/x-icon" href="images/logo.ico" />
@@ -71,21 +71,43 @@
 
         <main>
             <section class="seller-banner">
-                <h1 class="seller_Name">Fantasy Traders</h1>
+                <h1 class="seller_Name"></h1>
                 <a class="log-out-button">Log Out</a>
             </section>
 
             <section class="seller-menu">
                 <div class="menu-item Sell-Product"><h1>SELL NEW PRODUCT</h1></div>
                 <div class="menu-item Sale-History"><h1>SALE HISTORY</h1></div>
-                <div class="menu-item Current-Catalogue">
-                    <h1>CURRENT CATALOGUE</h1>
-                </div>
+                <div class="menu-item Current-Catalogue"><h1>CURRENT CATALOGUE</h1></div>
             </section>
 
             <section class="seller-Pages">
                 <div class="seller-Page Sell-Product-Page">
-                    <h1>work in progress</h1>
+                    <h1>sell product page</h1>
+                </div>
+                <div class="seller-Page Sale-History-Page">
+                    <h1>Sale History of <span class="seller_Name"></span></h1>
+                    <div class="product-grid-sale-history">
+                        <!-- <div class="sale-history-product-card">
+                            <img src="Images/hoodies/men_shirt2.webp" alt="Striped Hoodie" />
+                            <div class="product-details">
+                                <h2 class="product-name">Striped Hoodie</h2>
+                                <p class="price-text">Sold at <span class="price">$35.99</span></p>
+                                <p class="stock-remaining-text">Stock Remaining : <span class="quantity">50</span></p>
+                                <p class="stock-sold-text">Items Sold : <span class="quantity-sold">4</span></p>
+                                <h2 class="customer-list-heading">Customer List</h2>
+                                <ul class="customer-list">
+                                    <li class="customer-name">john</li>
+                                    <li class="customer-name">jane</li>
+                                    <li class="customer-name">ahmed</li>
+                                </ul>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="seller-Page Current-Catalogue-Page">
+                    <h1>Current Products being sold by <span class="seller_Name"></span></h1>
+                    <div class="product-grid"></div>
                 </div>
             </section>
         </main>
@@ -130,5 +152,7 @@
         </footer>
         <!-- javscript link at the end so that HTML content loads first -->
         <script src="js/main.js"></script>
+        <script src="js/search.js"></script>
+        <script src="js/seller-dashboard.js"></script>
     </body>
 </html>
