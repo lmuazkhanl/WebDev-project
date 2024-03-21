@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    /* put data from items.json into localStorage */
+    /* put data from items.json into localStorage whenever page is loaded*/
     async function fetchItems() {
-        const response = await fetch("data/items.json");
-        const itemsData = await response.json();
-        localStorage.setItem("items", JSON.stringify(itemsData));
+        if (!localStorage.getItem("items")) {
+            const response = await fetch("data/items.json");
+            const itemsData = await response.json();
+            localStorage.setItem("items", JSON.stringify(itemsData));
 
-        console.log(localStorage.getItem("items"));
+            console.log(localStorage.getItem("items"));
+        }
     }
 
     fetchItems();
