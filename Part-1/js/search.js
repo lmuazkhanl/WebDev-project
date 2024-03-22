@@ -55,7 +55,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Filter items based on search query
         const filteredItems = items.filter((item) => {
-            return item.name.toLowerCase().includes(searchQuery); // need return for the includes function
+            return (
+                item.name.toLowerCase().includes(searchQuery) ||
+                item.type.toLowerCase().includes(searchQuery) ||
+                item.material.toLowerCase().includes(searchQuery) ||
+                item.description.toLowerCase().includes(searchQuery)
+            ); // need return for the includes function
         });
 
         console.log("Filtered Items:", filteredItems); // Log the filtered items
