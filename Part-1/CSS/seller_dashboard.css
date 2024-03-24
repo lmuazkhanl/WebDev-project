@@ -275,3 +275,63 @@ body {
         }
     }
 }
+/* grid for seller product page */
+.Sell-Product-Page {
+    display: grid;
+    grid-template-columns: 200px 400px;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    grid-template-areas:
+      "header header"
+      "name nameArea"
+      "image imageArea"
+      "price priceArea"
+      "description descriptionArea"
+      "gender genderArea"
+      "type typeArea"
+      "color colorArea"
+      "size sizeArea"
+      "material materialArea"
+      "stock stockArea"
+      "stock form-btns";
+    grid-gap: 10px;
+    input{
+        width: 100%;
+    }
+    padding: 20px;
+    border-radius: 8px;
+    .header{padding-bottom: 20px;}
+    .submit{margin-bottom: 10px;}
+}
+.header{grid-area: header; }
+
+.name { grid-area: name; }
+.nameArea { grid-area: nameArea; }
+
+.image { grid-area: image; }
+.imageArea { grid-area: imageArea; }
+
+.price1 { grid-area: price; }
+.priceArea1 { grid-area: priceArea; }
+
+.description { grid-area: description; }
+.descriptionArea { grid-area: descriptionArea; }
+
+.gender { grid-area: gender; }
+.genderArea { grid-area: genderArea; }
+
+.type { grid-area: type; }
+.typeArea { grid-area: typeArea; }
+
+.color { grid-area: color; }
+.colorArea { grid-area: colorArea; }
+
+.size { grid-area: size; }
+.sizeArea { grid-area: sizeArea; }
+
+.material { grid-area: material; }
+.materialArea { grid-area: materialArea; }
+
+.stock { grid-area: stock; }
+.stockArea { grid-area: stockArea; }
+
+.form-btns { grid-area: form-btns; }

@@ -1,7 +1,7 @@
 const sellNew = document.querySelector(".Sell-Product");
 sellNew.addEventListener('click', addProduct);
 function addProduct() {
-    const display = document.querySelector(".Sell-Product-Page");
+    const display = document.querySelector(".please");
     display.style.display = "block";
 
     const remove = document.querySelector(".Sale-History-Page");
@@ -14,10 +14,42 @@ function showHistory() {
     const display = document.querySelector(".Sale-History-Page");
     display.style.display = "block";
 
-    const remove = document.querySelector(".Sell-Product-Page");
+    const remove = document.querySelector(".please");
     remove.style.display = "none";
 }
+let stock = [];
+const addStock = document.querySelector("#submit");
+addStock.addEventListener("click", addProductStock);
+function addProductStock(event){
 
+    event.preventDefault();
+
+    // Get the form element by its ID
+    const form = document.querySelector("#productForm");
+
+    // Create FormData object from the form
+    const formData = new FormData(form);
+
+    const product = {};
+    formData.forEach((value, key) => {
+        product[key] = value;
+    });
+
+    // Get existing stock from local storage
+    stock = JSON.parse(localStorage.getItem("items")) || [];
+
+    // Add new product to stock
+    stock.push(product);
+
+    // Save updated stock to local storage
+    localStorage.setItem("items", JSON.stringify(stock));
+
+    // Optionally, you can display a success message or redirect to another page
+    alert("Product added to stock successfully!");
+    // window.location.href = "success.html"; // Redirect to success page
+};
+
+// ----------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
     // Display name of the Seller
     const sellerName = JSON.parse(localStorage.getItem("session")).username;
