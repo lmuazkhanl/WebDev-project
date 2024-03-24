@@ -82,13 +82,61 @@
             </section>
 
             <section class="seller-Pages">
-                <div class="seller-Page Sell-Product-Page">
-                    <h1>sell product page</h1>
+                <div class="please">
+                    <form action="" id="productForm">
+                        <div class="Sell-Product-Page">
+                            <div class="header"><h1>Add New Product To The Stock</h1></div>
+
+                            <div class="name"><label for="name">Name:</label></div>
+                            <div class="nameArea"><input type="text" id="name" name="name" ></div>
+        
+                            <div class="image"><label for="image">Image:</label></div>
+                            <div class="priceArea"><input type="text" id="price" name="price" hidden></div>
+        
+                            <div class="price1"><label for="price">Price:</label></div>
+                            <div class="priceArea1"><input type="text" id="price" name="price" ></div>
+        
+                            <div class="description"><label for="description">Description:</label></div>
+                            <div class="descriptionArea"><input type="text" id="description" name="description" ></div>
+        
+                            <div class="gender"><label for="gender">Gender:</label></div>
+                            <div class="genderArea"><input type="text" id="gender" name="gender" ></div>
+        
+                            <div class="type"><label for="type">Type:</label></div>
+                            <div class="typeArea"><input type="text" id="type" name="type" ></div>
+                            
+                            <div class="color"><label for="gender">Color:</label></div>
+                            <div class="colorArea"><input type="color" id="color" name="color" ></div>
+        
+                            <div class="size"><label for="size">Size:</label></div>
+                            <div class="sizeArea">
+                                <select id="size" name="size">
+                                    <option value="Small">Small</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Large">Large</option>
+                                </select>
+                            </div>
+        
+                            <div class="material"><label for="material">Material:</label></div>
+                            <div class="materialArea"><input type="text" id="material" name="material" ></div>
+                            
+                            <div class="stock"><label for="stock">Stock number:</label></div>
+                            <div class="stockArea"><input type="number" id="stock" name="stock" ></div>
+        
+                            <div class="form-btns all">
+                                <input type="submit" value="Submit" id="submit" class="submit" >
+                                <input type="reset" value="Cancel" id="cancel" class="cancel" >
+                            </div>
+        
+                        </div>
+                    </form>
                 </div>
+                
+                
                 <div class="seller-Page Sale-History-Page">
-                    <h1>Sale History of <span class="seller_Name"></span></h1>
+                    <h1>Sale History of <span class="seller_Name">products</span></h1>
                     <div class="product-grid-sale-history">
-                        <!-- <div class="sale-history-product-card">
+                        <div class="sale-history-product-card">
                             <img src="Images/hoodies/men_shirt2.webp" alt="Striped Hoodie" />
                             <div class="product-details">
                                 <h2 class="product-name">Striped Hoodie</h2>
@@ -102,7 +150,7 @@
                                     <li class="customer-name">ahmed</li>
                                 </ul>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
                 <div class="seller-Page Current-Catalogue-Page">
