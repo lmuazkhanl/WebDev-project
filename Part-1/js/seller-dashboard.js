@@ -1,9 +1,31 @@
+const sellNew = document.querySelector(".Sell-Product");
+sellNew.addEventListener('click', addProduct);
+function addProduct() {
+    const display = document.querySelector(".Sell-Product-Page");
+    display.style.display = "block";
+
+    const remove = document.querySelector(".Sale-History-Page");
+    remove.style.display = "none";
+}
+
+const history = document.querySelector(".Sale-History");
+history.addEventListener('click', showHistory);
+function showHistory() {
+    const display = document.querySelector(".Sale-History-Page");
+    display.style.display = "block";
+
+    const remove = document.querySelector(".Sell-Product-Page");
+    remove.style.display = "none";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     // Display name of the Seller
     const sellerName = JSON.parse(localStorage.getItem("session")).username;
     document.querySelectorAll(".seller_Name").forEach((element) => {
         element.innerHTML = sellerName;
     });
+
+
 
     const menuItems = document.querySelectorAll(".menu-item");
     menuItems.forEach((item) => {
