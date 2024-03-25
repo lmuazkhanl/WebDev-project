@@ -279,59 +279,172 @@ body {
 .Sell-Product-Page {
     display: grid;
     grid-template-columns: 200px 400px;
-    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
     grid-template-areas:
       "header header"
       "name nameArea"
-      "image imageArea"
-      "price priceArea"
-      "description descriptionArea"
+      "sellerName sellerNameArea"
       "gender genderArea"
       "type typeArea"
+      "price priceArea"
+      "image imageArea"
       "color colorArea"
       "size sizeArea"
       "material materialArea"
+      "description descriptionArea"
       "stock stockArea"
-      "stock form-btns";
+      "purchaseHeader purchaseHeader"
+      /* "customer customerArea"
+      "quantity quantityArea" */
+      "purchase-history purchase-history";
+      /* "form-btns form-btns"; */
+
     grid-gap: 10px;
-    input{
+    input {
         width: 100%;
+        border: 1px solid #ccc;
+        padding: 6px;
     }
     padding: 20px;
     border-radius: 8px;
-    .header{padding-bottom: 20px;}
-    .submit{margin-bottom: 10px;}
+    .header {
+        padding-bottom: 20px;
+    }
+    .submit {
+        background-color: rgb(75, 126, 183);
+        margin-bottom: 10px;
+        color: #fff;
+    }
+    .cancel{background-color: rgb(85, 83, 82);
+        color: #fff;
+    }
 }
-.header{grid-area: header; }
 
-.name { grid-area: name; }
-.nameArea { grid-area: nameArea; }
+.header {
+    grid-area: header;
+}
 
-.image { grid-area: image; }
-.imageArea { grid-area: imageArea; }
+.name {
+    grid-area: name;
+}
 
-.price1 { grid-area: price; }
-.priceArea1 { grid-area: priceArea; }
+.nameArea {
+    grid-area: nameArea;
+}
 
-.description { grid-area: description; }
-.descriptionArea { grid-area: descriptionArea; }
+.sellerName {
+    grid-area: sellerName;
+}
 
-.gender { grid-area: gender; }
-.genderArea { grid-area: genderArea; }
+.sellerNameArea {
+    grid-area: sellerNameArea;
+}
 
-.type { grid-area: type; }
-.typeArea { grid-area: typeArea; }
+.image {
+    grid-area: image;
+}
 
-.color { grid-area: color; }
-.colorArea { grid-area: colorArea; }
+.imageArea {
+    grid-area: imageArea;
+}
 
-.size { grid-area: size; }
-.sizeArea { grid-area: sizeArea; }
+.price1 {
+    grid-area: price;
+}
 
-.material { grid-area: material; }
-.materialArea { grid-area: materialArea; }
+.priceArea1 {
+    grid-area: priceArea;
+}
 
-.stock { grid-area: stock; }
-.stockArea { grid-area: stockArea; }
+.description1 {
+    grid-area: description;
+}
 
-.form-btns { grid-area: form-btns; }
+.descriptionArea1 {
+    grid-area: descriptionArea;
+}
+
+.gender {
+    grid-area: gender;
+}
+
+.genderArea {
+    grid-area: genderArea;
+}
+
+.type {
+    grid-area: type;
+}
+
+.typeArea {
+    grid-area: typeArea;
+}
+
+.color {
+    grid-area: color;
+}
+
+.colorArea {
+    grid-area: colorArea;
+}
+
+.size {
+    grid-area: size;
+}
+
+.sizeArea {
+    grid-area: sizeArea;
+}
+
+.material {
+    grid-area: material;
+}
+
+.materialArea {
+    grid-area: materialArea;
+}
+
+.stock {
+    grid-area: stock;
+}
+
+.stockArea {
+    grid-area: stockArea;
+}
+
+.purchaseHeader {
+    grid-area: purchaseHeader;
+}
+
+/* .customer {
+    grid-area: customer;
+}
+
+.customerArea {
+    grid-area: customerArea;
+}
+
+.quantity {
+    grid-area: quantity;
+}
+
+.quantityArea {
+    grid-area: quantityArea;
+} */
+
+.form-btns {
+    grid-area: form-btns;
+}
+.purchase-history{
+    grid-area:purchase-history;
+
+    display: grid;
+    grid-template-columns: 200px 400px;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "customer customerName"
+      "quantity quantityArea"
+      "quantity form-btns";;
+      grid-gap: 10px;
+    
+}

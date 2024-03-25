@@ -17,12 +17,15 @@ function showHistory() {
     const remove = document.querySelector(".please");
     remove.style.display = "none";
 }
+
 let stock = [];
 const addStock = document.querySelector("#submit");
 addStock.addEventListener("click", addProductStock);
 function addProductStock(event){
 
     event.preventDefault();
+    event.returnValue = false;
+
 
     // Get the form element by its ID
     const form = document.querySelector("#productForm");
@@ -40,9 +43,12 @@ function addProductStock(event){
 
     // Add new product to stock
     stock.push(product);
+    alert("Product added to stock successfully!");
 
     // Save updated stock to local storage
     localStorage.setItem("items", JSON.stringify(stock));
+
+    form.reset();
 
     // Optionally, you can display a success message or redirect to another page
     alert("Product added to stock successfully!");
