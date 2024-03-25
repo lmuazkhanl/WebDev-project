@@ -15,17 +15,15 @@ function showHistory() {
     display.style.display = "block";
 
     const remove = document.querySelector(".please");
-    remove.style.display = "none";
+    remove.style.display = "none"; 
 }
 
 let stock = [];
 const addStock = document.querySelector("#submit");
 addStock.addEventListener("click", addProductStock);
-function addProductStock(event){
-
+function addProductStock(event) {
     event.preventDefault();
     event.returnValue = false;
-
 
     // Get the form element by its ID
     const form = document.querySelector("#productForm");
@@ -33,28 +31,37 @@ function addProductStock(event){
     // Create FormData object from the form
     const formData = new FormData(form);
 
-    const product = {};
-    formData.forEach((value, key) => {
-        product[key] = value;
-    });
+    // Convert image to base64
+    const fileInput = document.getElementById('image');
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+        const base64Image = reader.result;
 
-    // Get existing stock from local storage
-    stock = JSON.parse(localStorage.getItem("items")) || [];
+        // Add base64 image to the form data
+        formData.set('image', base64Image);
 
-    // Add new product to stock
-    stock.push(product);
-    alert("Product added to stock successfully!");
+        const product = {};
+        formData.forEach((value, key) => {
+            product[key] = value;
+        });
 
-    // Save updated stock to local storage
-    localStorage.setItem("items", JSON.stringify(stock));
+        // Get existing stock from local storage
+        let stock = JSON.parse(localStorage.getItem("items")) || [];
 
-    form.reset();
+        // Add new product to stock
+        stock.items.unshift(product);
 
-    // Optionally, you can display a success message or redirect to another page
-    alert("Product added to stock successfully!");
-    // window.location.href = "success.html"; // Redirect to success page
-};
+        // Save updated stock to local storage
+        localStorage.setItem("items", JSON.stringify(stock));
 
+        form.reset();
+
+        // Display a success message
+        alert("Product added to stock successfully!");
+    };
+}
 // ----------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
     // Display name of the Seller
