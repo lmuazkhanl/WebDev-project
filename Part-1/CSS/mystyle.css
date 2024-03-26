@@ -4,6 +4,10 @@
 	margin: 0;
 }
 
+body.showCart .cartTab {
+	inset: 0 0 0 auto;
+}
+
 body {
 	margin: auto;
 	background-color: white;
@@ -94,10 +98,92 @@ body {
 			.cart_button {
 				width: 36px;
 			}
+			#container_cart {
+				position: relative;
+			}
 
+			#container_cart span {
+				display: flex;
+				height: 20px;
+				width: 20px;
+				background-color: #333;
+				justify-content: center;
+				align-items: center;
+				color: white;
+				border-radius: 50%;
+				position: absolute;
+				top: 45%;
+				right: 0px;
+			}
 			.nav_button:hover {
 				fill: gray;
 			}
+		}
+	}
+	.container {
+		transition: transform 0.5s;
+	}
+	.cartTab {
+		width: 100%;
+		background-color: #333;
+		opacity: 0.99;
+		color: white;
+		position: fixed;
+		inset: 0 -100% 0 auto;
+		display: grid;
+		grid-template-rows: 70px 1fr 70px;
+		transition: 0.5s;
+		z-index: 999;
+		h1 {
+			padding: 20px;
+			margin: auto;
+			font-weight: 300;
+		}
+		.shopping-cart-Btn {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		button {
+			background-color: #8f8f8f;
+			border: none;
+			cursor: pointer;
+		}
+		.close-shopping-cart {
+			background-color: #f8f8f8;
+		}
+		.listCart {
+			margin-top: 15px;
+			overflow: auto;
+			.shop-cart-item {
+				margin-top: 15px;
+				display: grid;
+				grid-template-columns: 70px 150px 150px 1fr;
+				gap: 10px;
+				text-align: center;
+				align-items: center;
+				.item-quantity {
+					span {
+						padding-top: 3px;
+						display: inline-block;
+						width: 25px;
+						height: 25px;
+						background-color: #8f8f8a;
+						color: #333;
+						border-radius: 50%;
+						cursor: pointer;
+					}
+					span:nth-child(2) {
+						background-color: transparent;
+						color: #fff;
+					}
+				}
+				img {
+					width: 100%;
+				}
+			}
+		}
+		.listCart::-webkit-scrollbar {
+			width: 0;
 		}
 	}
 
@@ -353,7 +439,7 @@ footer {
 	display: flex;
 	flex-wrap: wrap;
 	margin-top: auto;
-	background-color: black;
+	background-color: #111827;
 	padding: 60px 10%;
 }
 ul {
@@ -367,7 +453,7 @@ ul {
 	margin-bottom: 30px;
 	font-weight: 400;
 	font-size: 20px;
-	color: gray;
+	color: #9ca3af;
 	text-transform: capitalize;
 }
 .footer-col h4::before {
@@ -375,7 +461,7 @@ ul {
 	position: absolute;
 	left: 0;
 	bottom: -6px;
-	background-color: gray;
+	background-color: #0369a1;
 	height: 2px;
 	width: 55px;
 }
@@ -386,12 +472,12 @@ ul li a {
 	display: block;
 	font-size: 19px;
 	text-transform: capitalize;
-	color: white;
+	color: #4b5563;
 	text-decoration: none;
 	transition: 0.4s;
 }
 ul li a:hover {
-	color: gray;
+	color: #f4f4f5;
 	padding-left: 2px;
 }
 
