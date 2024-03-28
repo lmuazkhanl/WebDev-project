@@ -6,6 +6,10 @@ function addProduct() {
 
     const remove = document.querySelector(".Sale-History-Page");
     remove.style.display = "none";
+
+    const remove2 = document.querySelector(".Current-Catalogue-Page");
+    remove2.style.display = "none";
+    
 }
 
 const history = document.querySelector(".Sale-History");
@@ -14,8 +18,24 @@ function showHistory() {
     const display = document.querySelector(".Sale-History-Page");
     display.style.display = "block";
 
-    const remove = document.querySelector(".please");
+    const remove = document.querySelector(".Current-Catalogue-Page");
     remove.style.display = "none"; 
+
+    const remove2 = document.querySelector(".please");
+    remove2.style.display = "none"; 
+}
+
+const catalogue = document.querySelector(".Current-Catalogue");
+catalogue.addEventListener('click', showCtalogue);
+function showCtalogue() {
+    const display = document.querySelector(".Current-Catalogue-Page");
+    display.style.display = "block";
+
+    const remove = document.querySelector(".Sale-History-Page");
+    remove.style.display = "none"; 
+
+    const remove2 = document.querySelector(".please");
+    remove2.style.display = "none"; 
 }
 
 let stock = [];
@@ -104,28 +124,70 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "login.html";
     });
 
-    function itemsToHTMLSellerView(items) {
-        return items.map(
-            (item) => `
-<div class="product-card">
-  <img src="${item.image}" alt="${item.name}" />
-  <div class="product-details">
-    <h2 class="product-name">${item.name}</h2>
-    <p class="seller-name">Sold by: ${item.sellername}</p>
-    <p class="price">$${item.price}</p>
-    <p class="description">${item.description}</p>
-    <ul class="attributes">
-      <li><strong>Gender:</strong> ${item.gender}</li>
-      <li><strong>Type:</strong> ${item.type}</li>
-      <li><strong>Color:</strong> ${item.color}</li>
-      <li><strong>Material:</strong> ${item.material}</li>
-      <li><strong>Quantity:</strong> ${item.quantity}</li>
-    </ul>
-  </div>
-</div>
-`
-        );
-    }
+//     function itemsToHTMLSellerView(items) {
+//         return items.map(
+//             (item) => `
+// <div class="product-card">
+//   <img src="${item.image}" alt="${item.name}" />
+//   <div class="product-details">
+//     <h2 class="product-name">${item.name}</h2>
+//     <p class="seller-name">Sold by: ${item.sellername}</p>
+//     <p class="price">$${item.price}</p>
+//     <p class="description">${item.description}</p>
+//     <ul class="attributes">
+//       <li><strong>Gender:</strong> ${item.gender}</li>
+//       <li><strong>Type:</strong> ${item.type}</li>
+//       <li><strong>Color:</strong> ${item.color}</li>
+//       <li><strong>Material:</strong> ${item.material}</li>
+//       <li><strong>Quantity:</strong> ${item.quantity}</li>
+
+//       <input type="number" id="quantity" name="quantity" placeholder="Enter new quantity">
+//       <button class="update-btn" id='${item.name}' onClick="updateItem(${item.quantity})"> <i class="fa fa-pencil"> Update </i></button>
+//     </ul>
+//   </div>
+// </div>
+// `
+//         );
+//     }
+
+function itemsToHTMLSellerView(items) {
+    return items.map(
+        (item) => `
+    <div class="product-card">
+        <img src="${item.image}" alt="${item.name}" />
+        <div class="product-details">
+            <h2 class="product-name">${item.name}</h2>
+            <p class="seller-name">Sold by: ${item.sellername}</p>
+            <p class="price">$${item.price}</p>
+            <p class="description">${item.description}</p>
+            <ul class="attributes">
+                <li><strong>Gender:</strong> ${item.gender}</li>
+                <li><strong>Type:</strong> ${item.type}</li>
+                <li><strong>Color:</strong> ${item.color}</li>
+                <li><strong>Material:</strong> ${item.material}</li>
+                <li><strong>Quantity:</strong> ${item.quantity}</li>
+            </ul>
+            <div class="quantity-update">
+                <input type="number" id="quantity" name="quantity" placeholder="Enter new quantity">
+                <button class="update-btn" onClick="updateItem('${item.name}', parseInt(document.getElementById('quantity').value))">Update</button>
+            </div>
+        </div>
+    </div>
+    `
+    );
+}
+function updateItem(itemName, newQuantity) {
+    alert("eee");
+    const allItems = JSON.parse(localStorage.getItem("items")).items;
+
+    const index = allItems.findIndex(item => item.name === itemName);
+
+    allItems[index].quantity = newQuantity;
+
+    localStorage.setItem("items", JSON.stringify(allItems));
+
+    displaySellerItems();
+}
 
     function generateSaleHistoryCard(items) {
         return items.map(
