@@ -132,6 +132,7 @@ function updateItem(itemName, newQuantity) {
     const itemsObject = { items: allItems };
 
     localStorage.setItem("items", JSON.stringify(itemsObject));
+    displaySellerItems();
 }
 
 // Function to display seller items in the grid
@@ -169,8 +170,8 @@ function itemsToHTMLSellerView(items) {
                 <li><strong>Quantity:</strong> ${item.quantity}</li>
             </ul>
             <div class="quantity-update">
-                <input type="number" id="quantity" name="quantity" placeholder="Enter new quantity">
-                <button class="update-btn" onClick="updateItem('${item.name}', parseInt(document.getElementById('quantity').value))">Update</button>
+                <input type="number" id="quantity${item.name}" name="quantity" placeholder="Enter new quantity">
+                <button class="update-btn" onClick="updateItem('${item.name}', document.getElementById('quantity${item.name}').value)">Update</button>
             </div>
         </div>
     </div>`
