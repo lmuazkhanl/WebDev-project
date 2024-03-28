@@ -15,6 +15,44 @@ navClose.addEventListener("click", () => {
   navLinks.classList.remove("show_menu");
 });
 
+// ---- load products data in local storage
+
+const add = document.querySelector("#menSec");
+add.addEventListener('click', loadData);
+async function loadData() {  
+  const response = await fetch("data/products.json");
+  const usersData = await response.json();
+  localStorage.setItem("products", JSON.stringify(usersData));
+
+  console.log(localStorage.getItem("users"));
+}
+
+loadData();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
     show and hide the search bar
 
