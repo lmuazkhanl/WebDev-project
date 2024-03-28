@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	let listProductHTML = document.querySelector(".product-grid");
 	let listCartHTML = document.querySelector(".listCart");
 	let iconCartSpan = document.querySelector(".cart_logo span");
-
+	let checkoutButton = document.querySelector(".checkout");
 	let listProducts = [];
 	let carts = [];
 
