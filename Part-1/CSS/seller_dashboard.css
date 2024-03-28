@@ -275,16 +275,14 @@ body {
         }
     }
 }
-
+/* .please{display: none;} */
 .Sell-Product-Page {
-    opacity: 1;
     display: grid;
     grid-template-columns: 200px 400px;
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
     grid-template-areas:
       "header header"
       "name nameArea"
-      /* "sellerName sellerNameArea" */
       "gender genderArea"
       "type typeArea"
       "price priceArea"
@@ -294,12 +292,12 @@ body {
       "material materialArea"
       "description descriptionArea"
       "stock stockArea"
+      "stock form-btns";
+      /* "sellerName sellerNameArea" */
       /* "purchaseHeader purchaseHeader" */
       /* "customer customerArea"
       "quantity quantityArea" */
       /* "purchase-history purchase-history" */
-      "stock form-btns";
-
       justify-content: center;
 
     grid-gap: 10px;
