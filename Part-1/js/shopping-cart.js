@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					<h2 class="product-name">${product.name}</h2>
 					<p class="price">$ ${product.price}</p>
 					<p class="description">
-					${product.desc}
+					${product.description}
 					</p>
 					<ul class="attributes">
 						<li><strong>Gender:</strong> ${product.gender}</li>
@@ -158,8 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 
 	const initApp = () => {
-		// get data from products.json
-		fetch("./data/products.json")
+		// get data from items.json
+		fetch("./data/items.json")
 			.then((Response) => Response.json())
 			.then((data) => {
 				listProducts = data;

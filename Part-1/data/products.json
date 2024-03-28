@@ -109,25 +109,5 @@
 		"material": "leather",
 		"gender": "male",
 		"desc": "Fine Leather Shoes for Men for any formal occasion"
-	},
-	{
-		"id": 12,
-		"name": "Leather Shoes",
-		"type": "shoes",
-		"price": 29.99,
-		"image": "Images/shoes/men_shoes2.jpg",
-		"material": "leather",
-		"gender": "female",
-		"desc": "Fine Leather Shoes for Men for any formal occasion"
-	},
-	{
-		"id": 13,
-		"name": "Leather Shoes",
-		"type": "shoes",
-		"price": 29.99,
-		"image": "Images/shoes/men_shoes2.jpg",
-		"material": "leather",
-		"gender": "female",
-		"desc": "Fine Leather Shoes for Men for any formal occasion"
 	}
 ]
