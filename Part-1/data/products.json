@@ -72,16 +72,6 @@
 	},
 	{
 		"id": 8,
-		"name": "Gray Sweatshirt",
-		"type": "sweatshirt",
-		"price": 45,
-		"image": "Images/sweatshirts/women_shirt.webp",
-		"material": "cotton",
-		"gender": "female",
-		"desc": "stylish simple sweatshirt for females"
-	},
-	{
-		"id": 9,
 		"name": "Denim Jeans",
 		"type": "pant",
 		"price": 35,
@@ -91,7 +81,7 @@
 		"desc": "An option for more casual wear and a classic"
 	},
 	{
-		"id": 10,
+		"id": 9,
 		"name": "Beige Trouser",
 		"type": "pant",
 		"price": 35,
@@ -101,7 +91,7 @@
 		"desc": "Stylish trouser needed for summer to for those beach parties"
 	},
 	{
-		"id": 11,
+		"id": 10,
 		"name": "Blue Suedes",
 		"type": "shoes",
 		"price": 29.99,
@@ -111,13 +101,33 @@
 		"desc": "Fine Blue Suedes that can go with any formal dressing"
 	},
 	{
-		"id": 12,
+		"id": 11,
 		"name": "Leather Shoes",
 		"type": "shoes",
 		"price": 29.99,
 		"image": "Images/shoes/men_shoes2.jpg",
 		"material": "leather",
 		"gender": "male",
+		"desc": "Fine Leather Shoes for Men for any formal occasion"
+	},
+	{
+		"id": 12,
+		"name": "Leather Shoes",
+		"type": "shoes",
+		"price": 29.99,
+		"image": "Images/shoes/men_shoes2.jpg",
+		"material": "leather",
+		"gender": "female",
+		"desc": "Fine Leather Shoes for Men for any formal occasion"
+	},
+	{
+		"id": 13,
+		"name": "Leather Shoes",
+		"type": "shoes",
+		"price": 29.99,
+		"image": "Images/shoes/men_shoes2.jpg",
+		"material": "leather",
+		"gender": "female",
 		"desc": "Fine Leather Shoes for Men for any formal occasion"
 	}
 ]

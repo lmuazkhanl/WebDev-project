@@ -1,89 +1,89 @@
 {
-    "items": [
-        {
-            "name": "Striped Hoodie",
-            "sellername": "Magic Inc.",
-            "gender": "Male",
-            "type": "Hoodie",
-            "price": 35.99,
-            "image": "Images/hoodies/Black-Hoodie.jpg",
-            "color": "Black/White",
-            "sisze": "Large",
-            "material": "Cotton",
-            "description": "Stylish striped hoodie for men, perfect for casual wear.",
-            "quantity": 80,
-            "purchaseHistory": [
-                { "customer": "john", "quantity": 2 },
-                { "customer": "jane", "quantity": 4 }
-            ]
-        },
-        {
-            "name": "White Hoodie",
-            "sellername": "Magic Inc.",
-            "gender": "Male",
-            "type": "Pant",
-            "price": 49.99,
-            "image": "Images/hoodies/White-Hoodie.jpg",
-            "color": "White",
-            "size": "Medium",
-            "material": "Denim",
-            "description": "Trendy baggy hoodie, perfect for any occasion.",
-            "quantity": 60,
-            "purchaseHistory": [
-                { "customer": "john", "quantity": 9 },
-                { "customer": "jane", "quantity": 1 }
-            ]
-        },
-        {
-            "name": "Bag Pack",
-            "sellername": "Magic Inc.",
-            "gender": "Male",
-            "type": "Bag",
-            "price": 149.99,
-            "image": "/Images/accessories/bag.webp",
-            "color": "Green",
-            "size": "Large",
-            "material": "Plolyester",
-            "description": "Trendy Bagpack",
-            "quantity": 10,
-            "purchaseHistory": [
-                { "customer": "john", "quantity": 2 },
-                { "customer": "jane", "quantity": 6 }
-            ]
-        },
-        {
-            "name": "Slim Fit Jeans Hoodie",
-            "sellername": "Fantasy Traders",
-            "gender": "Female",
-            "type": "Pant",
-            "price": 49.99,
-            "image": "Images/pants/men_pant1.webp",
-            "color": "Blue",
-            "size": "Medium",
-            "material": "Denim",
-            "description": "Trendy slim fit jeans for women, perfect for any occasion.",
-            "quantity": 50,
-            "purchaseHistory": [
-                { "customer": "john", "quantity": 9 },
-                { "customer": "jane", "quantity": 3 }
-            ]
-        },
-        {
-            "name": "Striped Hoodie",
-            "sellername": "Fantasy Traders",
-            "gender": "Male",
-            "type": "Hoodie",
-            "price": 35.99,
-            "image": "Images/hoodies/Black-Hoodie.jpg",
-            "color": "Black/White",
-            "size": "Large",
-            "material": "Cotton",
-            "description": "Stylish striped hoodie for men, perfect for casual wear.",
-            "quantity": 50,
-            "purchaseHistory": [
-                { "customer": "john", "quantity": 2 },
-                { "customer": "jane", "quantity": 4 }
-            ]
-        }
-    ]
+	"items": [
+		{
+			"name": "Striped Hoodie",
+			"sellername": "Magic Inc.",
+			"gender": "Male",
+			"type": "Hoodie",
+			"price": 35.99,
+			"image": "Images/hoodies/Black-Hoodie.jpg",
+			"color": "Black/White",
+			"sisze": "Large",
+			"material": "Cotton",
+			"description": "Stylish striped hoodie for men, perfect for casual wear.",
+			"quantity": 80,
+			"purchaseHistory": [
+				{ "customer": "john", "quantity": 2 },
+				{ "customer": "jane", "quantity": 4 }
+			]
+		},
+		{
+			"name": "White Hoodie",
+			"sellername": "Magic Inc.",
+			"gender": "Male",
+			"type": "Pant",
+			"price": 49.99,
+			"image": "Images/hoodies/White-Hoodie.jpg",
+			"color": "White",
+			"size": "Medium",
+			"material": "Denim",
+			"description": "Trendy baggy hoodie, perfect for any occasion.",
+			"quantity": 60,
+			"purchaseHistory": [
+				{ "customer": "john", "quantity": 9 },
+				{ "customer": "jane", "quantity": 1 }
+			]
+		},
+		{
+			"name": "Bag Pack",
+			"sellername": "Magic Inc.",
+			"gender": "Male",
+			"type": "Bag",
+			"price": 149.99,
+			"image": "/Images/accessories/bag.webp",
+			"color": "Green",
+			"size": "Large",
+			"material": "Plolyester",
+			"description": "Trendy Bagpack",
+			"quantity": 10,
+			"purchaseHistory": [
+				{ "customer": "john", "quantity": 2 },
+				{ "customer": "jane", "quantity": 6 }
+			]
+		},
+		{
+			"name": "Slim Fit Jeans Hoodie",
+			"sellername": "Fantasy Traders",
+			"gender": "Female",
+			"type": "Pant",
+			"price": 49.99,
+			"image": "Images/pants/men_pant1.webp",
+			"color": "Blue",
+			"size": "Medium",
+			"material": "Denim",
+			"description": "Trendy slim fit jeans for women, perfect for any occasion.",
+			"quantity": 50,
+			"purchaseHistory": [
+				{ "customer": "john", "quantity": 9 },
+				{ "customer": "jane", "quantity": 3 }
+			]
+		},
+		{
+			"name": "Striped Hoodie",
+			"sellername": "Fantasy Traders",
+			"gender": "Male",
+			"type": "Hoodie",
+			"price": 35.99,
+			"image": "Images/hoodies/Black-Hoodie.jpg",
+			"color": "Black/White",
+			"size": "Large",
+			"material": "Cotton",
+			"description": "Stylish striped hoodie for men, perfect for casual wear.",
+			"quantity": 50,
+			"purchaseHistory": [
+				{ "customer": "john", "quantity": 2 },
+				{ "customer": "jane", "quantity": 4 }
+			]
+		}
+	]
 }
