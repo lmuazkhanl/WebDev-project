@@ -193,7 +193,7 @@
 		"price": 149.99,
 		"image": "/Images/accessories/bag.webp",
 		"material": "Polyester",
-		"gender": "Male",
+		"gender": "male",
 		"description": "Trendy Bag-pack",
 		"sellername": "Magic Inc.",
 		"color": "Green",

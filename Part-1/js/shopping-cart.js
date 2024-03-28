@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				newProduct.innerHTML = `<img src="${product.image}" alt="Striped Hoodie" />
 				<div class="product-details">
 					<h2 class="product-name">${product.name}</h2>
+					<p class="seller-name">Sold by: ${product.sellername}</p>
 					<p class="price">$ ${product.price}</p>
 					<p class="description">
 					${product.description}
