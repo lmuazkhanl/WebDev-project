@@ -122,7 +122,6 @@ logOutButton.addEventListener("click", () => {
 });
 
 function updateItem(itemName, newQuantity) {
-    alert("eee");
     const allItems = JSON.parse(localStorage.getItem("items")).items;
 
     const index = allItems.findIndex((item) => item.name === itemName);
@@ -169,9 +168,9 @@ function itemsToHTMLSellerView(items) {
                 <li><strong>Quantity:</strong> ${item.quantity}</li>
             </ul>
             <div class="quantity-update">
-                <input type="number" id="quantity" name="quantity" placeholder="Enter new quantity">
-                <button class="update-btn" onClick="updateItem('${item.name}', parseInt(document.getElementById('quantity').value))">Update</button>
-            </div>
+                <input type="number" id="quantity1" name="quantity" placeholder="Enter new quantity">
+                <button class="update-btn" onClick="updateItem('${item.name}', isFinite(parseInt(document.getElementById('quantity1').value)) ? parseInt(document.getElementById('quantity1').value) : 0)">Update</button>
+                </div>
         </div>
     </div>`
     );

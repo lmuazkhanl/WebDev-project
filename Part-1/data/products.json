@@ -9,6 +9,16 @@
 		"gender": "male",
 		"desc": "Stylish striped hoodie for men, perfect for casual wear."
 	},
+	{
+		"id": 1,
+		"name": "Striped Hoodie",
+		"type": "hoodie",
+		"price": 35.99,
+		"image": "Images/hoodies/men_shirt2.webp",
+		"material": "cotton",
+		"gender": "female",
+		"desc": "Stylish striped hoodie for men, perfect for casual wear."
+	},
 
 	{
 		"id": 2,

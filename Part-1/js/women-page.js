@@ -12,7 +12,7 @@ async function collectData(url) {
         saveDataToLocalStorage(data);
       }
       localSavedData = fetchDataFromLocalStorage();
-      localSavedData = localSavedData.filter(item => item.gender.toLowerCase() === 'male');
+      localSavedData = localSavedData.filter(item => item.gender.toLowerCase() === 'female');
 
       displayingDataInTheGrid(localSavedData);
 
@@ -58,18 +58,3 @@ function displayingDataInTheGrid(localSavedData){
     }
     listProductHTML.innerHTML = card;
 }
-
-
-// Add event listener to each <p> tag
-// document.querySelectorAll("p").forEach(p => {
-//     p.addEventListener("click", () => {
-//         const searchTerm = p.textContent.trim();
-//         // Determine whether to filter by size or type based on the text content of the clicked element
-//         if (["Small", "Medium", "Large"].includes(searchTerm)) {
-//             filterBySize(searchTerm);
-//         } else {
-//           if (["Pant", "Shirt", "Polo", "Hoodie", "Sweatshirt", "Shoes", "Accessories"].includes(searchTerm)) {
-//             filterByType(searchTerm);}
-//         }
-//       })
-//     });

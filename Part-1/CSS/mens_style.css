@@ -118,16 +118,23 @@ body {
 	}
 }
 
-main {
+.content {
 	display: grid;
-	grid-template-columns: 1fr 4fr;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: auto;
+
 	grid-template-areas: "aside content";
 	grid-gap: 1.5rem;
+
+	.sideNav{
+		grid-area: aside;
+		margin: 10px;
+	}
+	.product-grid{
+		grid-area: content;
+	}
 }
-.sideNav {
-	grid-area: aside;
-	margin: 10px;
-}
+
 
 footer {
 	display: flex;
