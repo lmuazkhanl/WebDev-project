@@ -1,5 +1,5 @@
 const sellNew = document.querySelector(".Sell-Product");
-sellNew.addEventListener('click', addProduct);
+sellNew.addEventListener("click", addProduct);
 function addProduct() {
     const display = document.querySelector(".please");
     display.style.display = "block";
@@ -9,33 +9,32 @@ function addProduct() {
 
     const remove2 = document.querySelector(".Current-Catalogue-Page");
     remove2.style.display = "none";
-    
 }
 
 const history = document.querySelector(".Sale-History");
-history.addEventListener('click', showHistory);
+history.addEventListener("click", showHistory);
 function showHistory() {
     const display = document.querySelector(".Sale-History-Page");
     display.style.display = "block";
 
     const remove = document.querySelector(".Current-Catalogue-Page");
-    remove.style.display = "none"; 
+    remove.style.display = "none";
 
     const remove2 = document.querySelector(".please");
-    remove2.style.display = "none"; 
+    remove2.style.display = "none";
 }
 
 const catalogue = document.querySelector(".Current-Catalogue");
-catalogue.addEventListener('click', showCtalogue);
+catalogue.addEventListener("click", showCtalogue);
 function showCtalogue() {
     const display = document.querySelector(".Current-Catalogue-Page");
     display.style.display = "block";
 
     const remove = document.querySelector(".Sale-History-Page");
-    remove.style.display = "none"; 
+    remove.style.display = "none";
 
     const remove2 = document.querySelector(".please");
-    remove2.style.display = "none"; 
+    remove2.style.display = "none";
 }
 
 let stock = [];
@@ -52,7 +51,7 @@ function addProductStock(event) {
     const formData = new FormData(form);
 
     // Convert image to base64
-    const fileInput = document.getElementById('image');
+    const fileInput = document.getElementById("image");
     const file = fileInput.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -60,7 +59,7 @@ function addProductStock(event) {
         const base64Image = reader.result;
 
         // Add base64 image to the form data
-        formData.set('image', base64Image);
+        formData.set("image", base64Image);
 
         const product = {};
         formData.forEach((value, key) => {
@@ -83,77 +82,80 @@ function addProductStock(event) {
     };
 }
 // ----------------------------------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", () => {
-    // Display name of the Seller
-    const sellerName = JSON.parse(localStorage.getItem("session")).username;
-    document.querySelectorAll(".seller_Name").forEach((element) => {
-        element.innerHTML = sellerName;
+
+// Display name of the Seller
+const sellerName = JSON.parse(localStorage.getItem("session")).username;
+document.querySelectorAll(".seller_Name").forEach((element) => {
+    element.innerHTML = sellerName;
+});
+
+const menuItems = document.querySelectorAll(".menu-item");
+menuItems.forEach((item) => {
+    item.addEventListener("click", () => {
+        const pageName = item.classList[1];
+        showPage(`${pageName}-Page`);
+    });
+});
+
+function showPage(pageName) {
+    // Hide all seller pages
+    const pages = document.querySelectorAll(".seller-Page");
+    pages.forEach((page) => {
+        page.style.display = "none";
     });
 
-
-
-    const menuItems = document.querySelectorAll(".menu-item");
-    menuItems.forEach((item) => {
-        item.addEventListener("click", () => {
-            const pageName = item.classList[1];
-            showPage(`${pageName}-Page`);
-        });
-    });
-
-    function showPage(pageName) {
-        // Hide all seller pages
-        const pages = document.querySelectorAll(".seller-Page");
-        pages.forEach((page) => {
-            page.style.display = "none";
-        });
-
-        // Show the selected page
-        const selectedPage = document.querySelector(`.${pageName}`);
-        if (selectedPage) {
-            console.log(selectedPage);
-            selectedPage.style.display = "block";
-            if (selectedPage === document.querySelector(".Current-Catalogue-Page")) displaySellerItems();
-            if (selectedPage === document.querySelector(".Sale-History-Page")) displaySaleHistory();
-        }
+    // Show the selected page
+    const selectedPage = document.querySelector(`.${pageName}`);
+    if (selectedPage) {
+        console.log(selectedPage);
+        selectedPage.style.display = "block";
+        if (selectedPage === document.querySelector(".Current-Catalogue-Page")) displaySellerItems();
+        if (selectedPage === document.querySelector(".Sale-History-Page")) displaySaleHistory();
     }
+}
 
-    // Log Out
-    const logOutButton = document.querySelector(".log-out-button");
-    logOutButton.addEventListener("click", () => {
-        localStorage.removeItem("session");
-        window.location.href = "login.html";
-    });
+// Log Out
+const logOutButton = document.querySelector(".log-out-button");
+logOutButton.addEventListener("click", () => {
+    localStorage.removeItem("session");
+    window.location.href = "login.html";
+});
 
-//     function itemsToHTMLSellerView(items) {
-//         return items.map(
-//             (item) => `
-// <div class="product-card">
-//   <img src="${item.image}" alt="${item.name}" />
-//   <div class="product-details">
-//     <h2 class="product-name">${item.name}</h2>
-//     <p class="seller-name">Sold by: ${item.sellername}</p>
-//     <p class="price">$${item.price}</p>
-//     <p class="description">${item.description}</p>
-//     <ul class="attributes">
-//       <li><strong>Gender:</strong> ${item.gender}</li>
-//       <li><strong>Type:</strong> ${item.type}</li>
-//       <li><strong>Color:</strong> ${item.color}</li>
-//       <li><strong>Material:</strong> ${item.material}</li>
-//       <li><strong>Quantity:</strong> ${item.quantity}</li>
+function updateItem(itemName, newQuantity) {
+    alert("eee");
+    const allItems = JSON.parse(localStorage.getItem("items")).items;
 
-//       <input type="number" id="quantity" name="quantity" placeholder="Enter new quantity">
-//       <button class="update-btn" id='${item.name}' onClick="updateItem(${item.quantity})"> <i class="fa fa-pencil"> Update </i></button>
-//     </ul>
-//   </div>
-// </div>
-// `
-//         );
-//     }
+    const index = allItems.findIndex((item) => item.name === itemName);
+
+    allItems[index].quantity = newQuantity;
+    console.log(allItems[index]);
+    const itemsObject = { items: allItems };
+
+    localStorage.setItem("items", JSON.stringify(itemsObject));
+    displaySellerItems();
+}
+
+// Function to display seller items in the grid
+function displaySellerItems() {
+    const allItems = JSON.parse(localStorage.getItem("items")).items;
+    console.log("all-items", allItems);
+    const sellerItems = filterItemsBySeller(allItems, sellerName);
+
+    const productGrid = document.querySelector(".product-grid");
+    productGrid.innerHTML = itemsToHTMLSellerView(sellerItems).join("");
+}
+
+function displaySaleHistory() {
+    const allItems = JSON.parse(localStorage.getItem("items")).items;
+    const sellerItems = filterItemsBySeller(allItems, sellerName);
+
+    const productGridSaleHistory = document.querySelector(".product-grid-sale-history");
+    productGridSaleHistory.innerHTML = generateSaleHistoryCard(sellerItems).join("");
+}
 
 function itemsToHTMLSellerView(items) {
     return items.map(
-        (item) => `
-    <div class="product-card">
+        (item) => `<div class="product-card">
         <img src="${item.image}" alt="${item.name}" />
         <div class="product-details">
             <h2 class="product-name">${item.name}</h2>
@@ -168,72 +170,41 @@ function itemsToHTMLSellerView(items) {
                 <li><strong>Quantity:</strong> ${item.quantity}</li>
             </ul>
             <div class="quantity-update">
-                <input type="number" id="quantity" name="quantity" placeholder="Enter new quantity">
-                <button class="update-btn" onClick="updateItem('${item.name}', parseInt(document.getElementById('quantity').value))">Update</button>
+                <input type="number" id="quantity${item.name}" name="quantity" placeholder="Enter new quantity">
+                <button class="update-btn" onClick="updateItem('${item.name}', document.getElementById('quantity${item.name}').value)">Update</button>
             </div>
         </div>
-    </div>
+    </div>`
+    );
+}
+
+function generateSaleHistoryCard(items) {
+    return items.map(
+        (item) => `
+        <div class="sale-history-product-card">
+            <img src="${item.image}" alt="${item.name}" />
+            <div class="product-details">
+                <h2 class="product-name">${item.name}</h2>
+                <p class="price-text">Sold at <span class="price">$${item.price}</span></p>
+                <p class="stock-remaining-text">Stock Remaining : <span class="quantity">${item.quantity}</span></p>
+                <p class="stock-sold-text">Items Sold : <span class="quantity-sold">${calculateQuantitySold(item)}</span></p>
+                <h2 class="customer-list-heading">Customer List</h2>
+                <ul class="customer-list">${generateCustomerList(item)}</ul>
+            </div>
+        </div>
     `
     );
 }
-function updateItem(itemName, newQuantity) {
-    alert("eee");
-    const allItems = JSON.parse(localStorage.getItem("items")).items;
 
-    const index = allItems.findIndex(item => item.name === itemName);
-
-    allItems[index].quantity = newQuantity;
-
-    localStorage.setItem("items", JSON.stringify(allItems));
-
-    displaySellerItems();
+function calculateQuantitySold(item) {
+    console.log(item);
+    return item.purchaseHistory.reduce((total, purchase) => total + purchase.quantity, 0);
 }
 
-    function generateSaleHistoryCard(items) {
-        return items.map(
-            (item) => `
-            <div class="sale-history-product-card">
-                <img src="${item.image}" alt="${item.name}" />
-                <div class="product-details">
-                    <h2 class="product-name">${item.name}</h2>
-                    <p class="price-text">Sold at <span class="price">$${item.price}</span></p>
-                    <p class="stock-remaining-text">Stock Remaining : <span class="quantity">${item.quantity}</span></p>
-                    <p class="stock-sold-text">Items Sold : <span class="quantity-sold">${calculateQuantitySold(item)}</span></p>
-                    <h2 class="customer-list-heading">Customer List</h2>
-                    <ul class="customer-list">${generateCustomerList(item)}</ul>
-                </div>
-            </div>
-        `
-        );
-    }
+function generateCustomerList(item) {
+    return item.purchaseHistory.map((purchase) => `<li class="customer-name">${purchase.customer}</li>`).join("");
+}
 
-    function calculateQuantitySold(item) {
-        console.log(item);
-        return item.purchaseHistory.reduce((total, purchase) => total + purchase.quantity, 0);
-    }
-
-    function generateCustomerList(item) {
-        return item.purchaseHistory.map((purchase) => `<li class="customer-name">${purchase.customer}</li>`).join("");
-    }
-
-    function filterItemsBySeller(items, sellerName) {
-        return items.filter((item) => item.sellername === sellerName);
-    }
-
-    // Function to display seller items in the grid
-    function displaySellerItems() {
-        const allItems = JSON.parse(localStorage.getItem("items")).items;
-        const sellerItems = filterItemsBySeller(allItems, sellerName);
-
-        const productGrid = document.querySelector(".product-grid");
-        productGrid.innerHTML = itemsToHTMLSellerView(sellerItems).join("");
-    }
-
-    function displaySaleHistory() {
-        const allItems = JSON.parse(localStorage.getItem("items")).items;
-        const sellerItems = filterItemsBySeller(allItems, sellerName);
-
-        const productGridSaleHistory = document.querySelector(".product-grid-sale-history");
-        productGridSaleHistory.innerHTML = generateSaleHistoryCard(sellerItems).join("");
-    }
-});
+function filterItemsBySeller(items, sellerName) {
+    return items.filter((item) => item.sellername === sellerName);
+}
