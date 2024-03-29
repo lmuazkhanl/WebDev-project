@@ -69,8 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		let positionThisProductInCart = carts.findIndex(
 			(value) => value.product_id == product_id
 		);
-		let product_info = listProducts[positionThisProductInCart];
-		console.log(product_info);
+
 		if (carts.length <= 0) {
 			carts = [
 				{
@@ -78,8 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
 					quantity: 1,
 				},
 			];
-			customerInfo.money_balance = customerInfo.money_balance - product_info.price;
-			console.log(customerInfo.money_balance);
 		} else if (positionThisProductInCart < 0) {
 			carts.push({
 				product_id: product_id,
@@ -89,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			carts[positionThisProductInCart].quantity =
 				carts[positionThisProductInCart].quantity + 1;
 		}
-
 		addCartToHTML();
 		addCartToMemory();
 	};
