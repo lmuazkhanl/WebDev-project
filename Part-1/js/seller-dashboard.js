@@ -169,15 +169,9 @@ function itemsToHTMLSellerView(items) {
                 <li><strong>Quantity:</strong> ${item.quantity}</li>
             </ul>
             <div class="quantity-update">
-<<<<<<< HEAD
-                <input type="number" id="quantity1" name="quantity" placeholder="Enter new quantity">
-                <button class="update-btn" onClick="updateItem('${item.name}', isFinite(parseInt(document.getElementById('quantity1').value)) ? parseInt(document.getElementById('quantity1').value) : 0)">Update</button>
-                </div>
-=======
                 <input type="number" id="quantity${item.name}" name="quantity" placeholder="Enter new quantity">
                 <button class="update-btn" onClick="updateItem('${item.name}', document.getElementById('quantity${item.name}').value)">Update</button>
             </div>
->>>>>>> 2a48144325ac8467b41c57f168b7c2eba840dc7e
         </div>
     </div>`
     );
