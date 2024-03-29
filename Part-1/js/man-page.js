@@ -1,4 +1,4 @@
-let url = "../data/products.json";
+let url = "../data/items.json";
 let listProductHTML = document.querySelector(".product-grid");
 let data = [];
 let localSavedData = [];
@@ -18,10 +18,10 @@ async function collectData(url) {
 
 }
 function saveDataToLocalStorage(data) {
-    localStorage.setItem("products", JSON.stringify(data));
+    localStorage.setItem("items", JSON.stringify(data));
   }
 function fetchDataFromLocalStorage() {
-    return JSON.parse(localStorage.getItem("products") || "[]");
+    return JSON.parse(localStorage.getItem("items") || "[]");
     
 }
 function displayingDataInTheGrid(localSavedData){

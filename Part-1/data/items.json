@@ -51,6 +51,23 @@
 		]
 	},
 	{
+		"id": 3,
+		"name": "Black Shoes",
+		"type": "Shoes",
+		"price": 85.99,
+		"image": "Images/shoes/women_shoe.webp",
+		"material": "cotton",
+		"gender": "female",
+		"description": "Stylish white hoodie for men, perfect for casual wear.",
+		"sellername": "Magic Inc.",
+		"color": "White",
+		"quantity": 60,
+		"purchaseHistory": [
+			{ "customer": "john", "quantity": 8 },
+			{ "customer": "jane", "quantity": 4 }
+		]
+	},
+	{
 		"id": 4,
 		"name": "Beige Jacket",
 		"type": "jacket",
