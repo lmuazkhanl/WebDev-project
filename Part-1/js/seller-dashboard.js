@@ -66,8 +66,6 @@ function addProductStock(event) {
         formData.set("sellername", sellerName);
         formData.set("purchaseHistory", "[]");
 
-
-
         // Get existing stock from local storage
         stock = JSON.parse(localStorage.getItem("items")) || [];
 
@@ -84,8 +82,17 @@ function addProductStock(event) {
         formData.set("id", newId);
 
         const product = {};
+
         formData.forEach((value, key) => {
-            product[key] = value;
+            if (key === "id") {
+                product[key] = parseInt(value); // Convert id to integer
+            } else if (key === "purchaseHistory") {
+                product[key] = Array.isArray(value) ? value : []; // Store array if value is already an array, otherwise store empty array
+            } else if (key === "stock") {
+                product["quantity"] = value; // Store stock value as quantity
+            } else {
+                product[key] = value;
+            }
         });
 
         // Get existing stock from local storage
@@ -155,7 +162,6 @@ function updateItem(itemName, newQuantity) {
     localStorage.setItem("items", JSON.stringify(allItems));
     displaySellerItems();
 }
-
 
 // Function to display seller items in the grid
 function displaySellerItems() {
