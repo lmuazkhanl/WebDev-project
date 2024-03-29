@@ -38,8 +38,11 @@ function showCtalogue() {
 }
 
 let stock = [];
+const sellerName = JSON.parse(localStorage.getItem("session")).username;
+
 const addStock = document.querySelector("#submit");
 addStock.addEventListener("click", addProductStock);
+
 function addProductStock(event) {
     event.preventDefault();
     event.returnValue = false;
@@ -60,6 +63,25 @@ function addProductStock(event) {
 
         // Add base64 image to the form data
         formData.set("image", base64Image);
+        formData.set("sellername", sellerName);
+        formData.set("purchaseHistory", "[]");
+
+
+
+        // Get existing stock from local storage
+        stock = JSON.parse(localStorage.getItem("items")) || [];
+
+        // Find the maximum ID from existing items
+        let maxId = 0;
+        stock.forEach((item) => {
+            if (item.id > maxId) {
+                maxId = item.id;
+            }
+        });
+
+        // Set the ID for the new product as an integer
+        const newId = parseInt(maxId) + 1;
+        formData.set("id", newId);
 
         const product = {};
         formData.forEach((value, key) => {
@@ -67,10 +89,10 @@ function addProductStock(event) {
         });
 
         // Get existing stock from local storage
-        let stock = JSON.parse(localStorage.getItem("items")) || [];
+        stock = JSON.parse(localStorage.getItem("items")) || [];
 
         // Add new product to stock
-        stock.items.unshift(product);
+        stock.unshift(product);
 
         // Save updated stock to local storage
         localStorage.setItem("items", JSON.stringify(stock));
@@ -81,10 +103,11 @@ function addProductStock(event) {
         alert("Product added to stock successfully!");
     };
 }
+
 // ----------------------------------------------------------------------------------------
 
 // Display name of the Seller
-const sellerName = JSON.parse(localStorage.getItem("session")).username;
+// const sellerName = JSON.parse(localStorage.getItem("session")).username;
 document.querySelectorAll(".seller_Name").forEach((element) => {
     element.innerHTML = sellerName;
 });
@@ -122,21 +145,21 @@ logOutButton.addEventListener("click", () => {
 });
 
 function updateItem(itemName, newQuantity) {
-    const allItems = JSON.parse(localStorage.getItem("items")).items;
+    const allItems = JSON.parse(localStorage.getItem("items"));
 
     const index = allItems.findIndex((item) => item.name === itemName);
 
     allItems[index].quantity = newQuantity;
     console.log(allItems[index]);
-    const itemsObject = { items: allItems };
 
-    localStorage.setItem("items", JSON.stringify(itemsObject));
+    localStorage.setItem("items", JSON.stringify(allItems));
     displaySellerItems();
 }
 
+
 // Function to display seller items in the grid
 function displaySellerItems() {
-    const allItems = JSON.parse(localStorage.getItem("items")).items;
+    const allItems = JSON.parse(localStorage.getItem("items"));
     console.log("all-items", allItems);
     const sellerItems = filterItemsBySeller(allItems, sellerName);
 
@@ -145,7 +168,7 @@ function displaySellerItems() {
 }
 
 function displaySaleHistory() {
-    const allItems = JSON.parse(localStorage.getItem("items")).items;
+    const allItems = JSON.parse(localStorage.getItem("items"));
     const sellerItems = filterItemsBySeller(allItems, sellerName);
 
     const productGridSaleHistory = document.querySelector(".product-grid-sale-history");
@@ -167,6 +190,7 @@ function itemsToHTMLSellerView(items) {
                 <li><strong>Color:</strong> ${item.color}</li>
                 <li><strong>Material:</strong> ${item.material}</li>
                 <li><strong>Quantity:</strong> ${item.quantity}</li>
+
             </ul>
             <div class="quantity-update">
                 <input type="number" id="quantity${item.name}" name="quantity" placeholder="Enter new quantity">
