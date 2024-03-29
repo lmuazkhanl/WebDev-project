@@ -209,21 +209,43 @@ h2 {
   justify-content: center; */
 }
 .container {
-	display: grid;
+	position: relative; /* Added for positioning */
+	/* display: grid;
 	grid-template-columns: 50% 50%;
 	grid-template-rows: 100%;
-	grid-template-areas: "content img";
-	.img {
-		grid-area: img;
+	grid-template-areas: "content img"; */
+	display: flex;
+	justify-content: center;
+	padding: 30px;
 
-		#back {
-			width: 100%;
-		}
-	}
-	.content {
-		grid-area: content;
-	}
-}
+  }
+  
+  .container::before { /* Added pseudo-element for background image */
+	content: "";
+	background-image: url(../Images/login/addBackground.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	opacity: 0.35;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+  }
+  
+  .img {
+	grid-area: img;
+  }
+  
+  .content {
+	grid-area: content;
+	position: relative; /* Added for stacking context */
+	background-color: white;
+	opacity: 1;
+	border-radius: 8px;
+  }
+  
 
 footer {
 	display: flex;
