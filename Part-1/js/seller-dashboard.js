@@ -1,8 +1,11 @@
+const display = document.querySelector(".please");
+display.style.display = "grid";
+
 const sellNew = document.querySelector(".Sell-Product");
 sellNew.addEventListener("click", addProduct);
 function addProduct() {
     const display = document.querySelector(".please");
-    display.style.display = "block";
+    display.style.display = "grid";
 
     const remove = document.querySelector(".Sale-History-Page");
     remove.style.display = "none";
@@ -15,7 +18,7 @@ const history = document.querySelector(".Sale-History");
 history.addEventListener("click", showHistory);
 function showHistory() {
     const display = document.querySelector(".Sale-History-Page");
-    display.style.display = "block";
+    display.style.display = "grid";
 
     const remove = document.querySelector(".Current-Catalogue-Page");
     remove.style.display = "none";

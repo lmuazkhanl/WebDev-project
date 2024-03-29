@@ -120,7 +120,7 @@ body {
                     color: gray;
                 }
                 /* .Sell-Product-Page{ */
-                    /* edit here for new product */
+                /* edit here for new product */
                 /* } */
             }
 
@@ -281,28 +281,29 @@ body {
     grid-template-columns: 200px 400px;
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
     grid-template-areas:
-      "header header"
-      "name nameArea"
-      "gender genderArea"
-      "type typeArea"
-      "price priceArea"
-      "image imageArea"
-      "color colorArea"
-      "size sizeArea"
-      "material materialArea"
-      "description descriptionArea"
-      "stock stockArea"
-      "stock form-btns";
-      
-      /* "sellerName sellerNameArea" */
-      /* "purchaseHeader purchaseHeader" */
-      /* "customer customerArea"
+        "header header"
+        "name nameArea"
+        "gender genderArea"
+        "type typeArea"
+        "price priceArea"
+        "image imageArea"
+        "color colorArea"
+        "size sizeArea"
+        "material materialArea"
+        "description descriptionArea"
+        "stock stockArea"
+        "stock form-btns";
+
+    /* "sellerName sellerNameArea" */
+    /* "purchaseHeader purchaseHeader" */
+    /* "customer customerArea"
       "quantity quantityArea" */
-      /* "purchase-history purchase-history" */
-      justify-content: center;
+    /* "purchase-history purchase-history" */
+    justify-content: center;
 
     grid-gap: 10px;
-    input , select{
+    input,
+    select {
         width: 100%;
         border: 1px solid #ccc;
         padding: 6px;
@@ -313,7 +314,6 @@ body {
         padding-bottom: 20px;
         display: flex;
         justify-content: center;
-
     }
     .submit {
         background-color: rgb(75, 126, 183);
@@ -321,7 +321,8 @@ body {
         color: #fff;
         font-weight: bold;
     }
-    .cancel{background-color: rgb(85, 83, 82);
+    .cancel {
+        background-color: rgb(85, 83, 82);
         color: #fff;
         font-weight: bold;
     }
@@ -466,3 +467,7 @@ input[type="reset"]:hover {
       grid-gap: 10px;
     
 } */
+
+.product-grid {
+    max-width: none;
+}
