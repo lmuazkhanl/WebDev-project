@@ -9,11 +9,20 @@ document.addEventListener("DOMContentLoaded", () => {
 	let customerInfo = [];
 	let listProducts = [];
 	let carts = [];
+	let x = [];
 
 	const getsessiondata = () => {
-		customerInfo = JSON.parse(window.localStorage.getItem("session"));
+		customerInfo = JSON.parse(localStorage.getItem("session"));
 	};
 	getsessiondata();
+
+	const getusers = () => {
+		x = JSON.parse(localStorage.getItem("users"));
+	};
+	getusers();
+
+	console.log(x);
+	console.log(customerInfo);
 
 	iconCart.addEventListener("click", () => {
 		body.classList.toggle("showCart");
@@ -59,9 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	listProductHTML.addEventListener("click", (event) => {
 		let positionClick = event.target;
-		if (positionClick.classList.contains("add-to-cart-button")) {
-			let product_id = positionClick.parentElement.parentElement.dataset.id;
-			addToCart(product_id);
+		if (customerInfo !== null) {
+			if (positionClick.classList.contains("add-to-cart-button")) {
+				let product_id = positionClick.parentElement.parentElement.dataset.id;
+
+				addToCart(product_id);
+			}
+		} else {
+			alert("Please Login To Continue");
 		}
 	});
 
@@ -70,6 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			(value) => value.product_id == product_id
 		);
 
+		// console.log(product_id);
+		// if (customerInfo.money_balance >= ) {
 		if (carts.length <= 0) {
 			carts = [
 				{
@@ -86,6 +102,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			carts[positionThisProductInCart].quantity =
 				carts[positionThisProductInCart].quantity + 1;
 		}
+		// } else {
+		// 	alert("Balance Limit Reached");
+		// }
 		addCartToHTML();
 		addCartToMemory();
 	};
