@@ -27,9 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
 				newProduct.innerHTML = `<img src="${product.image}" alt="Striped Hoodie" />
 				<div class="product-details">
 					<h2 class="product-name">${product.name}</h2>
+					<p class="seller-name">Sold by: ${product.sellername}</p>
 					<p class="price">$ ${product.price}</p>
 					<p class="description">
-					${product.desc}
+					${product.description}
 					</p>
 					<ul class="attributes">
 						<li><strong>Gender:</strong> ${product.gender}</li>
@@ -158,8 +159,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 
 	const initApp = () => {
-		// get data from products.json
-		fetch("./data/products.json")
+		// get data from items.json
+		fetch("./data/items.json")
 			.then((Response) => Response.json())
 			.then((data) => {
 				listProducts = data;
@@ -172,5 +173,13 @@ document.addEventListener("DOMContentLoaded", () => {
 				}
 			});
 	};
+	const getsessiondata = () => {
+		fetch("./data/sessions.json")
+			.then((Response) => Response.json())
+			.then((data) => {
+				customerInfo = data;
+			});
+	};
 	initApp();
+	getsessiondata();
 });

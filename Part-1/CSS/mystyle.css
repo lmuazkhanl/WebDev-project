@@ -142,6 +142,16 @@ body {
 		.shopping-cart-Btn {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
+			a {
+				text-decoration: none;
+				color: black;
+			}
+		}
+		.checkout-shopping-cart {
+			#checkout_link {
+				height: 50px;
+				padding-top: 15px;
+			}
 		}
 		button {
 			background-color: #8f8f8f;

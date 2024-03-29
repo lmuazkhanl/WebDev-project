@@ -7,17 +7,18 @@ navClose = document.getElementById("close_button");
 
 // show nav links div
 navToggle.addEventListener("click", () => {
-  navLinks.classList.add("show_menu");
+	navLinks.classList.add("show_menu");
 });
 
 // hide nav links div
 navClose.addEventListener("click", () => {
-  navLinks.classList.remove("show_menu");
+	navLinks.classList.remove("show_menu");
 });
 
 // ---- load products data in local storage
 
 const add = document.querySelector("#menSec");
+<<<<<<< HEAD
 const addWoman = document.querySelector("#womenSec");
 
 add.addEventListener('click', loadData);
@@ -27,35 +28,18 @@ async function loadData() {
   const response = await fetch("data/products.json");
   const usersData = await response.json();
   localStorage.setItem("products", JSON.stringify(usersData));
+=======
+add.addEventListener("click", loadData);
+async function loadData() {
+	const response = await fetch("data/items.json");
+	const usersData = await response.json();
+	localStorage.setItem("products", JSON.stringify(usersData));
+>>>>>>> 2a48144325ac8467b41c57f168b7c2eba840dc7e
 
-  console.log(localStorage.getItem("users"));
+	console.log(localStorage.getItem("users"));
 }
 
 loadData();womenSec
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
     show and hide the search bar

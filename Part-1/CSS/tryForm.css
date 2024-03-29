@@ -16,12 +16,12 @@ body {
 		/* keep header fixed at top and fill the entire width */
 		position: sticky;
 		width: 100%;
-		max-height: 20vh;
+		/* max-height: 20vh; */
 
 		top: 0;
 		left: 0;
 		right: 0;
-		z-index: 999;
+		z-index: 998;
 
 		/* background-color of header matches logo and there is a box shadow */
 		/* background-color: rgb(242, 241, 238); */
@@ -97,7 +97,23 @@ body {
 			.cart_button {
 				width: 36px;
 			}
+			#container_cart {
+				position: relative;
+			}
 
+			#container_cart span {
+				display: flex;
+				height: 20px;
+				width: 20px;
+				background-color: #333;
+				justify-content: center;
+				align-items: center;
+				color: white;
+				border-radius: 50%;
+				position: absolute;
+				top: 45%;
+				right: 0px;
+			}
 			.nav_button:hover {
 				fill: gray;
 			}
