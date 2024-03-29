@@ -18,23 +18,11 @@ navClose.addEventListener("click", () => {
 // ---- load products data in local storage
 
 const add = document.querySelector("#menSec");
-<<<<<<< HEAD
-const addWoman = document.querySelector("#womenSec");
-
-add.addEventListener('click', loadData);
-addWoman.addEventListener('click', loadData);
-
-async function loadData() {  
-  const response = await fetch("data/products.json");
-  const usersData = await response.json();
-  localStorage.setItem("products", JSON.stringify(usersData));
-=======
 add.addEventListener("click", loadData);
 async function loadData() {
 	const response = await fetch("data/items.json");
 	const usersData = await response.json();
 	localStorage.setItem("products", JSON.stringify(usersData));
->>>>>>> 2a48144325ac8467b41c57f168b7c2eba840dc7e
 
 	console.log(localStorage.getItem("users"));
 }
