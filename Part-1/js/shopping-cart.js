@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	closeCart.addEventListener("click", () => {
 		body.classList.toggle("showCart");
 	});
-
 	const addDataToHTML = () => {
 		listProductHTML.innerHTML = "";
 		if (listProducts.length > 0) {
@@ -173,13 +172,13 @@ document.addEventListener("DOMContentLoaded", () => {
 				}
 			});
 	};
-	const getsessiondata = () => {
-		fetch("./data/sessions.json")
-			.then((Response) => Response.json())
-			.then((data) => {
-				customerInfo = data;
-			});
-	};
+	// const getsessiondata = () => {
+	// 	fetch("../data/sessions.json")
+	// 		.then((Response) => Response.json())
+	// 		.then((data) => {
+	// 			customerInfo = data;
+	// 		});
+	// };
 	initApp();
-	getsessiondata();
+	// getsessiondata();
 });
