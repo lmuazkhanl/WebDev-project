@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			location.replace("../checkout.html");
 		}
 	});
+
 	const addDataToHTML = () => {
 		listProductHTML.innerHTML = "";
 		if (listProducts.length > 0) {
@@ -141,9 +142,13 @@ document.addEventListener("DOMContentLoaded", () => {
 			</div`;
 				total = total + info.price * cart.quantity;
 				listCartHTML.appendChild(newCart);
+				localStorage.setItem("totalprice", JSON.stringify(total));
 			});
+
 			runningTotalHTML.innerHTML = ``;
+			// totalHTML.innerHTML = ``;
 			runningTotalHTML.innerHTML = `Total: $ ${total}`;
+			// totalHTML.innerHTML = `Total: $ ${total}`;
 		}
 		iconCartSpan.innerText = totalQuantity;
 	};

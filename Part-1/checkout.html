@@ -50,14 +50,6 @@
 								alt="login"
 							/>
 						</a>
-						<div class="nav_button cart_button cart_logo" id="container_cart">
-							<img
-								src="Images/svj/shopping-cart.svg"
-								class="nav_button"
-								alt="cart"
-							/>
-							<span>0</span>
-						</div>
 
 						<svg
 							class="nav_button toggle_button"
@@ -80,7 +72,7 @@
 				</div> -->
 
 				<div class="content">
-					<section class="contact">
+					<section class="checkout">
 						<h1>Checkout</h1>
 						<form method="get">
 							<div class="information">
@@ -107,7 +99,6 @@
 										type="tel"
 										required
 										pattern="\+[0-9]{3}\-[0-9]{4}\-[0-9]{4}"
-										placeholder="+974-8888-1582"
 									/>
 								</div>
 								<div class="countryArea">
@@ -128,9 +119,9 @@
 										required
 									/>
 								</div>
-								<div class="running-total">Total: $</div>
+								<div class="checkout-total">Total: $</div>
 
-								<div class="butt">
+								<div class="checkout_button">
 									<button type="submit" id="button">Purchase</button>
 								</div>
 							</div>
@@ -176,5 +167,6 @@
 				</div>
 			</div>
 		</footer>
+		<script src="js/checkout.js"></script>
 	</body>
 </html>

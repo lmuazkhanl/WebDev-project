@@ -142,8 +142,8 @@ h1 {
 		"nameArea mobileArea"
 		"country city"
 		"countryArea cityArea"
-		"running-total running-total"
-		"button button";
+		"checkout-total checkout-total"
+		"checkout_button checkout_button";
 
 	.name {
 		grid-area: name;
@@ -171,8 +171,15 @@ h1 {
 		grid-area: cityArea;
 	}
 
-	.butt {
-		grid-area: button;
+	.checkout-total {
+		text-align: end;
+		padding: 5px;
+		font-size: large;
+		font-family: monospace;
+		grid-area: checkout-total;
+	}
+	.checkout_button {
+		grid-area: checkout_button;
 	}
 	#name,
 	#country,
@@ -196,7 +203,7 @@ h1 {
 		text-align: center;
 	}
 }
-.contact {
+.checkout {
 	padding: 10px;
 	margin-left: 5px;
 	/* display: flex;
@@ -325,13 +332,12 @@ ul li a:hover {
 			"nameArea"
 			"mobile"
 			"mobileArea"
-			"order"
-			"orderArea"
-			"email"
-			"emailArea"
-			"text"
-			"textArea"
-			"button";
+			"country"
+			"countryArea"
+			"city"
+			"cityArea"
+			"checkout-total"
+			"checkout_button";
 
 		div {
 			width: 100%;
