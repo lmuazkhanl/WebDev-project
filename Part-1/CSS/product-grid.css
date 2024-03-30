@@ -36,6 +36,7 @@
     overflow: hidden;
     transition: transform 0.3s;
     margin-bottom: 10px;
+    justify-content: space-between;
 }
 
 .product-card:hover {

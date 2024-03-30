@@ -1,172 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="CSS/checkout.css" />
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-		/>
-		<title>CLOTH - Checkout</title>
-	</head>
-	<body>
-		<section class="ever">
-			<header>
-				<nav>
-					<!-- logo is a link that will refresh the page-->
-					<a href="index.html"
-						><img src="images/logo.png" alt="CLOTH logo" class="logo_img"
-					/></a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Checkout</title>
+        <style>
+            /* CSS styles */
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
 
-					<!-- nav menu contains links and close icon -->
-					<div class="nav_links" id="nav_links">
-						<ul>
-							<li><a href="mens_section.html" class="nav_link">Men</a></li>
-							<li><a href="women_section.html" class="nav_link">Women</a></li>
-							<li><a href="about.html" class="nav_link">About</a></li>
-							<li><a href="contact.html" class="nav_link">Contact Us</a></li>
-						</ul>
+            .cart-item {
+                border-bottom: 1px solid #ccc;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+            }
 
-						<img
-							src="Images/svj/x.svg"
-							id="close_button"
-							class="nav_button close_button"
-							alt="x"
-						/>
-					</div>
-					<div class="nav_buttons">
-						<img
-							src="Images/svj/search.svg"
-							class="nav_button search_button"
-							alt="search"
-						/>
+            .cart-item img {
+                max-width: 100px;
+                margin-right: 20px;
+            }
 
-						<a href="login.html" class="nav_button login_button">
-							<img
-								src="Images/svj/user-round.svg"
-								class="nav_button login_button"
-								alt="login"
-							/>
-						</a>
+            .form-group {
+                margin-bottom: 20px;
+            }
 
-						<svg
-							class="nav_button toggle_button"
-							id="toggle_button"
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 448 512"
-						>
-							<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-							<path
-								d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
-							/>
-						</svg>
-					</div>
-				</nav>
-			</header>
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+            }
 
-			<section class="container">
-				<!-- <div class="img">
-					<img src="/Images/Slider/2.jpg" alt="" id="back" />
-				</div> -->
+            .form-group input {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
 
-				<div class="content">
-					<section class="checkout">
-						<h1>Checkout</h1>
-						<form method="get">
-							<div class="information">
-								<div class="name"><label for="name">Your Name:</label></div>
-								<div class="mobile">
-									<label for="mobile">Mobile Number:</label>
-								</div>
-								<div class="country"><label for="country">Country</label></div>
-								<div class="city"><label for="city">City</label></div>
+            .btn {
+                background-color: #4caf50;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                float: right;
+            }
 
-								<!-- -------------------------- -->
-								<div class="nameArea">
-									<input
-										type="text"
-										name="name"
-										id="name"
-										placeholder="enter your full name"
-										required
-									/>
-								</div>
-								<div class="mobileArea">
-									<input
-										id="mobile"
-										type="tel"
-										required
-										pattern="\+[0-9]{3}\-[0-9]{4}\-[0-9]{4}"
-									/>
-								</div>
-								<div class="countryArea">
-									<input
-										type="text"
-										name="country"
-										id="country"
-										placeholder="Country name"
-										required
-									/>
-								</div>
-								<div class="cityArea">
-									<input
-										type="text"
-										name="city"
-										id="city"
-										placeholder="City name"
-										required
-									/>
-								</div>
-								<div class="checkout-total">Total: $</div>
+            .btn:hover {
+                background-color: #45a049;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Cart</h2>
+            <div id="cart-items"></div>
+            <p>Total Quantity: <span id="total-quantity">0</span></p>
 
-								<div class="checkout_button">
-									<button type="submit" id="button">Purchase</button>
-								</div>
-							</div>
-						</form>
-					</section>
-				</div>
-			</section>
-		</section>
-		<footer>
-			<div class="footer-col">
-				<h4>Products</h4>
-				<ul>
-					<li><a href="#">Men</a></li>
-					<li><a href="#">Women</a></li>
-					<li><a href="#">Accessories</a></li>
-				</ul>
-			</div>
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required />
+                </div>
+                <button type="submit" class="btn">Submit Order</button>
+            </form>
+        </div>
 
-			<div class="footer-col">
-				<h4>Company</h4>
-				<ul>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Privacy Policy</a></li>
-					<li><a href="#">Delivery Information</a></li>
-				</ul>
-			</div>
+        <script>
+            // JavaScript code
+            document.addEventListener("DOMContentLoaded", function () {
+                // Retrieve cart and items data from localStorage
+                var cart = JSON.parse(localStorage.getItem("cart"));
+                var items = JSON.parse(localStorage.getItem("items"));
+                var cartItemsContainer = document.getElementById("cart-items");
+                var totalQuantityElement = document.getElementById("total-quantity");
+                var totalQuantity = 0;
 
-			<div class="footer-col">
-				<h4>Service</h4>
-				<ul>
-					<li><a href="#">FAQs</a></li>
-					<li><a href="#">Contact Us</a></li>
-				</ul>
-			</div>
+                // Populate cart items
+                cart.forEach(function (cartItem) {
+                    var item = items.find(function (item) {
+                        return item.id == cartItem.product_id;
+                    });
+                    if (item) {
+                        var cartItemElement = document.createElement("div");
+                        cartItemElement.classList.add("cart-item");
+                        cartItemElement.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <div>
+                    <p>Name: ${item.name}</p>
+                    <p>Quantity: ${cartItem.quantity}</p>
+                    <p>Price: $${(item.price * cartItem.quantity).toFixed(2)}</p>
+                </div>
+            `;
+                        cartItemsContainer.appendChild(cartItemElement);
+                        totalQuantity += cartItem.quantity;
+                    }
+                });
 
-			<div class="footer-col">
-				<h4>Follow Us</h4>
-				<div class="links">
-					<a href="#"><i class="fab fa-linkedin-in"></i></a>
-					<a href="#"><i class="fab fa-facebook-f"></i></a>
-					<a href="#"><i class="fab fa-twitter"></i></a>
-					<a href="#"><i class="fab fa-instagram"></i></a>
-				</div>
-			</div>
-		</footer>
-		<script src="js/checkout.js"></script>
-	</body>
+                // Display total quantity
+                totalQuantityElement.textContent = totalQuantity;
+
+                // Handle form submission
+                var checkoutForm = document.getElementById("checkout-form");
+                checkoutForm.addEventListener("submit", function (event) {
+                    event.preventDefault();
+                    // You can add further logic here to process the order
+                    alert("Order submitted successfully!");
+                    // Clear the cart after submission
+                    localStorage.removeItem("cart");
+                    location.reload(); // Reload the page
+                });
+            });
+        </script>
+    </body>
 </html>

@@ -1,195 +1,135 @@
-document.addEventListener("DOMContentLoaded", () => {
-    let iconCart = document.querySelector(".cart_logo");
-    let closeCart = document.querySelector(".close-shopping-cart");
-    let checkoutButton = document.querySelector(".checkout-shopping-cart");
-    let body = document.querySelector("body");
-    let listProductHTML = document.querySelector(".product-grid");
-    let listCartHTML = document.querySelector(".listCart");
-    let iconCartSpan = document.querySelector(".cart_logo span");
-    let runningTotalHTML = document.querySelector(".running-total");
+let iconCart = document.querySelector(".cart_logo");
+let closeCart = document.querySelector(".close-shopping-cart");
 
-    let customerInfo = [];
-    let listProducts = [];
-    let carts = [];
+let checkoutButton = document.querySelector(".checkout-shopping-cart");
 
-    const getsessiondata = () => {
-        customerInfo = JSON.parse(localStorage.getItem("session"));
-    };
-    getsessiondata();
+let body = document.querySelector("body");
+let listProductHTML = document.querySelector(".product-grid");
+let listCartHTML = document.querySelector(".listCart");
+let iconCartSpan = document.querySelector(".cart_logo span");
+let runningTotalHTML = document.querySelector(".running-total");
 
-    console.log(customerInfo);
+let customerInfo = [];
+let carts = [];
 
-    iconCart.addEventListener("click", () => {
-        body.classList.toggle("showCart");
-    });
-    closeCart.addEventListener("click", () => {
-        body.classList.toggle("showCart");
-    });
-    checkoutButton.addEventListener("click", () => {
-        if (carts.length <= 0) {
-            alert("add an item to continue");
-        } else if (carts.length > 0) {
-            location.replace("../checkout.html");
-        }
-    });
+const getsessiondata = () => {
+    customerInfo = JSON.parse(localStorage.getItem("session"));
+};
+getsessiondata();
 
-    const addDataToHTML = () => {
-        listProductHTML.innerHTML = "";
-        if (listProducts.length > 0) {
-            listProducts.forEach((product) => {
-                let newProduct = document.createElement("div");
-                newProduct.classList.add("product-card");
-                newProduct.classList.add("men-grid");
-                newProduct.dataset.id = product.id;
-                newProduct.innerHTML = `<img src="${product.image}" alt="Striped Hoodie" />
-				<div class="product-details">
-					<h2 class="product-name">${product.name}</h2>
-					<p class="seller-name">Sold by: ${product.sellername}</p>
-					<p class="price">$ ${product.price}</p>
-					<p class="description">
-					${product.description}
-					</p>
-					<ul class="attributes">
-						<li><strong>Gender:</strong> ${product.gender}</li>
-						<li><strong>Type:</strong> ${product.type}</li>
-						<li>
-							<strong>Size:</strong>
-							<select class="size-dropdown">
-								<option value="Small">Small</option>
-								<option value="Medium">Medium</option>
-								<option value="Large" selected>Large</option>
-							</select>
-						</li>
-						<li><strong>Material:</strong> ${product.material}</li>
-					</ul>
-					<button class="add-to-cart-button">Add to Cart</button>
-				</div>`;
-                listProductHTML.appendChild(newProduct);
-            });
-        }
-    };
+console.log(customerInfo);
 
-    listProductHTML.addEventListener("click", (event) => {
-        let positionClick = event.target;
-        if (customerInfo !== null) {
-            if (positionClick.classList.contains("add-to-cart-button")) {
-                let product_id = positionClick.parentElement.parentElement.dataset.id;
+iconCart.addEventListener("click", () => {
+    body.classList.toggle("showCart");
+});
+closeCart.addEventListener("click", () => {
+    body.classList.toggle("showCart");
+});
+checkoutButton.addEventListener("click", () => {
+    if (carts.length <= 0) {
+        alert("Add an item to continue");
+    } else {
+        location.replace("../checkout.html");
+    }
+});
 
-                addToCart(product_id);
+const addCartToMemory = () => {
+    spanUpdate();
+    localStorage.setItem("cart", JSON.stringify(carts));
+};
+
+listCartHTML.addEventListener("click", (event) => {
+    let positionClick = event.target;
+    if (positionClick.classList.contains("minus") || positionClick.classList.contains("plus")) {
+        let product_id = positionClick.parentElement.parentElement.dataset.id;
+        let type = positionClick.classList.contains("plus") ? "plus" : "minus";
+        changeQuantity(product_id, type);
+    }
+});
+
+const changeQuantity = (product_id, type) => {
+    let positionItemInCart = carts.findIndex((value) => value.product_id === product_id);
+    if (positionItemInCart >= 0) {
+        if (type === "plus") {
+            carts[positionItemInCart].quantity += 1;
+        } else {
+            let valueChange = carts[positionItemInCart].quantity - 1;
+            if (valueChange > 0) {
+                carts[positionItemInCart].quantity = valueChange;
+            } else {
+                carts.splice(positionItemInCart, 1);
             }
-        } else {
-            alert("Please Login To Continue");
         }
-    });
-
-    const addToCart = (product_id) => {
-        let positionThisProductInCart = carts.findIndex((value) => value.product_id == product_id);
-
-        // console.log(product_id);
-        // if (customerInfo.money_balance >= ) {
-        if (carts.length <= 0) {
-            carts = [
-                {
-                    product_id: product_id,
-                    quantity: 1,
-                },
-            ];
-        } else if (positionThisProductInCart < 0) {
-            carts.push({
-                product_id: product_id,
-                quantity: 1,
-            });
-        } else {
-            carts[positionThisProductInCart].quantity = carts[positionThisProductInCart].quantity + 1;
-        }
-        // } else {
-        // 	alert("Balance Limit Reached");
-        // }
-        addCartToHTML();
+        spanUpdate();
         addCartToMemory();
-    };
+        addCartToHTML();
+    }
+};
 
-    const addCartToMemory = () => {
-        localStorage.setItem("cart", JSON.stringify(carts));
-    };
+/* ------------------------------------------------------------------------------------------------ */
 
-    const addCartToHTML = () => {
-        listCartHTML.innerHTML = ``;
-        let totalQuantity = 0;
-        if (carts.length > 0) {
-            let total = 0;
-            carts.forEach((cart) => {
-                totalQuantity = totalQuantity + cart.quantity;
+const addCartToHTML = () => {
+    listCartHTML.innerHTML = ``;
+    let totalQuantity = 0;
+    let totalPrice = 0;
+
+    if (carts.length > 0) {
+        carts.forEach((cart) => {
+            let product = findProductById(cart.product_id);
+            if (product) {
+                totalQuantity += cart.quantity;
+                totalPrice += product.price * cart.quantity;
+
                 let newCart = document.createElement("div");
                 newCart.classList.add("shop-cart-item");
                 newCart.dataset.id = cart.product_id;
-                let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id);
-                let info = listProducts[positionProduct];
-                newCart.innerHTML = `<div class="image-shop-cart">
-				<img src="${info.image}" alt="" />
-			</div>
-			<div class="shop-cart-item-name">${info.name}</div>
-			<div class="item-price">$ ${info.price * cart.quantity}</div>
-			<div class="item-quantity">
-				<span class="minus"> < </span>
-				<span> ${cart.quantity} </span>
-				<span class="plus"> > </span>
-			</div`;
-                total = total + info.price * cart.quantity;
+
+                newCart.innerHTML = `
+                    <div class="image-shop-cart">
+                        <img src="${product.image}" alt="" />
+                    </div>
+                    <div class="shop-cart-item-name">${product.name}</div>
+                    <div class="item-price">$ ${product.price * cart.quantity}</div>
+                    <div class="item-quantity">
+                        <span class="minus"> < </span>
+                        <span> ${cart.quantity} </span>
+                        <span class="plus"> > </span>
+                    </div>
+                `;
                 listCartHTML.appendChild(newCart);
-                localStorage.setItem("totalprice", JSON.stringify(total));
-            });
-
-            runningTotalHTML.innerHTML = ``;
-            // totalHTML.innerHTML = ``;
-            runningTotalHTML.innerHTML = `Total: $ ${total}`;
-            // totalHTML.innerHTML = `Total: $ ${total}`;
-        }
-        iconCartSpan.innerText = totalQuantity;
-    };
-
-    listCartHTML.addEventListener("click", (event) => {
-        let positionClick = event.target;
-        if (positionClick.classList.contains("minus") || positionClick.classList.contains("plus")) {
-            let product_id = positionClick.parentElement.parentElement.dataset.id;
-            console.log(product_id);
-            let type = "minus";
-            if (positionClick.classList.contains("plus")) {
-                type = "plus";
             }
-            changeQuantity(product_id, type);
-        }
+        });
+    }
+
+    runningTotalHTML.innerHTML = `Total: $ ${totalPrice.toFixed(2)}`;
+    iconCartSpan.innerText = totalQuantity;
+};
+
+/* const findProductById = (productId) => {
+    const items = JSON.parse(localStorage.getItem("items"));
+    console.log(items.find((item) => item.id === parseInt(productId)));
+    return items.find((item) => item.id === parseInt(productId));
+};
+ */
+
+const spanUpdate = () => {
+    let carts = JSON.parse(localStorage.getItem("cart")) || [];
+    let totalQuantity = 0;
+
+    carts.forEach((cart) => {
+        totalQuantity += cart.quantity;
     });
 
-    const changeQuantity = (product_id, type) => {
-        let positionItemInCart = carts.findIndex((value) => value.product_id == product_id);
-        if (positionItemInCart >= 0) {
-            switch (type) {
-                case "plus":
-                    carts[positionItemInCart].quantity = carts[positionItemInCart].quantity + 1;
-                    break;
+    const spanElement = document.querySelector(".cart_logo span");
+    spanElement.innerText = totalQuantity;
+};
 
-                default:
-                    let valueChange = carts[positionItemInCart].quantity - 1;
-                    if (valueChange > 0) {
-                        carts[positionItemInCart].quantity = valueChange;
-                    } else {
-                        carts.splice(positionItemInCart, 1);
-                    }
-                    break;
-            }
-        }
-        addCartToMemory();
+const initApp = () => {
+    if (localStorage.getItem("cart")) {
+        carts = JSON.parse(localStorage.getItem("cart"));
+        spanUpdate();
         addCartToHTML();
-    };
+    }
+};
 
-    const initApp = () => {
-        // get data from LocalStorage
-        if (localStorage.getItem("cart")) {
-            carts = JSON.parse(localStorage.getItem("cart"));
-            addCartToHTML();
-        }
-    };
-
-    initApp();
-});
+initApp();
