@@ -8,7 +8,6 @@
 
         <link rel="stylesheet" href="CSS/mystyle.css" />
         <link rel="stylesheet" href="CSS/product-grid.css" />
-        <link rel="stylesheet" href="CSS/product-grid-featured-products.css" />
         <link rel="icon" type="image/x-icon" href="images/logo.ico" />
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     </head>
@@ -100,35 +99,235 @@
                 </div>
             </section>
 
-            <div class="container_shoppingcart">
+            <!--             <div class="container_shoppingcart">
                 <div class="grid-container">
                     <div class="product-grid men-grid">
-                        <!-- <div class="product-card">
-							<img src="Images/hoodies/men_shirt2.webp" alt="Striped Hoodie" />
-							<div class="product-details">
-								<h2 class="product-name">Striped Hoodie</h2>
-								<p class="seller-name">Sold by: Magic Inc.</p>
-								<p class="price">$35.99</p>
-								<p class="description">
-									Stylish striped hoodie for men, perfect for casual wear.
-								</p>
-								<ul class="attributes">
-									<li><strong>Gender:</strong> Male</li>
-									<li><strong>Type:</strong> Hoodie</li>
-									<li><strong>Color:</strong> Black/White</li>
-									<li>
-										<strong>Size:</strong>
-										<select class="size-dropdown">
-											<option value="Small">Small</option>
-											<option value="Medium">Medium</option>
-											<option value="Large" selected>Large</option>
-										</select>
-									</li>
-									<li><strong>Material:</strong> Cotton</li>
-								</ul>
-								<button class="add-to-cart-button">Add to Cart</button>
-							</div>
-						</div> -->
+
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="content">
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="Images/hoodies/men_shirt2.webp" alt="Striped Hoodie" />
+                        <div class="product-details">
+                            <h2 class="product-name">Striped Hoodie</h2>
+                            <p class="price">$ 35.99</p>
+                            <p class="description">Stylish striped hoodie for men, perfect for casual wear.</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> hoodie</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-1">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> cotton</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="1" control-id="ControlID-2">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/hoodies/Black-Hoodie.jpg" alt="Black Hoodie" />
+                        <div class="product-details">
+                            <h2 class="product-name">Black Hoodie</h2>
+                            <p class="price">$ 35.99</p>
+                            <p class="description">Stylish black hoodie for men, perfect for casual wear.</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> hoodie</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-3">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> cotton</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="2" control-id="ControlID-4">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/hoodies/White-Hoodie.jpg" alt="White Hoodie" />
+                        <div class="product-details">
+                            <h2 class="product-name">White Hoodie</h2>
+                            <p class="price">$ 35.99</p>
+                            <p class="description">Stylish white hoodie for men, perfect for casual wear.</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> hoodie</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-5">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> cotton</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="3" control-id="ControlID-6">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/hoodies/jacket.webp" alt="Beige Jacket" />
+                        <div class="product-details">
+                            <h2 class="product-name">Beige Jacket</h2>
+                            <p class="price">$ 45</p>
+                            <p class="description">stylish simple Jacket for those cold nights</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> jacket</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-7">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> leather</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="4" control-id="ControlID-8">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/hoodies/men_cottonPolo.webp" alt="Polo" />
+                        <div class="product-details">
+                            <h2 class="product-name">Polo</h2>
+                            <p class="price">$ 40</p>
+                            <p class="description">stylish simple polo shirt for males</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> polo</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-9">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> cotton</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="5" control-id="ControlID-10">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/hoodies/Man-Pic.jpg" alt="Blue Sweatshirt" />
+                        <div class="product-details">
+                            <h2 class="product-name">Blue Sweatshirt</h2>
+                            <p class="price">$ 42</p>
+                            <p class="description">stylish simple sweatshirt for males</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> sweatshirt</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-11">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> cotton</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="6" control-id="ControlID-12">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/sweatshirts/men_shirt.webp" alt="Beige Sweatshirt" />
+                        <div class="product-details">
+                            <h2 class="product-name">Beige Sweatshirt</h2>
+                            <p class="price">$ 45</p>
+                            <p class="description">stylish simple sweatshirt for males</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> sweatshirt</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-13">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> cotton</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="7" control-id="ControlID-14">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/pants/men_pant1.webp" alt="Denim Jeans" />
+                        <div class="product-details">
+                            <h2 class="product-name">Denim Jeans</h2>
+                            <p class="price">$ 35</p>
+                            <p class="description">An option for more casual wear and a classic</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> pant</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-15">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> Denim</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="8" control-id="ControlID-16">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/pants/men_trouser.webp" alt="Beige Trouser" />
+                        <div class="product-details">
+                            <h2 class="product-name">Beige Trouser</h2>
+                            <p class="price">$ 35</p>
+                            <p class="description">Stylish trouser needed for summer to for those beach parties</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> pant</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-17">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> cotton</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="9" control-id="ControlID-18">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/shoes/men_shoes1.jpg" alt="Blue Suedes" />
+                        <div class="product-details">
+                            <h2 class="product-name">Blue Suedes</h2>
+                            <p class="price">$ 29.99</p>
+                            <p class="description">Fine Blue Suedes that can go with any formal dressing</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> shoes</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-19">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> leather</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="10" control-id="ControlID-20">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -238,35 +437,227 @@
                 </div>
             </section>
 
-            <div class="container_shoppingcart">
-                <div class="grid-container">
-                    <div class="product-grid women-grid">
-                        <!-- <div class="product-card">
-							<img src="Images/hoodies/men_shirt2.webp" alt="Striped Hoodie" />
-							<div class="product-details">
-								<h2 class="product-name">Striped Hoodie</h2>
-								<p class="seller-name">Sold by: Magic Inc.</p>
-								<p class="price">$35.99</p>
-								<p class="description">
-									Stylish striped hoodie for men, perfect for casual wear.
-								</p>
-								<ul class="attributes">
-									<li><strong>Gender:</strong> Female</li>
-									<li><strong>Type:</strong> Hoodie</li>
-									<li><strong>Color:</strong> Black/White</li>
-									<li>
-										<strong>Size:</strong>
-										<select class="size-dropdown">
-											<option value="Small">Small</option>
-											<option value="Medium">Medium</option>
-											<option value="Large" selected>Large</option>
-										</select>
-									</li>
-									<li><strong>Material:</strong> Cotton</li>
-								</ul>
-								<button class="add-to-cart-button">Add to Cart</button>
-							</div> -->
-                        <!-- </div> -->
+            <div class="content">
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="Images/hoodies/men_shirt2.webp" alt="Striped Hoodie" />
+                        <div class="product-details">
+                            <h2 class="product-name">Striped Hoodie</h2>
+                            <p class="price">$ 35.99</p>
+                            <p class="description">Stylish striped hoodie for men, perfect for casual wear.</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> hoodie</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-1">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> cotton</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="1" control-id="ControlID-2">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/hoodies/Black-Hoodie.jpg" alt="Black Hoodie" />
+                        <div class="product-details">
+                            <h2 class="product-name">Black Hoodie</h2>
+                            <p class="price">$ 35.99</p>
+                            <p class="description">Stylish black hoodie for men, perfect for casual wear.</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> hoodie</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-3">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> cotton</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="2" control-id="ControlID-4">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/hoodies/White-Hoodie.jpg" alt="White Hoodie" />
+                        <div class="product-details">
+                            <h2 class="product-name">White Hoodie</h2>
+                            <p class="price">$ 35.99</p>
+                            <p class="description">Stylish white hoodie for men, perfect for casual wear.</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> hoodie</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-5">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> cotton</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="3" control-id="ControlID-6">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/hoodies/jacket.webp" alt="Beige Jacket" />
+                        <div class="product-details">
+                            <h2 class="product-name">Beige Jacket</h2>
+                            <p class="price">$ 45</p>
+                            <p class="description">stylish simple Jacket for those cold nights</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> jacket</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-7">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> leather</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="4" control-id="ControlID-8">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/hoodies/men_cottonPolo.webp" alt="Polo" />
+                        <div class="product-details">
+                            <h2 class="product-name">Polo</h2>
+                            <p class="price">$ 40</p>
+                            <p class="description">stylish simple polo shirt for males</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> polo</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-9">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> cotton</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="5" control-id="ControlID-10">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/hoodies/Man-Pic.jpg" alt="Blue Sweatshirt" />
+                        <div class="product-details">
+                            <h2 class="product-name">Blue Sweatshirt</h2>
+                            <p class="price">$ 42</p>
+                            <p class="description">stylish simple sweatshirt for males</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> sweatshirt</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-11">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> cotton</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="6" control-id="ControlID-12">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/sweatshirts/men_shirt.webp" alt="Beige Sweatshirt" />
+                        <div class="product-details">
+                            <h2 class="product-name">Beige Sweatshirt</h2>
+                            <p class="price">$ 45</p>
+                            <p class="description">stylish simple sweatshirt for males</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> sweatshirt</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-13">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> cotton</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="7" control-id="ControlID-14">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/pants/men_pant1.webp" alt="Denim Jeans" />
+                        <div class="product-details">
+                            <h2 class="product-name">Denim Jeans</h2>
+                            <p class="price">$ 35</p>
+                            <p class="description">An option for more casual wear and a classic</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> pant</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-15">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> Denim</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="8" control-id="ControlID-16">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/pants/men_trouser.webp" alt="Beige Trouser" />
+                        <div class="product-details">
+                            <h2 class="product-name">Beige Trouser</h2>
+                            <p class="price">$ 35</p>
+                            <p class="description">Stylish trouser needed for summer to for those beach parties</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> pant</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-17">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> cotton</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="9" control-id="ControlID-18">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="Images/shoes/men_shoes1.jpg" alt="Blue Suedes" />
+                        <div class="product-details">
+                            <h2 class="product-name">Blue Suedes</h2>
+                            <p class="price">$ 29.99</p>
+                            <p class="description">Fine Blue Suedes that can go with any formal dressing</p>
+                            <ul class="attributes">
+                                <li><strong>Gender:</strong> male</li>
+                                <li><strong>Type:</strong> shoes</li>
+                                <li>
+                                    <strong>Size:</strong>
+                                    <select class="size-dropdown" control-id="ControlID-19">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large" selected="">Large</option>
+                                    </select>
+                                </li>
+                                <li><strong>Material:</strong> leather</li>
+                            </ul>
+                            <button class="add-to-cart-button" data-product-id="10" control-id="ControlID-20">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -398,209 +789,10 @@
         <!-- javscript link at the end so that HTML content loads first -->
         <script src="js/search.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/man-page.js"></script>
         <script src="js/shopping-cart.js"></script>
         <script src="js/login.js"></script>
+        <script src="js/main-page-cart.js"></script>
         <!-- <script src="js/man-page.js"></script>
 		<script src="js/women-page.js"></script> -->
     </body>
 </html>
-
-<!-- 
-          <h1>About Us</h1>
-          We're more than just a clothing brand; we're a community of
-          individuals united by our love for urban fashion and the vibrant
-          energy of city life. Our mission is simple: to blend cutting-edge
-          style with comfort and functionality, creating pieces that empower you
-          to express yourself boldly and authentically. At UrbanCloth Co.,
-          inclusivity is at the core of everything we do. We believe that
-          fashion should be accessible to all, which is why we offer a diverse
-          range of sizes and styles to cater to every body type and personal
-          taste. Additionally, our commitment to sustainability drives us to
-          prioritize ethical manufacturing practices and eco-friendly materials,
-          ensuring that our impact on the planet is as stylish as our clothing.
-          Whether you're navigating the bustling streets or making a statement
-          at a social gathering, UrbanCloth Co. is here to support you on your
-          journey. Join us in celebrating the diversity of urban culture and
-          embracing the power of self-expression through clothing. Welcome to
-          the UrbanCloth Co. community, where style meets substance and
-          individuality reigns supreme.
-        </section>
-      </div>
- -->
-<!-- 
-						<div class="product-card">
-							<img src="Images/hoodies/men_shirt2.webp" alt="Striped Hoodie" />
-							<div class="product-details">
-								<h2 class="product-name">Striped Hoodie</h2>
-								<p class="price">$35.99</p>
-								<p class="description">
-									Stylish striped hoodie for men, perfect for casual wear.
-								</p>
-								<ul class="attributes">
-									<li><strong>Gender:</strong> Male</li>
-									<li><strong>Type:</strong> Hoodie</li>
-									<li><strong>Color:</strong> Black/White</li>
-									<li>
-										<strong>Size:</strong>
-										<select class="size-dropdown">
-											<option value="Small">Small</option>
-											<option value="Medium">Medium</option>
-											<option value="Large" selected>Large</option>
-										</select>
-									</li>
-									<li><strong>Material:</strong> Cotton</li>
-								</ul>
-								<button class="add-to-cart-button">Add to Cart</button>
-							</div>
-						</div>
-						<div class="product-card">
-							<img src="Images/hoodies/men_shirt2.webp" alt="Striped Hoodie" />
-							<div class="product-details">
-								<h2 class="product-name">Striped Hoodie</h2>
-								<p class="price">$35.99</p>
-								<p class="description">
-									Stylish striped hoodie for men, perfect for casual wear.
-								</p>
-								<ul class="attributes">
-									<li><strong>Gender:</strong> Male</li>
-									<li><strong>Type:</strong> Hoodie</li>
-									<li><strong>Color:</strong> Black/White</li>
-									<li>
-										<strong>Size:</strong>
-										<select class="size-dropdown">
-											<option value="Small">Small</option>
-											<option value="Medium">Medium</option>
-											<option value="Large" selected>Large</option>
-										</select>
-									</li>
-									<li><strong>Material:</strong> Cotton</li>
-								</ul>
-								<button class="add-to-cart-button">Add to Cart</button>
-							</div>
-						</div>
-						<div class="product-card">
-							<img src="Images/hoodies/men_shirt2.webp" alt="Striped Hoodie" />
-							<div class="product-details">
-								<h2 class="product-name">Striped Hoodie</h2>
-								<p class="price">$35.99</p>
-								<p class="description">
-									Stylish striped hoodie for men, perfect for casual wear.
-								</p>
-								<ul class="attributes">
-									<li><strong>Gender:</strong> Male</li>
-									<li><strong>Type:</strong> Hoodie</li>
-									<li><strong>Color:</strong> Black/White</li>
-									<li>
-										<strong>Size:</strong>
-										<select class="size-dropdown">
-											<option value="Small">Small</option>
-											<option value="Medium">Medium</option>
-											<option value="Large" selected>Large</option>
-										</select>
-									</li>
-									<li><strong>Material:</strong> Cotton</li>
-								</ul>
-								<button class="add-to-cart-button">Add to Cart</button>
-							</div>
-						</div> -->
-<!--<div class="product-card">
-							<img src="Images/hoodies/men_shirt2.webp" alt="Striped Hoodie" />
-							<div class="product-details">
-								<h2 class="product-name">Striped Hoodie</h2>
-								<p class="price">$35.99</p>
-								<p class="description">
-									Stylish striped hoodie for men, perfect for casual wear.
-								</p>
-								<ul class="attributes">
-									<li><strong>Gender:</strong> Male</li>
-									<li><strong>Type:</strong> Hoodie</li>
-									<li><strong>Color:</strong> Black/White</li>
-									<li>
-										<strong>Size:</strong>
-										<select class="size-dropdown">
-											<option value="Small">Small</option>
-											<option value="Medium">Medium</option>
-											<option value="Large" selected>Large</option>
-										</select>
-									</li>
-									<li><strong>Material:</strong> Cotton</li>
-								</ul>
-								<button class="add-to-cart-button">Add to Cart</button>
-							</div>
-						</div>
-						<div class="product-card">
-							<img src="Images/hoodies/men_shirt2.webp" alt="Striped Hoodie" />
-							<div class="product-details">
-								<h2 class="product-name">Striped Hoodie</h2>
-								<p class="price">$35.99</p>
-								<p class="description">
-									Stylish striped hoodie for men, perfect for casual wear.
-								</p>
-								<ul class="attributes">
-									<li><strong>Gender:</strong> Male</li>
-									<li><strong>Type:</strong> Hoodie</li>
-									<li><strong>Color:</strong> Black/White</li>
-									<li>
-										<strong>Size:</strong>
-										<select class="size-dropdown">
-											<option value="Small">Small</option>
-											<option value="Medium">Medium</option>
-											<option value="Large" selected>Large</option>
-										</select>
-									</li>
-									<li><strong>Material:</strong> Cotton</li>
-								</ul>
-								<button class="add-to-cart-button">Add to Cart</button>
-							</div>
-						</div>
-						<div class="product-card">
-							<img src="Images/hoodies/men_shirt2.webp" alt="Striped Hoodie" />
-							<div class="product-details">
-								<h2 class="product-name">Striped Hoodie</h2>
-								<p class="price">$35.99</p>
-								<p class="description">
-									Stylish striped hoodie for men, perfect for casual wear.
-								</p>
-								<ul class="attributes">
-									<li><strong>Gender:</strong> Male</li>
-									<li><strong>Type:</strong> Hoodie</li>
-									<li><strong>Color:</strong> Black/White</li>
-									<li>
-										<strong>Size:</strong>
-										<select class="size-dropdown">
-											<option value="Small">Small</option>
-											<option value="Medium">Medium</option>
-											<option value="Large" selected>Large</option>
-										</select>
-									</li>
-									<li><strong>Material:</strong> Cotton</li>
-								</ul>
-								<button class="add-to-cart-button">Add to Cart</button>
-							</div>
-						</div>
-						<div class="product-card">
-							<img src="Images/hoodies/jacket.webp" alt="Striped Hoodie" />
-							<div class="product-details">
-								<h2 class="product-name">Striped Hoodie</h2>
-								<p class="price">$35.99</p>
-								<p class="description">
-									Stylish striped hoodie for men, perfect for casual wear.
-								</p>
-								<ul class="attributes">
-									<li><strong>Gender:</strong> Male</li>
-									<li><strong>Type:</strong> Hoodie</li>
-									<li><strong>Color:</strong> Black/White</li>
-									<li>
-										<strong>Size:</strong>
-										<select class="size-dropdown">
-											<option value="Small">Small</option>
-											<option value="Medium">Medium</option>
-											<option value="Large" selected>Large</option>
-										</select>
-									</li>
-									<li><strong>Material:</strong> Cotton</li>
-								</ul>
-								<button class="add-to-cart-button">Add to Cart</button>
-							</div>
-						</div> -->
