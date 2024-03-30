@@ -203,7 +203,7 @@ function itemsToHTMLSellerView(items) {
 
             </ul>
             <div class="quantity-update">
-                <input type="number" id="quantity${item.name}" name="quantity" placeholder="Enter new quantity">
+                <input type="number" class="inputNO" id="quantity${item.name}" name="quantity" placeholder="Enter new quantity">
                 <button class="update-btn" onClick="updateItem('${item.name}', document.getElementById('quantity${item.name}').value)">Update</button>
             </div>
         </div>
