@@ -254,3 +254,7 @@ document.querySelector(".women_accessories").addEventListener("click", function 
     localStorage.setItem("filteredItems", JSON.stringify(filteredItems));
     window.location.href = "searchItems.html";
 });
+
+document.querySelector(".paralax-btn").addEventListener("click", function () {
+    window.location.href = "about.html";
+});
