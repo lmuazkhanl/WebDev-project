@@ -40,8 +40,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var logoutBtn = document.getElementById("logout-btn");
     logoutBtn.addEventListener("click", function () {
+        var session = JSON.parse(localStorage.getItem("session"));
+        var users = JSON.parse(localStorage.getItem("users"));
+
+        // Update money balance in users data from session
+        if (session && session.userType === "customer") {
+            var userIndex = users.customers.findIndex(function (customer) {
+                return customer.username === session.username;
+            });
+            if (userIndex !== -1) {
+                users.customers[userIndex].money_balance = session.money_balance;
+                localStorage.setItem("users", JSON.stringify(users));
+            }
+        }
+
+        // Remove session and cart from localStorage
         localStorage.removeItem("session");
         localStorage.removeItem("cart");
+
+        // Redirect to login page
         window.location.href = "login.html";
     });
 });
