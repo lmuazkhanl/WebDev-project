@@ -1,27 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
 	let iconCart = document.querySelector(".cart_logo");
 	let closeCart = document.querySelector(".close-shopping-cart");
+	let checkoutButton = document.querySelector(".checkout-shopping-cart");
 	let body = document.querySelector("body");
 	let listProductHTML = document.querySelector(".product-grid");
 	let listCartHTML = document.querySelector(".listCart");
 	let iconCartSpan = document.querySelector(".cart_logo span");
+	let runningTotalHTML = document.querySelector(".running-total");
 
 	let customerInfo = [];
 	let listProducts = [];
 	let carts = [];
-	let x = [];
 
 	const getsessiondata = () => {
 		customerInfo = JSON.parse(localStorage.getItem("session"));
 	};
 	getsessiondata();
 
-	const getusers = () => {
-		x = JSON.parse(localStorage.getItem("users"));
-	};
-	getusers();
-
-	console.log(x);
 	console.log(customerInfo);
 
 	iconCart.addEventListener("click", () => {
@@ -29,6 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 	closeCart.addEventListener("click", () => {
 		body.classList.toggle("showCart");
+	});
+	checkoutButton.addEventListener("click", () => {
+		if (carts.length <= 0) {
+			alert("add an item to continue");
+		} else if (carts.length > 0) {
+			location.replace("../checkout.html");
+		}
 	});
 	const addDataToHTML = () => {
 		listProductHTML.innerHTML = "";
@@ -117,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		listCartHTML.innerHTML = ``;
 		let totalQuantity = 0;
 		if (carts.length > 0) {
+			let total = 0;
 			carts.forEach((cart) => {
 				totalQuantity = totalQuantity + cart.quantity;
 				let newCart = document.createElement("div");
@@ -136,8 +139,11 @@ document.addEventListener("DOMContentLoaded", () => {
 				<span> ${cart.quantity} </span>
 				<span class="plus"> > </span>
 			</div`;
+				total = total + info.price * cart.quantity;
 				listCartHTML.appendChild(newCart);
 			});
+			runningTotalHTML.innerHTML = ``;
+			runningTotalHTML.innerHTML = `Total: $ ${total}`;
 		}
 		iconCartSpan.innerText = totalQuantity;
 	};

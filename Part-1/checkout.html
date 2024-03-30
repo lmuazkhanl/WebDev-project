@@ -1,131 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<title>CLOTH</title>
-
-		<link rel="stylesheet" href="CSS/mystyle.css" />
-		<!-- <link rel="stylesheet" href="CSS/checkout.css" /> -->
-		<link rel="icon" type="image/x-icon" href="images/logo.ico" />
+		<link rel="stylesheet" href="CSS/checkout.css" />
 		<link
 			rel="stylesheet"
 			type="text/css"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
 		/>
+		<title>CLOTH - Checkout</title>
 	</head>
-
 	<body>
-		<header>
-			<nav>
-				<!-- logo is a link that will refresh the page-->
-				<a href="index.html"
-					><img src="images/logo.png" alt="CLOTH logo" class="logo_img"
-				/></a>
+		<section class="ever">
+			<header>
+				<nav>
+					<!-- logo is a link that will refresh the page-->
+					<a href="index.html"
+						><img src="images/logo.png" alt="CLOTH logo" class="logo_img"
+					/></a>
 
-				<!-- nav menu contains links and close icon -->
-				<div class="nav_links" id="nav_links">
-					<ul>
-						<li><a href="mens_section.html" class="nav_link" id="menSec">Men</a></li>
-						<li>
-							<a href="women_section.html" class="nav_link" id="womenSec">Women</a>
-						</li>
-						<li><a href="about.html" class="nav_link">About</a></li>
-						<li><a href="contact.html" class="nav_link">Contact Us</a></li>
-					</ul>
+					<!-- nav menu contains links and close icon -->
+					<div class="nav_links" id="nav_links">
+						<ul>
+							<li><a href="mens_section.html" class="nav_link">Men</a></li>
+							<li><a href="women_section.html" class="nav_link">Women</a></li>
+							<li><a href="about.html" class="nav_link">About</a></li>
+							<li><a href="contact.html" class="nav_link">Contact Us</a></li>
+						</ul>
 
-					<img
-						src="Images/svj/x.svg"
-						id="close_button"
-						class="nav_button close_button"
-						alt="x"
-					/>
-				</div>
-				<div class="nav_buttons">
-					<img
-						src="Images/svj/search.svg"
-						class="nav_button search_button"
-						alt="search"
-					/>
-
-					<a href="login.html" class="nav_button login_button">
 						<img
-							src="Images/svj/user-round.svg"
-							class="nav_button login_button"
-							alt="login"
+							src="Images/svj/x.svg"
+							id="close_button"
+							class="nav_button close_button"
+							alt="x"
 						/>
-					</a>
-					<div class="nav_button cart_button cart_logo" id="container_cart">
-						<img src="Images/svj/shopping-cart.svg" class="nav_button" alt="cart" />
-						<span>0</span>
 					</div>
+					<div class="nav_buttons">
+						<img
+							src="Images/svj/search.svg"
+							class="nav_button search_button"
+							alt="search"
+						/>
 
-					<svg
-						class="nav_button toggle_button"
-						id="toggle_button"
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 448 512"
-					>
-						<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-						<path
-							d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
-						/>
-					</svg>
-				</div>
-			</nav>
-		</header>
-		<main>
-			<div class="container">
-				<div class="cartTab">
-					<h1>Shopping Cart</h1>
-					<div class="listCart">
-						<div class="shop-cart-item">
-							<div class="image-shop-cart">
-								<img src="/Images/hoodies/Man-Pic.jpg" alt="" />
-							</div>
-							<div class="shop-cart-item-name">Name</div>
-							<div class="item-price">40$</div>
-							<div class="item-quantity">
-								<span class="minus"> < </span>
-								<span> 1 </span>
-								<span class="plus"> > </span>
-							</div>
+						<a href="login.html" class="nav_button login_button">
+							<img
+								src="Images/svj/user-round.svg"
+								class="nav_button login_button"
+								alt="login"
+							/>
+						</a>
+						<div class="nav_button cart_button cart_logo" id="container_cart">
+							<img
+								src="Images/svj/shopping-cart.svg"
+								class="nav_button"
+								alt="cart"
+							/>
+							<span>0</span>
 						</div>
+
+						<svg
+							class="nav_button toggle_button"
+							id="toggle_button"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 448 512"
+						>
+							<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+							<path
+								d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+							/>
+						</svg>
 					</div>
-					<!-- Add more product items as needed -->
-				</div>
-				<!-- <div class="shipping-form">
-					<h2>Shipping Information</h2>
-					<form action="submit_order.php" method="post">
-						<input type="text" name="name" placeholder="Name" required /><br />
-						<input type="email" name="email" placeholder="Email" required /><br />
-						<textarea
-							name="address"
-							placeholder="Address"
-							rows="4"
-							required
-						></textarea
-						><br />
-						<input
-							type="text"
-							name="card_number"
-							placeholder="Credit Card Number"
-							required
-						/><br />
-						<input
-							type="text"
-							name="expiry"
-							placeholder="Expiry Date (MM/YY)"
-							required
-						/><br />
-						<input type="text" name="cvv" placeholder="CVV" required /><br />
-						<button type="submit">Place Order</button>
-					</form>
+				</nav>
+			</header>
+
+			<section class="container">
+				<!-- <div class="img">
+					<img src="/Images/Slider/2.jpg" alt="" id="back" />
 				</div> -->
-			</div>
-		</main>
-		<!-- <footer>
+
+				<div class="content">
+					<section class="contact">
+						<h1>Checkout</h1>
+						<form method="get">
+							<div class="information">
+								<div class="name"><label for="name">Your Name:</label></div>
+								<div class="mobile">
+									<label for="mobile">Mobile Number:</label>
+								</div>
+								<div class="country"><label for="country">Country</label></div>
+								<div class="city"><label for="city">City</label></div>
+
+								<!-- -------------------------- -->
+								<div class="nameArea">
+									<input
+										type="text"
+										name="name"
+										id="name"
+										placeholder="enter your full name"
+										required
+									/>
+								</div>
+								<div class="mobileArea">
+									<input
+										id="mobile"
+										type="tel"
+										required
+										pattern="\+[0-9]{3}\-[0-9]{4}\-[0-9]{4}"
+										placeholder="+974-8888-1582"
+									/>
+								</div>
+								<div class="countryArea">
+									<input
+										type="text"
+										name="country"
+										id="country"
+										placeholder="Country name"
+										required
+									/>
+								</div>
+								<div class="cityArea">
+									<input
+										type="text"
+										name="city"
+										id="city"
+										placeholder="City name"
+										required
+									/>
+								</div>
+								<div class="running-total">Total: $</div>
+
+								<div class="butt">
+									<button type="submit" id="button">Purchase</button>
+								</div>
+							</div>
+						</form>
+					</section>
+				</div>
+			</section>
+		</section>
+		<footer>
 			<div class="footer-col">
 				<h4>Products</h4>
 				<ul>
@@ -155,35 +169,12 @@
 			<div class="footer-col">
 				<h4>Follow Us</h4>
 				<div class="links">
-					<a href="example.com"><i class="fab fa-linkedin-in"></i></a>
-					<a href="example.com"><i class="fab fa-facebook-f"></i></a>
-					<a href="example.com"><i class="fab fa-twitter"></i></a>
-					<a href="example.com"><i class="fab fa-instagram"></i></a>
+					<a href="#"><i class="fab fa-linkedin-in"></i></a>
+					<a href="#"><i class="fab fa-facebook-f"></i></a>
+					<a href="#"><i class="fab fa-twitter"></i></a>
+					<a href="#"><i class="fab fa-instagram"></i></a>
 				</div>
 			</div>
-		</footer> -->
-		<script src="js/checkout.js"></script>
+		</footer>
 	</body>
 </html>
-<!-- 
-<div class="checkout-page-container">
-    <div class="checkoutlayout">
-        <div class="returnCart">
-            <a href="/">Keep Shopping</a>
-            <h1>List Of Products In Cart</h1>
-            <div class="checkout-list">
-                <div class="shop-cart-item">
-                    <img src="/Images/hoodies/Man-Pic.jpg" alt="" />
-
-                    <div class="shop-cart-item-name">Name</div>
-                    <div class="item-price">40$</div>
-                    <div class="item-quantity">
-                        <span class="minus"> < </span>
-                        <span> 1 </span>
-                        <span class="plus"> > </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->

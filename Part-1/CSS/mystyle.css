@@ -192,6 +192,12 @@ body {
 				}
 			}
 		}
+		.running-total {
+			padding: 10px;
+			font-size: x-large;
+			text-align: end;
+			font-family: monospace;
+		}
 		.listCart::-webkit-scrollbar {
 			width: 0;
 		}
