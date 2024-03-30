@@ -46,9 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* put data from users.json into localStorage */
     async function fetchUserData() {
-        const response = await fetch("data/users.json");
-        const usersData = await response.json();
-        localStorage.setItem("users", JSON.stringify(usersData));
+        if (!localStorage.getItem("users")) {
+            const response = await fetch("data/users.json");
+            const usersData = await response.json();
+            localStorage.setItem("users", JSON.stringify(usersData));
+        }
 
         console.log(localStorage.getItem("users"));
     }

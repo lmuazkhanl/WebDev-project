@@ -475,215 +475,218 @@ footer {
 ul {
 	list-style: none;
 	color: gray;
-}
-.footer-col {
-	width: 25%;
-}
-.footer-col h4 {
-	position: relative;
-	margin-bottom: 30px;
-	font-weight: 400;
-	font-size: 20px;
-	color: #9ca3af;
-	text-transform: capitalize;
-}
-.footer-col h4::before {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: -6px;
-	background-color: gray;
-	height: 2px;
-	width: 55px;
-}
-ul li:not(:last-child) {
-	margin-bottom: 8px;
-}
-ul li a {
-	display: block;
-	font-size: 19px;
-	text-transform: capitalize;
-	color: white;
-	text-decoration: none;
-	transition: 0.4s;
-}
-ul li a:hover {
-	color: gray;
-	padding-left: 2px;
-}
-
-.links a {
-	display: inline-block;
-	height: 44px;
-	width: 44px;
-	color: white;
-	background-color: #374151;
-	margin: 0 8px 8px 0;
-	text-align: center;
-	line-height: 44px;
-	border-radius: 50%;
-	transition: 0.4s;
-}
-.links a:hover {
-	color: #4d4f55;
-	background-color: #06b6d4;
-	transition-duration: 0.5s;
-	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-/* END OF FOOTER STYLES */
-@media screen and (max-width: 740px) {
+	footer ul {
+		list-style: none;
+		color: gray;
+	}
 	.footer-col {
-		width: 50%;
+		width: 25%;
+	}
+	.footer-col h4 {
+		position: relative;
 		margin-bottom: 30px;
-		text-align: center;
+		font-weight: 400;
+		font-size: 20px;
+		color: #9ca3af;
+		text-transform: capitalize;
 	}
 	.footer-col h4::before {
-		all: unset;
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -6px;
+		background-color: gray;
+		height: 2px;
+		width: 55px;
 	}
-}
-@media screen and (max-width: 555px) {
-	.footer-col {
-		width: 100%;
+	ul li:not(:last-child) {
+		margin-bottom: 8px;
 	}
-}
-
-/* layout for bigger screen */
-@media screen and (min-width: 768px) {
-	/* hide the close buttona and collapse toggle button */
-	body {
-		transition: all ease-in 0.5s;
-	}
-	.toggle_button,
-	.close_button {
-		display: none;
-	}
-}
-
-/* small screen layout for the navbar */
-@media screen and (max-width: 767px) {
-	/* display the close buttona and collapse toggle button */
-	.toggle_button,
-	.close_button {
+	ul li a {
 		display: block;
+		font-size: 19px;
+		text-transform: capitalize;
+		color: white;
+		text-decoration: none;
+		transition: 0.4s;
 	}
-	nav {
-		.nav_links {
-			position: fixed;
-
-			/* absolute position set outside view */
-			top: -100%;
-
-			/* background-color: rgb(242, 241, 238); */
-			background-color: white;
-
-			width: 100%;
-			height: 100%;
-
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-			transition: top 0.4s;
-
-			ul {
-				text-align: center;
-				flex-direction: column;
-				padding: 0;
-			}
-
-			.close_button {
-				position: absolute;
-				top: 3rem;
-				right: 1rem;
-			}
-		}
-
-		/* class added to .nav_links to bring it back to the top */
-		.show_menu {
-			top: 0;
-		}
-	}
-}
-
-/* prevent video from getting too stretched out on ultrawide displays */
-@media screen and (min-width: 3000px) {
-	.slide video {
-		max-width: 1000px;
-		align-self: center;
-	}
-}
-
-/*  */
-/*  */
-/*  */
-
-/*  */
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Riot&display=swap");
-
-/* TWO TYPES OF CODE ARE THERE - BOTH ARE WORKING */
-/* CODE BELOW IS CODED ACCORDING TO BIG SCREEN */
-.display,
-.women_cards {
-	/* outline: auto; */
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	grid-template-rows: 75vh;
-	margin-top: 10px;
-	grid-gap: 0.4rem;
-	padding: 20px;
-
-	.men_hoodie {
-		background-image: url(../Images/hoodies/men_shirt2.webp);
-	}
-	.men_sweatshirt {
-		background-image: url(../Images/sweatshirts/men_shirt.webp);
-	}
-	.men_pants {
-		background-image: url(../Images/pants/men_pant1.webp);
-	}
-	.men_shoes {
-		background-image: url(../Images/shoes/men_shoes1.jpg);
-	}
-	.men_accessories {
-		background-image: url(../Images/accessories/men_bag.webp);
-	}
-	/* -------------------------------------------------------------- */
-	.women_hoodie {
-		background-image: url(../Images/hoodies/White-Hoodie.jpg);
-	}
-	.women_sweatshirt {
-		background-image: url(../Images/sweatshirts/women_shirt.webp);
-	}
-	.women_pants {
-		background-image: url(../Images/pants/men_pant1.webp);
-	}
-	.women_shoes {
-		background-image: url(../Images/shoes/women_shoe.webp);
-	}
-	.women_accessories {
-		background-image: url(../Images/accessories/earings.webp);
+	ul li a:hover {
+		color: gray;
+		padding-left: 2px;
 	}
 
-	div {
-		border: 1px solid black;
-		background-color: aquamarine;
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-
-		h2 {
-			color: black;
+	.links a {
+		display: inline-block;
+		height: 44px;
+		width: 44px;
+		color: white;
+		background-color: #374151;
+		margin: 0 8px 8px 0;
+		text-align: center;
+		line-height: 44px;
+		border-radius: 50%;
+		transition: 0.4s;
+	}
+	.links a:hover {
+		color: #4d4f55;
+		background-color: #06b6d4;
+		transition-duration: 0.5s;
+		box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+	}
+	/* END OF FOOTER STYLES */
+	@media screen and (max-width: 740px) {
+		.footer-col {
+			width: 50%;
+			margin-bottom: 30px;
 			text-align: center;
-			padding: 15px;
-			writing-mode: vertical-rl;
-			transform: rotate(180deg);
-			font-weight: bold;
+		}
+		.footer-col h4::before {
+			all: unset;
 		}
 	}
-}
+	@media screen and (max-width: 555px) {
+		.footer-col {
+			width: 100%;
+		}
+	}
 
-/* 
+	/* layout for bigger screen */
+	@media screen and (min-width: 768px) {
+		/* hide the close buttona and collapse toggle button */
+		body {
+			transition: all ease-in 0.5s;
+		}
+		.toggle_button,
+		.close_button {
+			display: none;
+		}
+	}
+
+	/* small screen layout for the navbar */
+	@media screen and (max-width: 767px) {
+		/* display the close buttona and collapse toggle button */
+		.toggle_button,
+		.close_button {
+			display: block;
+		}
+		nav {
+			.nav_links {
+				position: fixed;
+
+				/* absolute position set outside view */
+				top: -100%;
+
+				/* background-color: rgb(242, 241, 238); */
+				background-color: white;
+
+				width: 100%;
+				height: 100%;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				transition: top 0.4s;
+
+				ul {
+					text-align: center;
+					flex-direction: column;
+					padding: 0;
+				}
+
+				.close_button {
+					position: absolute;
+					top: 3rem;
+					right: 1rem;
+				}
+			}
+
+			/* class added to .nav_links to bring it back to the top */
+			.show_menu {
+				top: 0;
+			}
+		}
+	}
+
+	/* prevent video from getting too stretched out on ultrawide displays */
+	@media screen and (min-width: 3000px) {
+		.slide video {
+			max-width: 1000px;
+			align-self: center;
+		}
+	}
+
+	/*  */
+	/*  */
+	/*  */
+
+	/*  */
+
+	@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Riot&display=swap");
+
+	/* TWO TYPES OF CODE ARE THERE - BOTH ARE WORKING */
+	/* CODE BELOW IS CODED ACCORDING TO BIG SCREEN */
+	.display,
+	.women_cards {
+		/* outline: auto; */
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: 75vh;
+		margin-top: 10px;
+		grid-gap: 0.4rem;
+		padding: 20px;
+
+		.men_hoodie {
+			background-image: url(../Images/hoodies/men_shirt2.webp);
+		}
+		.men_sweatshirt {
+			background-image: url(../Images/sweatshirts/men_shirt.webp);
+		}
+		.men_pants {
+			background-image: url(../Images/pants/men_pant1.webp);
+		}
+		.men_shoes {
+			background-image: url(../Images/shoes/men_shoes1.jpg);
+		}
+		.men_accessories {
+			background-image: url(../Images/accessories/men_bag.webp);
+		}
+		/* -------------------------------------------------------------- */
+		.women_hoodie {
+			background-image: url(../Images/women/women-pink-hoodie.jpg);
+		}
+		.women_sweatshirt {
+			background-image: url(../Images/women/women-olive-hoodie.jpg);
+		}
+		.women_pants {
+			background-image: url(../Images/women/women-trouser-1.jpg);
+		}
+		.women_shoes {
+			background-image: url(../Images/shoes/women_shoe.webp);
+		}
+		.women_accessories {
+			background-image: url(../Images/accessories/earings.webp);
+		}
+
+		div {
+			border: 1px solid black;
+			background-color: aquamarine;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			h2 {
+				color: black;
+				text-align: center;
+				padding: 15px;
+				writing-mode: vertical-rl;
+				transform: rotate(180deg);
+				font-weight: bold;
+			}
+		}
+	}
+
+	/* 
 .paralax-container {
   outline: auto;
   display: flex;
@@ -725,30 +728,30 @@ ul li a:hover {
   text-align: center;
 } */
 
-/*  */
-@media screen and (max-width: 767px) {
-	.display,
-	.women_cards {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+	/*  */
+	@media screen and (max-width: 767px) {
+		.display,
+		.women_cards {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
 
-		div h2 {
-			padding: 15px;
-			text-align: left;
-			writing-mode: unset;
-			transform: none;
+			div h2 {
+				padding: 15px;
+				text-align: left;
+				writing-mode: unset;
+				transform: none;
+			}
+		}
+		.paralax-header .paralax-content {
+			width: auto;
+			right: 20px;
+			left: 20px;
 		}
 	}
-	.paralax-header .paralax-content {
-		width: auto;
-		right: 20px;
-		left: 20px;
-	}
-}
 
-/* CODE BELOW IS CODED ACCORDING TO SMALL SCREEN */
-/* .display{
+	/* CODE BELOW IS CODED ACCORDING TO SMALL SCREEN */
+	/* .display{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
@@ -783,7 +786,7 @@ div h2{
 }
 } */
 
-/* 
+	/* 
     .paralax-wrap {
       height: 100vh;
       overflow-y: auto;
@@ -840,65 +843,66 @@ div h2{
 
 */
 
-@keyframes slide {
-	from {
-		transform: translateX(0);
-	}
-	to {
-		transform: translateX(-100%);
-	}
-}
-
-/* Styles of sliding images */
-
-.sliding-images {
-	overflow: hidden;
-	padding: 40px 0;
-	background: white;
-	white-space: nowrap;
-	position: relative;
-
-	.slide {
-		display: inline-block;
-		animation: 40s slide infinite linear;
+	@keyframes slide {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-100%);
+		}
 	}
 
-	.slide img {
-		height: 150px;
-		margin: 0 40px;
+	/* Styles of sliding images */
+
+	.sliding-images {
+		overflow: hidden;
+		padding: 40px 0;
+		background: white;
+		white-space: nowrap;
+		position: relative;
+
+		.slide {
+			display: inline-block;
+			animation: 40s slide infinite linear;
+		}
+
+		.slide img {
+			height: 150px;
+			margin: 0 40px;
+		}
 	}
-}
 
-.sliding-images:before,
-.sliding-imagess:after {
-	position: absolute;
-	top: 0;
-	width: 400px;
-	height: 150%;
-	content: "";
-	z-index: 2;
-}
+	.sliding-images:before,
+	.sliding-imagess:after {
+		position: absolute;
+		top: 0;
+		width: 400px;
+		height: 150%;
+		content: "";
+		z-index: 2;
+	}
 
-.sliding-images:before {
-	left: 0;
-	background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
-}
+	.sliding-images:before {
+		left: 0;
+		background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+	}
 
-.sliding-images:after {
-	right: 0;
-	background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
-}
+	.sliding-images:after {
+		right: 0;
+		background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+	}
 
-.sliding-images:hover .slide {
-	animation-play-state: paused;
-}
+	.sliding-images:hover .slide {
+		animation-play-state: paused;
+	}
 
-/* Men and Women Cards */
-.typeCard {
-	cursor: pointer;
-	transition: opacity 0.3s ease-in-out;
-}
+	/* Men and Women Cards */
+	.typeCard {
+		cursor: pointer;
+		transition: opacity 0.3s ease-in-out;
+	}
 
-.typeCard:hover {
-	opacity: 0.5;
+	.typeCard:hover {
+		opacity: 0.5;
+	}
 }
