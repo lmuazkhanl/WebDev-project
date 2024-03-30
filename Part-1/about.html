@@ -1,123 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>About Us</title>
-		<link rel="stylesheet" href="./CSS/about.css" />
-	</head>
-	<body>
-		<header>
-			<nav>
-				<!-- logo is a link that will refresh the page-->
-				<a href="index.html"
-					><img src="images/logo.png" alt="CLOTH logo" class="logo_img"
-				/></a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="CSS/mystyle.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <!-- logo is a link that will refresh the page-->
+                <a href="index.html"><img src="images/logo.png" alt="CLOTH logo" class="logo_img" /></a>
 
-				<!-- nav menu contains links and close icon -->
-				<div class="nav_links" id="nav_links">
-					<ul>
-						<li><a href="mens_section.html" class="nav_link" id="menSec">Men</a></li>
-						<li>
-							<a href="women_section.html" class="nav_link" id="womenSec">Women</a>
-						</li>
-						<li><a href="about.html" class="nav_link">About</a></li>
-						<li><a href="contact.html" class="nav_link">Contact Us</a></li>
-					</ul>
-				</div>
-				<div class="nav_buttons">
-					<a href="login.html" class="nav_button login_button">
-						<img
-							src="Images/svj/user-round.svg"
-							class="nav_button login_button"
-							alt="login"
-						/>
-					</a>
+                <!-- nav menu contains links and close icon -->
+                <div class="nav_links" id="nav_links">
+                    <ul>
+                        <li><a href="mens_section.html" class="nav_link" id="menSec">Men</a></li>
+                        <li>
+                            <a href="women_section.html" class="nav_link" id="womenSec">Women</a>
+                        </li>
+                        <li><a href="about.html" class="nav_link">About</a></li>
+                        <li><a href="contact.html" class="nav_link">Contact Us</a></li>
+                    </ul>
 
-					<svg
-						class="nav_button toggle_button"
-						id="toggle_button"
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 448 512"
-					>
-						<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-						<path
-							d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
-						/>
-					</svg>
-				</div>
-			</nav>
-		</header>
-		<div class="container">
-			<h1>About Us</h1>
-			<p>
-				At Cloth.com, we're not just a platform; we're your ultimate fashion
-				destination, where style meets convenience. Dive into a world of limitless
-				possibilities, where every click unveils the latest trends and timeless
-				classics alike. Whether you're hunting for the perfect ensemble to elevate
-				your wardrobe or dreaming of showcasing your unique designs to the world,
-				Cloth.com is your one-stop shop.
-			</p>
-			<p>
-				Step into our virtual boutique and discover a treasure trove of high-quality
-				clothing items handpicked to cater to your discerning tastes. From chic
-				streetwear to elegant formal wear, our curated collection ensures that every
-				piece tells a story and makes a statement.
-			</p>
-			<p>
-				But Cloth.com isn't just about what you wear; it's about how you express
-				yourself. It's a vibrant community where fashion enthusiasts, designers, and
-				trendsetters come together to celebrate individuality and creativity. Whether
-				you're a buyer seeking inspiration or a seller ready to unleash your
-				creativity, Cloth.com provides the perfect platform to showcase your style
-				and connect with like-minded fashion aficionados.
-			</p>
-			<p>
-				Join us on this exciting journey as we redefine the fashion landscape, one
-				thread at a time. At Cloth.com, your fashion aspirations come to life
-				effortlessly because we believe that every outfit tells a story, and yours is
-				waiting to be written.
-			</p>
-		</div>
-		<footer>
-			<div class="footer-col">
-				<h4>Products</h4>
-				<ul>
-					<li><a href="mens_section.html">Men</a></li>
-					<li><a href="women_section.html">Women</a></li>
-				</ul>
-			</div>
+                    <img src="Images/svj/x.svg" id="close_button" class="nav_button close_button" alt="x" />
+                </div>
+                <div class="nav_buttons">
+                    <a href="login.html" class="nav_button login_button">
+                        <img src="Images/svj/user-round.svg" class="nav_button login_button" alt="login" />
+                    </a>
 
-			<div class="footer-col">
-				<h4>Company</h4>
-				<ul>
-					<li><a href="about.html">About Us</a></li>
-					<li><a href="about.html">Privacy Policy</a></li>
-					<li><a href="about.html">Delivery Information</a></li>
-				</ul>
-			</div>
+                    <svg class="nav_button toggle_button" id="toggle_button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+                        />
+                    </svg>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <p class="about-text">
+                    At Cloth.com, we offer a wide range of high-quality clothing items for both buyers and sellers. Whether you're looking to buy
+                    trendy outfits or sell your own creations, Cloth.com provides a seamless platform for all your fashion needs.
+                </p>
+            </div>
 
-			<div class="footer-col">
-				<h4>Service</h4>
-				<ul>
-					<li><a href="about.html">FAQs</a></li>
-					<li><a href="contact.html">Contact Us</a></li>
-				</ul>
-			</div>
+            <section class="banner_slideshow">
+                <div class="slide">
+                    <video autoplay muted loop src="videos/about-banner-video.mp4"></video>
+                    <a href="">Learn About Us</a>
+                </div>
+            </section>
+        </main>
+    </body>
+    <footer>
+        <div class="footer-col">
+            <h4>Products</h4>
+            <ul>
+                <li><a href="mens_section.html">Men</a></li>
+                <li><a href="women_section.html">Women</a></li>
+            </ul>
+        </div>
 
-			<div class="footer-col">
-				<h4>Follow Us</h4>
-				<div class="links">
-					<a href="example.com"><i class="fab fa-linkedin-in"></i></a>
-					<a href="example.com"><i class="fab fa-facebook-f"></i></a>
-					<a href="example.com"><i class="fab fa-twitter"></i></a>
-					<a href="example.com"><i class="fab fa-instagram"></i></a>
-				</div>
-			</div>
-		</footer>
-		<script src="js/search.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/shopping-cart.js"></script>
-		<script src="js/login.js"></script>
-	</body>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">Privacy Policy</a></li>
+                <li><a href="about.html">Delivery Information</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Service</h4>
+            <ul>
+                <li><a href="about.html">FAQs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="links">
+                <a href="example.com"><i class="fab fa-linkedin-in"></i></a>
+                <a href="example.com"><i class="fab fa-facebook-f"></i></a>
+                <a href="example.com"><i class="fab fa-twitter"></i></a>
+                <a href="example.com"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/search.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/shopping-cart.js"></script>
+    <script src="js/login.js"></script>
 </html>
