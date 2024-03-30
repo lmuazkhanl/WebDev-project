@@ -53,3 +53,103 @@ searchCloseButton.addEventListener("click", () => {
     searchContainer.classList.add("search_hidden");
   }, 500);
 });*/
+
+// Hoodie section
+document.querySelector(".men_hoodie").addEventListener("click", function (event) {
+    event.preventDefault();
+    var searchQuery = "hoodie";
+    localStorage.setItem("searchQuery", searchQuery);
+
+    const items = JSON.parse(localStorage.getItem("items"));
+    const filteredItems = items.filter((item) => {
+        return (
+            item.gender.toLowerCase() === "male" &&
+            (item.name.toLowerCase().includes(searchQuery) ||
+                item.type.toLowerCase().includes(searchQuery) ||
+                item.material.toLowerCase().includes(searchQuery) ||
+                item.description.toLowerCase().includes(searchQuery))
+        );
+    });
+    localStorage.setItem("filteredItems", JSON.stringify(filteredItems));
+    window.location.href = "searchItems.html";
+});
+
+// Sweatshirt section
+document.querySelector(".men_sweatshirt").addEventListener("click", function (event) {
+    event.preventDefault();
+    var searchQuery = "sweatshirt";
+    localStorage.setItem("searchQuery", searchQuery);
+
+    const items = JSON.parse(localStorage.getItem("items"));
+    const filteredItems = items.filter((item) => {
+        return (
+            item.gender.toLowerCase() === "male" &&
+            (item.name.toLowerCase().includes(searchQuery) ||
+                item.type.toLowerCase().includes(searchQuery) ||
+                item.material.toLowerCase().includes(searchQuery) ||
+                item.description.toLowerCase().includes(searchQuery))
+        );
+    });
+    localStorage.setItem("filteredItems", JSON.stringify(filteredItems));
+    window.location.href = "searchItems.html";
+});
+
+// Pants section
+document.querySelector(".men_pants").addEventListener("click", function (event) {
+    event.preventDefault();
+    var searchQuery = "pant";
+    localStorage.setItem("searchQuery", searchQuery);
+
+    const items = JSON.parse(localStorage.getItem("items"));
+    const filteredItems = items.filter((item) => {
+        return (
+            item.gender.toLowerCase() === "male" &&
+            (item.name.toLowerCase().includes(searchQuery) ||
+                item.type.toLowerCase().includes(searchQuery) ||
+                item.material.toLowerCase().includes(searchQuery) ||
+                item.description.toLowerCase().includes(searchQuery))
+        );
+    });
+    localStorage.setItem("filteredItems", JSON.stringify(filteredItems));
+    window.location.href = "searchItems.html";
+});
+
+// Shoes section
+document.querySelector(".men_shoes").addEventListener("click", function (event) {
+    event.preventDefault();
+    var searchQuery = "shoe";
+    localStorage.setItem("searchQuery", searchQuery);
+
+    const items = JSON.parse(localStorage.getItem("items"));
+    const filteredItems = items.filter((item) => {
+        return (
+            item.gender.toLowerCase() === "male" &&
+            (item.name.toLowerCase().includes(searchQuery) ||
+                item.type.toLowerCase().includes(searchQuery) ||
+                item.material.toLowerCase().includes(searchQuery) ||
+                item.description.toLowerCase().includes(searchQuery))
+        );
+    });
+    localStorage.setItem("filteredItems", JSON.stringify(filteredItems));
+    window.location.href = "searchItems.html";
+});
+
+// Accessories section
+document.querySelector(".men_accessories").addEventListener("click", function (event) {
+    event.preventDefault();
+    var searchQuery = "accessories";
+    localStorage.setItem("searchQuery", searchQuery);
+
+    const items = JSON.parse(localStorage.getItem("items"));
+    const filteredItems = items.filter((item) => {
+        return (
+            item.gender.toLowerCase() === "male" &&
+            (item.name.toLowerCase().includes(searchQuery) ||
+                item.type.toLowerCase().includes(searchQuery) ||
+                item.material.toLowerCase().includes(searchQuery) ||
+                item.description.toLowerCase().includes(searchQuery))
+        );
+    });
+    localStorage.setItem("filteredItems", JSON.stringify(filteredItems));
+    window.location.href = "searchItems.html";
+});
