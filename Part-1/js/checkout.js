@@ -54,6 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
             });
             if (item) {
                 totalCartPrice += item.price * cartItem.quantity;
+                // Decrease the quantity of the item in localStorage
+                var index = items.findIndex(function (item) {
+                    return item.id == cartItem.product_id;
+                });
+                if (index !== -1) {
+                    items[index].quantity -= cartItem.quantity;
+                }
             }
         });
 
