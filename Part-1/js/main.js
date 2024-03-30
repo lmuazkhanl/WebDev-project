@@ -18,27 +18,27 @@ navClose.addEventListener("click", () => {
 // ---- load products data in local storage
 
 const add = document.querySelector("#menSec");
-const addWoman = document.querySelector("#womenSec");
+// const addWoman = document.querySelector("#womenSec");
 
 add.addEventListener("click", loadData);
-addWoman.addEventListener("click", loadData);
+// addWoman.addEventListener("click", loadData);
 
-async function loadData() {
-    const response = await fetch("data/products.json");
-    const usersData = await response.json();
-    localStorage.setItem("products", JSON.stringify(usersData));
-    add.addEventListener("click", loadData);
-    async function loadData() {
-        const response = await fetch("data/items.json");
-        const usersData = await response.json();
-        localStorage.setItem("products", JSON.stringify(usersData));
+// async function loadData() {
+//     const response = await fetch("data/products.json");
+//     const usersData = await response.json();
+//     localStorage.setItem("products", JSON.stringify(usersData));
+//     add.addEventListener("click", loadData);
+//     async function loadData() {
+//         const response = await fetch("data/items.json");
+//         const usersData = await response.json();
+//         localStorage.setItem("products", JSON.stringify(usersData));
 
-        console.log(localStorage.getItem("users"));
-    }
+//         console.log(localStorage.getItem("users"));
+//     }
 
-    loadData();
-    womenSec;
-}
+//     // loadData();
+//     // womenSec;
+// }
 /*
     show and hide the search bar
 

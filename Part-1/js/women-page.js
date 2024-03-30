@@ -1,5 +1,7 @@
 let url = "../data/items.json";
-let listProductHTML = document.querySelector(".product-grid");
+let listProductHTML = document.querySelector(".women-grid");
+// let mainWomanProducts = document.querySelector(".women-grid");
+
 let data = [];
 let localSavedData = [];
 collectData(url);
@@ -57,4 +59,5 @@ function displayingDataInTheGrid(localSavedData){
         }
     }
     listProductHTML.innerHTML = card;
+    // mainWomanProducts.innerHTML = card;
 }

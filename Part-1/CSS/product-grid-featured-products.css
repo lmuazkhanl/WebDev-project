@@ -2,7 +2,7 @@
     background-color: black;
 }
 
-.product-grid {
+.product-grid, .women-grid, .men-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 0.2fr));
     gap: 20px;

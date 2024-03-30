@@ -219,5 +219,89 @@
 			{ "customer": "john", "quantity": 2 },
 			{ "customer": "jane", "quantity": 6 }
 		]
-	}
+	},
+	{
+        "id": 13,
+        "name": "Checked Shirt",
+        "type": "shirt",
+        "price": 39.99,
+        "image": "Images/hoodies/checkedShirt.jpg",
+        "material": "cotton",
+        "gender": "male",
+        "sellername":"Fantasy Traders",
+        "color": "Blue/White",
+        "description": "Casual checked shirt for men, perfect for everyday wear.",
+        "quantity": 70,
+        "purchaseHistory": []
+    },
+    {
+        "id": 14,
+        "name": "Denim Jacket",
+        "type": "jacket",
+        "price": 59.99,
+        "image": "Images/hoodies/denimJacket.webp",
+        "material": "denim",
+        "gender": "male",
+        "sellername": "Fantasy Traders",
+        "color": "Blue",
+        "description": "Stylish denim jacket for men, perfect for cool weather.",
+        "quantity": 50,
+        "purchaseHistory": []
+    },
+    {
+        "id": 15,
+        "name": "Leather Belt",
+        "type": "accessory",
+        "price": 29.99,
+        "image": "Images/accessories/leatherBelt.jpeg",
+        "material": "leather",
+        "gender": "male",
+        "sellername": "Fantasy Traders",
+        "color": "Brown",
+        "description": "Classic leather belt for men, perfect for formal occasions.",
+        "quantity": 40,
+        "purchaseHistory": []
+    },
+    {
+        "id": 23,
+        "name": "Floral Dress",
+        "type": "dress",
+        "price": 49.99,
+        "image": "Images/foralDress.webp",
+        "material": "silk",
+        "gender": "female",
+        "sellername":  "Magic Inc.",
+        "color": "Pink/White",
+        "description": "Beautiful floral dress for women, perfect for summer.",
+        "quantity": 60,
+        "purchaseHistory": []
+    },
+    {
+        "id": 24,
+        "name": "Silver Necklace",
+        "type": "jewelry",
+        "price": 79.99,
+        "image": "Images/accessories/silverNecklace.jpeg",
+        "material": "silver",
+        "gender": "female",
+        "sellername": "Fantasy Traders",
+        "color": "Silver",
+        "description": "Elegant silver necklace for women, perfect for special occasions.",
+        "quantity": 45,
+        "purchaseHistory": []
+    },
+    {
+        "id": 25,
+        "name": "Black Handbag",
+        "type": "bag",
+        "price": 59.99,
+        "image": "Images/accessories/womenBlackBag.jpeg",
+        "material": "leather",
+        "gender": "female",
+        "sellername": "Fantasy Traders",
+        "color": "Black",
+        "description": "Stylish black handbag for women, perfect for everyday use.",
+        "quantity": 55,
+        "purchaseHistory": []
+    }
 ]
