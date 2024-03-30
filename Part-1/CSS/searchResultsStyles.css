@@ -40,6 +40,17 @@ body {
     }
 }
 
+.container .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto; /* Center the grid */
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+}
+
 @media screen and (max-width: 767px) {
     .search-query {
         display: block;
