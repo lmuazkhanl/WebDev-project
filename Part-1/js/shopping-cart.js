@@ -52,12 +52,18 @@ const changeQuantity = (product_id, type) => {
     if (positionItemInCart >= 0) {
         if (type === "plus") {
             carts[positionItemInCart].quantity += 1;
+            spanUpdate();
         } else {
             let valueChange = carts[positionItemInCart].quantity - 1;
+            spanUpdate();
             if (valueChange > 0) {
+                spanUpdate();
                 carts[positionItemInCart].quantity = valueChange;
+                spanUpdate();
             } else {
+                spanUpdate();
                 carts.splice(positionItemInCart, 1);
+                spanUpdate();
             }
         }
         spanUpdate();

@@ -151,6 +151,7 @@ function showPage(pageName) {
 const logOutButton = document.querySelector(".log-out-button");
 logOutButton.addEventListener("click", () => {
     localStorage.removeItem("session");
+    localStorage.removeItem("cart");
     window.location.href = "login.html";
 });
 

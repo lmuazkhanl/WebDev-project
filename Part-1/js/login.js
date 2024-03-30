@@ -10,7 +10,7 @@ loginButton.addEventListener("click", function (event) {
 
     var userType = session.userType;
     if (userType === "customer") {
-        window.location.href = "mens_section.html";
+        window.location.href = "customer-dashboard.html";
     } else if (userType === "seller") {
         window.location.href = "seller-dashboard.html";
     } else if (userType === "admin") {
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // redirect to differnet locations based on the userType
         if (userType === "customer") {
-            window.location.href = "mens_section.html";
+            window.location.href = "customer-dashboard.html";
         } else if (userType === "seller") {
             window.location.href = "seller-dashboard.html";
         } else if (userType === "admin") {

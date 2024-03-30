@@ -1,7 +1,8 @@
+/* Display Cards on the page */
 function displayingDataInTheGrid(localSavedData) {
     let card = "";
     if (localSavedData.length === 0) {
-        card = `<div style="display: flex, justify-contenst:center"><h3>No Data Found</h3> </div>`;
+        card = `<div style="display: flex; justify-content:center;"><h3>No Data Found</h3></div>`;
     } else {
         for (const product of localSavedData) {
             // Filter items based on gender
@@ -18,14 +19,14 @@ function displayingDataInTheGrid(localSavedData) {
                                   <li>
                                       <strong>Size:</strong>
                                       <select class="size-dropdown">
-                                          <option value="Small">Small</option>
+                                            <option value="Small">Small</option>
                                           <option value="Medium">Medium</option>
                                           <option value="Large" selected>Large</option>
                                       </select>
                                   </li>
                                   <li><strong>Material:</strong> ${product.material}</li>
                               </ul>
-                              <button class="add-to-cart-button">Add to Cart</button>
+                              <button class="add-to-cart-button" data-product-id="${product.id}">Add to Cart</button>
                           </div>
                       </div>`;
             }
@@ -33,10 +34,63 @@ function displayingDataInTheGrid(localSavedData) {
     }
     // Append the generated HTML to the grid container
     document.querySelector(".product-grid").innerHTML = card;
+
+    // Add event listeners to the "Add to Cart" buttons
+    const addToCartButtons = document.querySelectorAll(".add-to-cart-button");
+    addToCartButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+            const sessionData = JSON.parse(localStorage.getItem("session"));
+
+            // Check if user is logged in and is a customer
+            if (sessionData && sessionData.userType === "customer" && sessionData.loggedIn) {
+                const productId = this.dataset.productId;
+                const product = findProductById(productId);
+                console.log(product);
+
+                if (product) {
+                    const cartItem = {
+                        product_id: productId,
+                        quantity: 1, // Set initial quantity to 1
+                        price: product.price, // Add the price of the product to the cart
+                    };
+
+                    addToCart(cartItem);
+                    alert("Item added to cart successfully!");
+                } else {
+                    alert("Product not found!");
+                }
+            } else {
+                alert("Please log in as a customer to add items to the cart.");
+            }
+        });
+    });
 }
 
-// Retrieve items data from localStorage
-const items = JSON.parse(localStorage.getItem("items"));
+// Function to find product by ID
+function findProductById(productId) {
+    console.log(productId);
+    const items = JSON.parse(localStorage.getItem("items"));
+    console.log(items);
+    const product = items.find((item) => item.id == productId);
+    console.log(product);
+    return product;
+}
 
-// Call the function to display items in the grid
+// Function to add item to cart
+function addToCart(item) {
+    let carts = JSON.parse(localStorage.getItem("cart")) || [];
+    let existingItemIndex = carts.findIndex((cartItem) => cartItem.product_id === item.product_id);
+
+    if (existingItemIndex !== -1) {
+        carts[existingItemIndex].quantity += 1;
+    } else {
+        carts.push(item);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(carts));
+
+    initApp();
+}
+
+const items = JSON.parse(localStorage.getItem("items")) || [];
 displayingDataInTheGrid(items);
