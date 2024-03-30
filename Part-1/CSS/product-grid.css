@@ -4,51 +4,53 @@
 
 } */
 
-.product-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    transition: background-color 0.3s, transform 0.3s;
-}
 .content {
     width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 3fr;
-	grid-template-rows: auto;
-	grid-template-areas: "aside content";
-	grid-gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    grid-template-areas: "aside content";
+    grid-gap: 1.5rem;
 
-	.sideNav{
-		grid-area: aside;
-		margin: 10px;
-	}
-	.product-grid{
-		grid-area: content;
+    .sideNav {
+        grid-area: aside;
+        margin: 10px;
+    }
+    .product-grid {
+        grid-area: content;
         display: grid;
-        grid-template-columns: repeat(auto-fill, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 20px;
         padding: 20px;
         margin: 0 auto; /* Center the grid */
         align-content: center;
         justify-content: center;
         width: 100%;
-	}
+    }
+}
+.product-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    margin-bottom: 10px;
 }
 
 .product-card:hover {
-    background-color: #f0f0f0; /* Light gray background color */
-    transform: translateX(-5px); /* Move the card slightly to the left */
+    background-color: #f0f0f0;
+    transform: translateX(-5px);
 }
 
 .product-card img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
 }
 
 .product-details {
-    margin-top: 20px;
+    padding: 20px;
 }
 
 .product-name {
@@ -86,7 +88,7 @@
 }
 
 .add-to-cart-button {
-    margin-top: auto; /* Align button to the bottom */
+    margin-top: auto;
     background-color: lightgray;
     color: white;
     border: none;
@@ -94,7 +96,6 @@
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s;
-
     width: 100%;
 }
 

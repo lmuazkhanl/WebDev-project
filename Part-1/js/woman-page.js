@@ -1,11 +1,11 @@
 function displayingDataInTheGrid(localSavedData) {
     let card = "";
     if (localSavedData.length === 0) {
-        card = `<div style="display: flex, justify-content:center"><h3>No Data Found</h3> </div>`;
+        card = `<div style="display: flex, justify-contenst:center"><h3>No Data Found</h3> </div>`;
     } else {
         for (const product of localSavedData) {
             // Filter items based on gender
-            if (product.gender === "male") {
+            if (product.gender === "female") {
                 card += `<div class="product-card">
                           <img src="${product.image}" alt="${product.name}" />
                           <div class="product-details">

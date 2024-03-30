@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         localStorage.setItem("searchQuery", searchQuery);
 
-        const items = JSON.parse(localStorage.getItem("items")).items;
+        const items = JSON.parse(localStorage.getItem("items"));
 
         // Filter items based on search query
         const filteredItems = items.filter((item) => {
