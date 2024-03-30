@@ -241,3 +241,40 @@ function generateCustomerList(item) {
 function filterItemsBySeller(items, sellerName) {
     return items.filter((item) => item.sellername === sellerName);
 }
+
+// Calculate the bank account balance of the seller
+
+function calculateSellerBalance(items, sellerName) {
+    console.log(items);
+    let totalEarnings = 0;
+
+    items.forEach((item) => {
+        item.purchaseHistory.forEach((purchase) => {
+            totalEarnings += purchase.quantity * item.price;
+        });
+    });
+
+    return totalEarnings;
+}
+
+const filteredItems = filterItemsBySeller(JSON.parse(localStorage.getItem("items")), sellerName);
+const sellerBalance = calculateSellerBalance(filteredItems, sellerName);
+
+console.log(sellerBalance);
+
+document.querySelector(".seller_Name").innerHTML = `${sellerName} (Balance: $${sellerBalance.toFixed(2)})`;
+
+const usersData = JSON.parse(localStorage.getItem("users"));
+
+const sellerIndex = usersData.sellers.findIndex((seller) => seller.username === sellerName);
+
+if (sellerIndex !== -1) {
+    const filteredItems = filterItemsBySeller(JSON.parse(localStorage.getItem("items")), sellerName);
+    const sellerBalance = calculateSellerBalance(filteredItems, sellerName);
+
+    usersData.sellers[sellerIndex].bank_account.bank_account_balance = sellerBalance;
+
+    localStorage.setItem("users", JSON.stringify(usersData));
+} else {
+    console.error("Seller not found");
+}
