@@ -16,16 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
       <li><strong>Type:</strong> ${item.type}</li>
       <li><strong>Color:</strong> ${item.color}</li>
       <li>
-        <strong>Size:</strong>
-        <select class="size-dropdown">
-              <option value="Small">Small</option>
-              <option value="Medium">Medium</option>
-              <option value="Large" selected>Large</option>
-            </select>
-      </li>
       <li><strong>Material:</strong> ${item.material}</li>
     </ul>
-    <button class="add-to-cart-button">Add to Cart</button>
   </div>
 </div>
 `
