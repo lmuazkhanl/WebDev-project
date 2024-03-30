@@ -1,226 +1,226 @@
 [
-	{
-		"id": 1,
-		"name": "Striped Hoodie",
-		"type": "hoodie",
-		"price": 35.99,
-		"image": "Images/hoodies/men_shirt2.webp",
-		"material": "cotton",
-		"gender": "male",
-		"sellername": "Magic Inc.",
-		"color": "Black/White",
-		"description": "Stylish striped hoodie for men, perfect for casual wear.",
-		"quantity": 80,
-		"purchaseHistory": [
-			{ "customer": "john", "quantity": 2 },
-			{ "customer": "jane", "quantity": 4 }
-		]
-	},
-	{
-		"id": 2,
-		"name": "Black Hoodie",
-		"type": "hoodie",
-		"price": 35.99,
-		"image": "Images/hoodies/Black-Hoodie.jpg",
-		"material": "cotton",
-		"gender": "male",
-		"description": "Stylish black hoodie for men, perfect for casual wear.",
-		"sellername": "Magic Inc.",
-		"color": "Black/White",
-		"quantity": 60,
-		"purchaseHistory": [
-			{ "customer": "john", "quantity": 3 },
-			{ "customer": "jane", "quantity": 2 }
-		]
-	},
-	{
-		"id": 3,
-		"name": "White Hoodie",
-		"type": "hoodie",
-		"price": 35.99,
-		"image": "Images/hoodies/White-Hoodie.jpg",
-		"material": "cotton",
-		"gender": "male",
-		"description": "Stylish white hoodie for men, perfect for casual wear.",
-		"sellername": "Magic Inc.",
-		"color": "White",
-		"quantity": 60,
-		"purchaseHistory": [
-			{ "customer": "john", "quantity": 8 },
-			{ "customer": "jane", "quantity": 4 }
-		]
-	},
-	{
-		"id": 3,
-		"name": "Black Shoes",
-		"type": "Shoes",
-		"price": 85.99,
-		"image": "Images/shoes/women_shoe.webp",
-		"material": "cotton",
-		"gender": "female",
-		"description": "Stylish white hoodie for men, perfect for casual wear.",
-		"sellername": "Magic Inc.",
-		"color": "White",
-		"quantity": 60,
-		"purchaseHistory": [
-			{ "customer": "john", "quantity": 8 },
-			{ "customer": "jane", "quantity": 4 }
-		]
-	},
-	{
-		"id": 4,
-		"name": "Beige Jacket",
-		"type": "jacket",
-		"price": 45,
-		"image": "Images/hoodies/jacket.webp",
-		"material": "leather",
-		"gender": "male",
-		"description": "stylish simple Jacket for those cold nights",
-		"sellername": "Magic Inc.",
-		"color": "Brown",
-		"quantity": 60,
-		"purchaseHistory": [
-			{ "customer": "john", "quantity": 4 },
-			{ "customer": "jane", "quantity": 4 }
-		]
-	},
-	{
-		"id": 5,
-		"name": "Polo",
-		"type": "polo",
-		"price": 40,
-		"image": "Images/hoodies/men_cottonPolo.webp",
-		"material": "cotton",
-		"gender": "male",
-		"description": "stylish simple polo shirt for males",
-		"sellername": "Magic Inc.",
-		"color": "Beige",
-		"quantity": 50,
-		"purchaseHistory": [
-			{ "customer": "john", "quantity": 2 },
-			{ "customer": "jane", "quantity": 1 }
-		]
-	},
-	{
-		"id": 6,
-		"name": "Blue Sweatshirt",
-		"type": "sweatshirt",
-		"price": 42,
-		"image": "Images/hoodies/Man-Pic.jpg",
-		"material": "cotton",
-		"gender": "male",
-		"description": "stylish simple sweatshirt for males",
-		"sellername": "Fantasy Traders",
-		"color": "Blue",
-		"quantity": 50,
-		"purchaseHistory": [
-			{ "customer": "john", "quantity": 3 },
-			{ "customer": "jane", "quantity": 9 }
-		]
-	},
-	{
-		"id": 7,
-		"name": "Beige Sweatshirt",
-		"type": "sweatshirt",
-		"price": 45,
-		"image": "Images/sweatshirts/men_shirt.webp",
-		"material": "cotton",
-		"gender": "male",
-		"description": "stylish simple sweatshirt for males",
-		"sellername": "Fantasy Traders",
-		"color": "Beige",
-		"quantity": 50,
-		"purchaseHistory": [
-			{ "customer": "john", "quantity": 2 },
-			{ "customer": "jane", "quantity": 2 }
-		]
-	},
-	{
-		"id": 8,
-		"name": "Denim Jeans",
-		"type": "pant",
-		"price": 35,
-		"image": "Images/pants/men_pant1.webp",
-		"material": "Denim",
-		"gender": "male",
-		"description": "An option for more casual wear and a classic",
-		"sellername": "Fantasy Traders",
-		"color": "Blue",
-		"quantity": 45,
-		"purchaseHistory": [
-			{ "customer": "john", "quantity": 3 },
-			{ "customer": "jane", "quantity": 2 }
-		]
-	},
-	{
-		"id": 9,
-		"name": "Beige Trouser",
-		"type": "pant",
-		"price": 35,
-		"image": "Images/pants/men_trouser.webp",
-		"material": "cotton",
-		"gender": "male",
-		"description": "Stylish trouser needed for summer to for those beach parties",
-		"sellername": "Fantasy Traders",
-		"color": "Beige",
-		"quantity": 30,
-		"purchaseHistory": [
-			{ "customer": "john", "quantity": 2 },
-			{ "customer": "jane", "quantity": 5 }
-		]
-	},
-	{
-		"id": 10,
-		"name": "Blue Suedes",
-		"type": "shoes",
-		"price": 29.99,
-		"image": "Images/shoes/men_shoes1.jpg",
-		"material": "leather",
-		"gender": "male",
-		"description": "Fine Blue Suedes that can go with any formal dressing",
-		"sellername": "Magic Inc.",
-		"color": "Beige",
-		"quantity": 25,
-		"purchaseHistory": [
-			{ "customer": "john", "quantity": 4 },
-			{ "customer": "jane", "quantity": 5 }
-		]
-	},
-	{
-		"id": 11,
-		"name": "Leather Shoes",
-		"type": "shoes",
-		"price": 29.99,
-		"image": "Images/shoes/men_shoes2.jpg",
-		"material": "leather",
-		"gender": "male",
-		"description": "Fine Leather Shoes for Men for any formal occasion",
-		"sellername": "Fantasy Traders",
-		"color": "Brown",
-		"quantity": 30,
-		"purchaseHistory": [
-			{ "customer": "john", "quantity": 7 },
-			{ "customer": "jane", "quantity": 2 }
-		]
-	},
-	{
-		"id": 12,
-		"name": "Bag Pack",
-		"type": "Bag",
-		"price": 149.99,
-		"image": "/Images/accessories/bag.webp",
-		"material": "Polyester",
-		"gender": "male",
-		"description": "Trendy Bag-pack",
-		"sellername": "Magic Inc.",
-		"color": "Green",
-		"quantity": 10,
-		"purchaseHistory": [
-			{ "customer": "john", "quantity": 2 },
-			{ "customer": "jane", "quantity": 6 }
-		]
-	},
-	{
+    {
+        "id": 1,
+        "name": "Striped Hoodie",
+        "type": "hoodie",
+        "price": 35.99,
+        "image": "Images/hoodies/men_shirt2.webp",
+        "material": "cotton",
+        "gender": "male",
+        "sellername": "Magic Inc.",
+        "color": "Black/White",
+        "description": "Stylish striped hoodie for men, perfect for casual wear.",
+        "quantity": 80,
+        "purchaseHistory": [
+            { "customer": "john", "quantity": 2 },
+            { "customer": "jane", "quantity": 4 }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Black Hoodie",
+        "type": "hoodie",
+        "price": 35.99,
+        "image": "Images/hoodies/Black-Hoodie.jpg",
+        "material": "cotton",
+        "gender": "male",
+        "description": "Stylish black hoodie for men, perfect for casual wear.",
+        "sellername": "Magic Inc.",
+        "color": "Black/White",
+        "quantity": 60,
+        "purchaseHistory": [
+            { "customer": "john", "quantity": 3 },
+            { "customer": "jane", "quantity": 2 }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "White Hoodie",
+        "type": "hoodie",
+        "price": 35.99,
+        "image": "Images/hoodies/White-Hoodie.jpg",
+        "material": "cotton",
+        "gender": "male",
+        "description": "Stylish white hoodie for men, perfect for casual wear.",
+        "sellername": "Magic Inc.",
+        "color": "White",
+        "quantity": 60,
+        "purchaseHistory": [
+            { "customer": "john", "quantity": 8 },
+            { "customer": "jane", "quantity": 4 }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Black Shoes",
+        "type": "Shoes",
+        "price": 85.99,
+        "image": "Images/shoes/women_shoe.webp",
+        "material": "cotton",
+        "gender": "female",
+        "description": "Stylish black shoes for ladies, perfect for casual wear.",
+        "sellername": "Magic Inc.",
+        "color": "White",
+        "quantity": 60,
+        "purchaseHistory": [
+            { "customer": "john", "quantity": 8 },
+            { "customer": "jane", "quantity": 4 }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Beige Jacket",
+        "type": "jacket",
+        "price": 45,
+        "image": "Images/hoodies/jacket.webp",
+        "material": "leather",
+        "gender": "male",
+        "description": "stylish simple Jacket for those cold nights",
+        "sellername": "Magic Inc.",
+        "color": "Brown",
+        "quantity": 60,
+        "purchaseHistory": [
+            { "customer": "john", "quantity": 4 },
+            { "customer": "jane", "quantity": 4 }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Polo",
+        "type": "polo",
+        "price": 40,
+        "image": "Images/hoodies/men_cottonPolo.webp",
+        "material": "cotton",
+        "gender": "male",
+        "description": "stylish simple polo shirt for males",
+        "sellername": "Magic Inc.",
+        "color": "Beige",
+        "quantity": 50,
+        "purchaseHistory": [
+            { "customer": "john", "quantity": 2 },
+            { "customer": "jane", "quantity": 1 }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Blue Sweatshirt",
+        "type": "sweatshirt",
+        "price": 42,
+        "image": "Images/hoodies/Man-Pic.jpg",
+        "material": "cotton",
+        "gender": "male",
+        "description": "stylish simple sweatshirt for males",
+        "sellername": "Fantasy Traders",
+        "color": "Blue",
+        "quantity": 50,
+        "purchaseHistory": [
+            { "customer": "john", "quantity": 3 },
+            { "customer": "jane", "quantity": 9 }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Beige Sweatshirt",
+        "type": "sweatshirt",
+        "price": 45,
+        "image": "Images/sweatshirts/men_shirt.webp",
+        "material": "cotton",
+        "gender": "male",
+        "description": "stylish simple sweatshirt for males",
+        "sellername": "Fantasy Traders",
+        "color": "Beige",
+        "quantity": 50,
+        "purchaseHistory": [
+            { "customer": "john", "quantity": 2 },
+            { "customer": "jane", "quantity": 2 }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Denim Jeans",
+        "type": "pant",
+        "price": 35,
+        "image": "Images/pants/men_pant1.webp",
+        "material": "Denim",
+        "gender": "male",
+        "description": "An option for more casual wear and a classic",
+        "sellername": "Fantasy Traders",
+        "color": "Blue",
+        "quantity": 45,
+        "purchaseHistory": [
+            { "customer": "john", "quantity": 3 },
+            { "customer": "jane", "quantity": 2 }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Beige Trouser",
+        "type": "pant",
+        "price": 35,
+        "image": "Images/pants/men_trouser.webp",
+        "material": "cotton",
+        "gender": "male",
+        "description": "Stylish trouser needed for summer to for those beach parties",
+        "sellername": "Fantasy Traders",
+        "color": "Beige",
+        "quantity": 30,
+        "purchaseHistory": [
+            { "customer": "john", "quantity": 2 },
+            { "customer": "jane", "quantity": 5 }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Blue Suedes",
+        "type": "shoes",
+        "price": 29.99,
+        "image": "Images/shoes/men_shoes1.jpg",
+        "material": "leather",
+        "gender": "male",
+        "description": "Fine Blue Suedes that can go with any formal dressing",
+        "sellername": "Magic Inc.",
+        "color": "Beige",
+        "quantity": 25,
+        "purchaseHistory": [
+            { "customer": "john", "quantity": 4 },
+            { "customer": "jane", "quantity": 5 }
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Leather Shoes",
+        "type": "shoes",
+        "price": 29.99,
+        "image": "Images/shoes/men_shoes2.jpg",
+        "material": "leather",
+        "gender": "male",
+        "description": "Fine Leather Shoes for Men for any formal occasion",
+        "sellername": "Fantasy Traders",
+        "color": "Brown",
+        "quantity": 30,
+        "purchaseHistory": [
+            { "customer": "john", "quantity": 7 },
+            { "customer": "jane", "quantity": 2 }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Bag Pack",
+        "type": "Bag",
+        "price": 149.99,
+        "image": "/Images/accessories/bag.webp",
+        "material": "Polyester",
+        "gender": "male",
+        "description": "Trendy Bag-pack",
+        "sellername": "Magic Inc.",
+        "color": "Green",
+        "quantity": 10,
+        "purchaseHistory": [
+            { "customer": "john", "quantity": 2 },
+            { "customer": "jane", "quantity": 6 }
+        ]
+    },
+    {
         "id": 13,
         "name": "Checked Shirt",
         "type": "shirt",
@@ -228,7 +228,7 @@
         "image": "Images/hoodies/checkedShirt.jpg",
         "material": "cotton",
         "gender": "male",
-        "sellername":"Fantasy Traders",
+        "sellername": "Fantasy Traders",
         "color": "Blue/White",
         "description": "Casual checked shirt for men, perfect for everyday wear.",
         "quantity": 70,
@@ -270,7 +270,7 @@
         "image": "Images/foralDress.webp",
         "material": "silk",
         "gender": "female",
-        "sellername":  "Magic Inc.",
+        "sellername": "Magic Inc.",
         "color": "Pink/White",
         "description": "Beautiful floral dress for women, perfect for summer.",
         "quantity": 60,

@@ -1,3 +1,23 @@
+var loginButton = document.querySelector(".login_button");
+loginButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    console.log("hello");
+
+    var session = JSON.parse(localStorage.getItem("session"));
+    if (!session || !session.loggedIn) {
+        window.location.href = "login.html";
+    }
+
+    var userType = session.userType;
+    if (userType === "customer") {
+        window.location.href = "mens_section.html";
+    } else if (userType === "seller") {
+        window.location.href = "seller-dashboard.html";
+    } else if (userType === "admin") {
+        window.location.href = "searchItems.html";
+    }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     /* change background color in login page based on selectedvalue */
     const loginTypeSelect = document.querySelector("#loginType");
