@@ -217,7 +217,6 @@ h2 {
     display: flex;
     justify-content: center;
     padding: 30px;
-    min-height: 100vh;
 }
 
 .container::before {
