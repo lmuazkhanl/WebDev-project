@@ -236,7 +236,7 @@ body {
                 background-color: #f9f9f9;
                 border-radius: 10px;
                 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-                height: 526px;
+                min-height: 526px;
             }
 
             .sale-history-product-card img {
