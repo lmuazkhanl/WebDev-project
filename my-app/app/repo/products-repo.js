@@ -13,6 +13,14 @@ export default class productsRepo {
         }
         return items;
     }
+    async getProduct(type) {
+        const items = await fs.readJSON(this.path)
+        const index = items.findIndex(item => item.id == type)
+        if (index >= 0) {
+            return items[index]
+        }
+        return "not found";
+    }
     async addProduct(product) {
         const item = await this.getProducts()
         let maxId = 0;
@@ -26,5 +34,16 @@ export default class productsRepo {
         item.push(product)
         await fs.writeJSON(this.path, item)
         return product
+    }
+    async updateProduct(item, itemNo) {
+        const products = await fs.readJson(this.path)
+        const index = products.findIndex(item => item.id == itemNo)
+        // console.log(index);
+        if (index >= 0) {
+            products[index] = { ...products[index], ...item }
+            await fs.writeJson(this.path, products)
+            return "updated successfully"
+        }
+        return "Unable to update account because it does not exist"
     }
 }
