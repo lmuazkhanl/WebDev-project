@@ -1,5 +1,4 @@
 import fs from 'fs-extra'
-// import { nanoid } from 'nanoid'
 import path from 'path'
 
 export default class productsRepo {
@@ -13,5 +12,19 @@ export default class productsRepo {
             return items.filter(item => item.type.toLowerCase() === type.toLowerCase())
         }
         return items;
+    }
+    async addProduct(product) {
+        const item = await this.getProducts()
+        let maxId = 0;
+        item.forEach((item) => {
+            if (item.id > maxId) {
+                maxId = item.id;
+            }
+        });
+        const newId = maxId + 1;
+        product.id = newId;
+        item.push(product)
+        await fs.writeJSON(this.path, item)
+        return product
     }
 }
