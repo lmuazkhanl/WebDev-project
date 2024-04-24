@@ -34,8 +34,8 @@ Table Customer {
   password String [not null]
   name String [not null]
   surname String [not null]
-  shippingAddress String [not null]
-  moneyBalance Int [not null]
+  shipping_address String [not null]
+  money_balance Int [not null]
   Item Item [not null]
   id Int [not null]
 }
@@ -44,8 +44,8 @@ Table Seller {
   sellerId Int [pk, increment]
   username String [not null]
   password String [not null]
-  companyName String [not null]
-  bankAccountBalance Int [not null]
+  company_name String [not null]
+  bank_account_balance Int [not null]
   item Item [not null]
 }
 

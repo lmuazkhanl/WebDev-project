@@ -48,8 +48,8 @@ model Customer {
   password        String
   name            String
   surname         String
-  shippingAddress String
-  moneyBalance    Int
+  shipping_address String
+  money_balance    Int
 
   // item Item[]
 
@@ -61,8 +61,8 @@ model Seller {
   sellerId           Int    @id @default(autoincrement())
   username           String
   password           String
-  companyName        String
-  bankAccountBalance Int
+  company_name        String
+  bank_account_balance Int
 
   item Item[]
 }
