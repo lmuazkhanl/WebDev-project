@@ -1,6 +1,9 @@
 import fs from 'fs-extra'
 import path from 'path'
 
+import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
+
 export default class productsRepo {
     constructor() {
         this.path = path.join(process.cwd(), 'app/data/products.json')
