@@ -10,7 +10,7 @@
         "color": "Black/White",
         "description": "Stylish striped hoodie for men, perfect for casual wear.",
         "quantity": 80,
-        "sellerId": 1
+        "sellername": "Magic Inc."
 
     },
     {
@@ -24,7 +24,7 @@
         "color": "Black/White",
         "description": "Stylish black hoodie for men, perfect for casual wear.",
         "quantity": 60,
-        "sellerId": 3
+        "sellername": "Fantasy Traders"
     },
     {
         "id": 3,
@@ -37,7 +37,7 @@
         "color": "White",
         "description": "Stylish white hoodie for men, perfect for casual wear.",
         "quantity": 60,
-        "sellerId": 5
+        "sellername": "Magic Inc."
     },
     {
         "id": 4,
@@ -50,7 +50,7 @@
         "color": "White",
         "description": "Stylish black shoes for ladies, perfect for casual wear.",
         "quantity": 60,
-        "sellerId": 2
+        "sellername": "Mythical Merchants"
     },
     {
         "id": 5,
@@ -63,7 +63,7 @@
         "color": "Brown",
         "description": "stylish simple Jacket for those cold nights",
         "quantity": 60,
-        "sellerId": 7
+        "sellername": "Fantastical Finds"
     },
     {
         "id": 6,
@@ -76,6 +76,6 @@
         "color": "Beige",
         "description": "stylish simple polo shirt for males",
         "quantity": 50,
-        "sellerId": 8
+        "sellername": "Enchanted Goods"
     }
 ]

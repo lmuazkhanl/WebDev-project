@@ -21,25 +21,25 @@ model Item {
   image       String
   material    String
   gender      String
-  description String
-  sellername  String
   color       String
+  description String
   quantity    Int
-
-  purchaseHistory PurchaseHistory[]
-  Customer        Customer[]
+  // sellername  String
 
   Seller   Seller @relation(fields: [sellerId], references: [sellerId])
   sellerId Int
+
+  purchaseHistory PurchaseHistory[]
 }
 
 model PurchaseHistory {
-  id       Int    @id @default(autoincrement())
-  customer String
-  quantity Int
+  purchaseId       Int    @id @default(autoincrement())
+  quantity         Int
 
-  item   Item @relation(fields: [itemId], references: [id])
-  itemId Int
+  item   Item @relation(fields: [id], references: [id])
+  id Int
+
+  Customer        Customer[]
 }
 
 model Customer {
@@ -51,10 +51,8 @@ model Customer {
   shipping_address String
   money_balance    Int
 
-  // item Item[]
-
-  Item   Item  @relation(fields: [id], references: [id]) 
-  id Int
+  PurchaseHistory PurchaseHistory @relation(fields: [purchaseId], references: [purchaseId]) 
+  purchaseId             Int
 }
 
 model Seller {

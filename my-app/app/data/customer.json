@@ -6,7 +6,8 @@
         "name": "John",
         "surname": "Doe",
         "shipping_address": "123 Glitter St",
-        "money_balance": 1000
+        "money_balance": 1000,
+        "purchaseId": 1
     },
     {
         "customerId": 2,
@@ -15,7 +16,8 @@
         "name": "Jane",
         "surname": "Smith",
         "shipping_address": "456 Sunshine Ave",
-        "money_balance": 1500
+        "money_balance": 1500,
+        "purchaseId": 3
     },
     {
         "customerId": 3,
@@ -24,7 +26,8 @@
         "name": "Alice",
         "surname": "Johnson",
         "shipping_address": "789 Rainbow Rd",
-        "money_balance": 1200
+        "money_balance": 1200,
+        "purchaseId": 3
     },
     {
         "customerId": 4,
@@ -33,7 +36,8 @@
         "name": "Bob",
         "surname": "Brown",
         "shipping_address": "1010 Cloud Blvd",
-        "money_balance": 2000
+        "money_balance": 2000,
+        "purchaseId": 1
     },
     {
         "customerId": 5,
@@ -42,7 +46,8 @@
         "name": "Carol",
         "surname": "Williams",
         "shipping_address": "1111 Star St",
-        "money_balance": 800
+        "money_balance": 800,
+        "purchaseId": 2
     },
     {
         "customerId": 6,
@@ -51,7 +56,8 @@
         "name": "David",
         "surname": "Davis",
         "shipping_address": "1212 Moon Ave",
-        "money_balance": 3000
+        "money_balance": 3000,
+        "purchaseId": 3
     },
     {
         "customerId": 7,
@@ -60,7 +66,8 @@
         "name": "Emma",
         "surname": "Anderson",
         "shipping_address": "1313 Sun St",
-        "money_balance": 1600
+        "money_balance": 1600,
+        "purchaseId": 2
     },
     {
         "customerId": 8,
@@ -69,7 +76,8 @@
         "name": "Frank",
         "surname": "White",
         "shipping_address": "1414 Cloud Rd",
-        "money_balance": 1900
+        "money_balance": 1900,
+        "purchaseId": 3
     },
     {
         "customerId": 9,
@@ -78,7 +86,8 @@
         "name": "Grace",
         "surname": "Martinez",
         "shipping_address": "1515 Rainbow Blvd",
-        "money_balance": 2200
+        "money_balance": 2200,
+        "purchaseId": 3
     },
     {
         "customerId": 10,
@@ -87,6 +96,7 @@
         "name": "Henry",
         "surname": "Garcia",
         "shipping_address": "1616 Star Rd",
-        "money_balance": 1300
+        "money_balance": 1300,
+        "purchaseId": 2
     }
 ]

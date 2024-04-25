@@ -10,22 +10,20 @@ Table Item {
   image String [not null]
   material String [not null]
   gender String [not null]
-  description String [not null]
-  sellername String [not null]
   color String [not null]
+  description String [not null]
   quantity Int [not null]
-  purchaseHistory PurchaseHistory [not null]
-  Customer Customer [not null]
   Seller Seller [not null]
   sellerId Int [not null]
+  purchaseHistory PurchaseHistory [not null]
 }
 
 Table PurchaseHistory {
-  id Int [pk, increment]
-  customer String [not null]
+  purchaseId Int [pk, increment]
   quantity Int [not null]
   item Item [not null]
-  itemId Int [not null]
+  id Int [not null]
+  Customer Customer [not null]
 }
 
 Table Customer {
@@ -36,8 +34,8 @@ Table Customer {
   surname String [not null]
   shipping_address String [not null]
   money_balance Int [not null]
-  Item Item [not null]
-  id Int [not null]
+  PurchaseHistory PurchaseHistory [not null]
+  purchaseId Int [not null]
 }
 
 Table Seller {
@@ -51,6 +49,6 @@ Table Seller {
 
 Ref: Item.sellerId > Seller.sellerId
 
-Ref: PurchaseHistory.itemId > Item.id
+Ref: PurchaseHistory.id > Item.id
 
-Ref: Customer.id > Item.id
+Ref: Customer.purchaseId > PurchaseHistory.purchaseId
