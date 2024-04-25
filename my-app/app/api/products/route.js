@@ -7,7 +7,7 @@ export async function GET(request) {
     
     const products = await productsRepo.getProducts(type);
 
-    return Response.json({search : products}, { status: 200 })
+    return Response.json(products, { status: 200 })
 }
 
 export async function POST(request) {

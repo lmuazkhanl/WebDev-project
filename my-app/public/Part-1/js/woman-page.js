@@ -5,6 +5,7 @@ function displayingDataInTheGrid(localSavedData) {
         card = `<div style="display: flex; justify-content:center;"><h3>No Data Found</h3></div>`;
     } else {
         for (const product of localSavedData) {
+
             // Filter items based on gender
             if (product.gender === "female") {
                 card += `<div class="product-card">
@@ -66,6 +67,8 @@ function displayingDataInTheGrid(localSavedData) {
     });
 }
 
+// setAccounts(await response.json())
+
 // Function to find product by ID
 function findProductById(productId) {
     console.log(productId);
@@ -91,6 +94,9 @@ function addToCart(item) {
 
     initApp();
 }
-
-const items = JSON.parse(localStorage.getItem("items")) || [];
-displayingDataInTheGrid(items);
+async function call(){
+    const response = await fetch(`http://localhost:3000/api/products`)
+    const items = await response.json()
+    displayingDataInTheGrid(items);
+}
+call()
