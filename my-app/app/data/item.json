@@ -283,7 +283,7 @@
 		"color": "Olive Green",
 		"description": "Stylish olive colored hoodie for women, perfect for winters.",
 		"quantity": 55,
-		"sellerId": 6
+		"sellerId": 5
 	},
 	{
 		"id": 23,
@@ -296,7 +296,7 @@
 		"color": "Orange",
 		"description": "Stylish orange hoodie for women, perfect for winters.",
 		"quantity": 55,
-		"sellerId": 7
+		"sellerId": 2
 	},
 	{
 		"id": 24,
@@ -309,7 +309,7 @@
 		"color": "Blue",
 		"description": "An option for more casual wear and a classic",
 		"quantity": 65,
-		"sellerId": 8
+		"sellerId": 2
 	},
 	{
 		"id": 25,
@@ -323,5 +323,200 @@
 		"description": "An option for more casual wear and a classic",
 		"quantity": 65,
 		"sellerId": 1
+	},
+	{
+		"id": 26,
+		"name": "Black Shoes",
+		"type": "Shoes",
+		"price": 85.99,
+		"image": "Images/shoes/women_shoe1.webp",
+		"material": "leather",
+		"gender": "female",
+		"description": "Stylish black shoes for ladies, perfect for casual wear.",
+		"color": "White",
+		"quantity": 60,
+		"sellerId": 4
+	},
+	{
+		"id": 27,
+		"name": "Grey Sweatshirt",
+		"type": "sweatshirt",
+		"price": 42,
+		"image": "Images/sweatshirts/women_shirt.webp",
+		"material": "cotton",
+		"gender": "female",
+		"description": "stylish simple sweatshirt for females",
+		"color": "Grey",
+		"quantity": 50,
+		"sellerId": 7
+	},
+	{
+		"id": 28,
+		"name": "light brown Sweatshirt",
+		"type": "sweatshirt",
+		"price": 42,
+		"image": "Images/sweatshirts/men_shirt3.webp",
+		"material": "cotton",
+		"gender": "male",
+		"description": "stylish simple sweatshirt for males",
+		"color": "Light Brown",
+		"quantity": 50,
+		"sellerId": 6
+	},
+	{
+		"id": 29,
+		"name": "Brown Handbag",
+		"type": "bag",
+		"price": 42,
+		"image": "Images/accessories/brown-handbag.jpg",
+		"material": "leather",
+		"gender": "female",
+		"description": "Stylish brown handbag for women, perfect for everyday use.",
+		"color": "Brown",
+		"quantity": 45,
+		"sellerId": 8
+	},
+	{
+		"id": 30,
+		"name": "Chain Necklace",
+		"type": "Necklace",
+		"price": 35,
+		"image": "Images/accessories/accessories-necklace.jpg",
+		"material": "metal",
+		"gender": "female",
+		"description": "Elegant silver necklace for women, perfect for special occasions.",
+		"color": "Silver",
+		"quantity": 60,
+		"sellerId": 4
+	},
+	{
+		"id": 31,
+		"name": "Metal Ring",
+		"type": "Ring",
+		"price": 30,
+		"image": "Images/accessories/accessories-ring-man.jpg",
+		"material": "metal",
+		"gender": "male",
+		"description": "Elegant silver ring for men, perfect for special occasions.",
+		"color": "Silver",
+		"quantity": 60,
+		"sellerId": 1
+	},
+	{
+		"id": 32,
+		"name": "Golden Earing",
+		"type": "Earing",
+		"price": 20,
+		"image": "Images/accessories/earings.webp",
+		"material": "metal",
+		"gender": "female",
+		"description": "Elegant golden earings for women, perfect for special occasions.",
+		"color": "Golden",
+		"quantity": 50,
+		"sellerId": 2
+	},
+	{
+		"id": 33,
+		"name": "small side bag",
+		"type": "bag",
+		"price": 30,
+		"image": "Images/accessories/men_bag.webp",
+		"material": "kevlar",
+		"gender": "male",
+		"description": "Stylish green bag for men, perfect for everyday use.",
+		"color": "Camouflage",
+		"quantity": 45,
+		"sellerId": 4
+	},
+	{
+		"id": 34,
+		"name": "Side Bag",
+		"type": "bag",
+		"price": 30,
+		"image": "Images/accessories/side_bag.webp",
+		"material": "kevlar",
+		"gender": "male",
+		"description": "Stylish brown bag for men, perfect for everyday use.",
+		"color": "Brown",
+		"quantity": 45,
+		"sellerId": 3
+	},
+	{
+		"id": 35,
+		"name": "Sport Shoes",
+		"type": "Shoes",
+		"price": 85.99,
+		"image": "Images/shoes/male-sportsshoes.jpg",
+		"material": "cotton",
+		"gender": "male",
+		"description": "stylish simple shoes for males for sports",
+		"color": "White",
+		"quantity": 55,
+		"sellerId": 8
+	},
+	{
+		"id": 36,
+		"name": "Red Sport Shoes",
+		"type": "Shoes",
+		"price": 85.99,
+		"image": "Images/shoes/red-sports-shoes.jpg",
+		"material": "cotton",
+		"gender": "male",
+		"description": "stylish Red shoes for males for sports",
+		"color": "Red",
+		"quantity": 55,
+		"sellerId": 5
+	},
+	{
+		"id": 37,
+		"name": "High Top Shoes",
+		"type": "Shoes",
+		"price": 85.99,
+		"image": "Images/shoes/hightop-shoes.jpg",
+		"material": "leather",
+		"gender": "male",
+		"description": "stylish blue and white shoes for males casual wear",
+		"color": "White",
+		"quantity": 55,
+		"sellerId": 3
+	},
+	{
+		"id": 38,
+		"name": "Pink Heels",
+		"type": "Heels",
+		"price": 80,
+		"image": "Images/shoes/pink-heels.jpg",
+		"material": "leather",
+		"gender": "female",
+		"description": "stylish pink heels for females for parties",
+		"color": "Pink",
+		"quantity": 60,
+		"sellerId": 2
+	},
+	{
+		"id": 39,
+		"name": "Black Heels",
+		"type": "Heels",
+		"price": 80,
+		"image": "Images/shoes/black-heels.jpg",
+		"material": "leather",
+		"gender": "female",
+		"description": "stylish black heels for females for parties",
+		"color": "Black",
+		"quantity": 60,
+		"sellerId": 5
+	},
+	{
+		"id": 40,
+		"name": "Golden Heels",
+		"type": "Heels",
+		"price": 80,
+		"image": "Images/shoes/golden-heels.jpg",
+		"material": "leather",
+		"gender": "female",
+		"description": "stylish golden heels for females for parties",
+		"color": "Pink",
+		"quantity": 60,
+		"sellerId": 6
 	}
 ]
