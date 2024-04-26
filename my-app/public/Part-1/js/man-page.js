@@ -1,34 +1,47 @@
-/* Display Cards on the page */
-function displayingDataInTheGrid(localSavedData) {
+// Function to fetch data from API
+async function fetchDataFromAPI() {
+    try {
+        const response = await fetch("http://localhost:3000/api/products");
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        return [];
+    }
+}
+
+// Display Cards on the page
+async function displayingDataInTheGrid() {
+    const data = await fetchDataFromAPI();
     let card = "";
-    if (localSavedData.length === 0) {
+    if (data.length === 0) {
         card = `<div style="display: flex; justify-content:center;"><h3>No Data Found</h3></div>`;
     } else {
-        for (const product of localSavedData) {
+        for (const product of data) {
             // Filter items based on gender
             if (product.gender === "male") {
                 card += `<div class="product-card">
-                          <img src="${product.image}" alt="${product.name}" />
-                          <div class="product-details">
-                              <h2 class="product-name">${product.name}</h2>
-                              <p class="price">$ ${product.price}</p>
-                              <p class="description">${product.description}</p>
-                              <ul class="attributes">
-                                  <li><strong>Gender:</strong> ${product.gender}</li>
-                                  <li><strong>Type:</strong> ${product.type}</li>
-                                  <li>
-                                      <strong>Size:</strong>
-                                      <select class="size-dropdown">
-                                            <option value="Small">Small</option>
-                                          <option value="Medium">Medium</option>
-                                          <option value="Large" selected>Large</option>
-                                      </select>
-                                  </li>
-                                  <li><strong>Material:</strong> ${product.material}</li>
-                              </ul>
-                              <button class="add-to-cart-button" data-product-id="${product.id}">Add to Cart</button>
-                          </div>
-                      </div>`;
+                    <img src="${product.image}" alt="${product.name}" />
+                    <div class="product-details">
+                        <h2 class="product-name">${product.name}</h2>
+                        <p class="price">$ ${product.price}</p>
+                        <p class="description">${product.description}</p>
+                        <ul class="attributes">
+                            <li><strong>Gender:</strong> ${product.gender}</li>
+                            <li><strong>Type:</strong> ${product.type}</li>
+                            <li>
+                                <strong>Size:</strong>
+                                <select class="size-dropdown">
+                                      <option value="Small">Small</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Large" selected>Large</option>
+                                </select>
+                            </li>
+                            <li><strong>Material:</strong> ${product.material}</li>
+                        </ul>
+                        <button class="add-to-cart-button" data-product-id="${product.id}">Add to Cart</button>
+                    </div>
+                </div>`;
             }
         }
     }
@@ -39,40 +52,29 @@ function displayingDataInTheGrid(localSavedData) {
     const addToCartButtons = document.querySelectorAll(".add-to-cart-button");
     addToCartButtons.forEach((button) => {
         button.addEventListener("click", function () {
-            const sessionData = JSON.parse(localStorage.getItem("session"));
+            const productId = this.dataset.productId;
+            const product = findProductById(productId);
 
-            // Check if user is logged in and is a customer
-            if (sessionData && sessionData.userType === "customer" && sessionData.loggedIn) {
-                const productId = this.dataset.productId;
-                const product = findProductById(productId);
-                console.log(product);
+            if (product) {
+                const cartItem = {
+                    product_id: productId,
+                    quantity: 1, // Set initial quantity to 1
+                    price: product.price, // Add the price of the product to the cart
+                };
 
-                if (product) {
-                    const cartItem = {
-                        product_id: productId,
-                        quantity: 1, // Set initial quantity to 1
-                        price: product.price, // Add the price of the product to the cart
-                    };
-
-                    addToCart(cartItem);
-                    alert("Item added to cart successfully!");
-                } else {
-                    alert("Product not found!");
-                }
+                addToCart(cartItem);
+                alert("Item added to cart successfully!");
             } else {
-                alert("Please log in as a customer to add items to the cart.");
+                alert("Product not found!");
             }
         });
     });
 }
 
 // Function to find product by ID
-function findProductById(productId) {
-    console.log(productId);
-    const items = JSON.parse(localStorage.getItem("items"));
-    console.log(items);
-    const product = items.find((item) => item.id == productId);
-    console.log(product);
+async function findProductById(productId) {
+    const data = await fetchDataFromAPI();
+    const product = data.find((item) => item.id == productId);
     return product;
 }
 
@@ -92,5 +94,4 @@ function addToCart(item) {
     initApp();
 }
 
-const items = JSON.parse(localStorage.getItem("items")) || [];
-displayingDataInTheGrid(items);
+displayingDataInTheGrid();
