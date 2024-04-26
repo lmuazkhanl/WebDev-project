@@ -1,8 +1,8 @@
 import fs from 'fs-extra'
 import path from 'path'
 import { PrismaClient } from '@prisma/client'
-
 const prisma = new PrismaClient()
+
 const sellersPath = path.join(process.cwd(), 'app/data/seller.json')
 const itemsPath = path.join(process.cwd(), 'app/data/item.json')
 const purchasePath = path.join(process.cwd(), 'app/data/purchase.json')

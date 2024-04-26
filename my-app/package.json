@@ -19,5 +19,5 @@
     "prisma": "^5.13.0",
     "prisma-dbml-generator": "^0.10.0"
   },
-  "type": "module"
+  "type":"module"
 }

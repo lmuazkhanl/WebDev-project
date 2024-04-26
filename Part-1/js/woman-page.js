@@ -1,5 +1,6 @@
 /* Display Cards on the page */
 function displayingDataInTheGrid(localSavedData) {
+    alert(items)
     let card = "";
     if (localSavedData.length === 0) {
         card = `<div style="display: flex; justify-content:center;"><h3>No Data Found</h3></div>`;
@@ -92,5 +93,12 @@ function addToCart(item) {
     initApp();
 }
 
-const items = JSON.parse(localStorage.getItem("items")) || [];
-displayingDataInTheGrid(items);
+// const items = JSON.parse(localStorage.getItem("items")) || [];
+// displayingDataInTheGrid(items);
+async function hi(){
+    const response = await fetch(`http://localhost:3000/api/products`)
+    const items = await response.json()
+    console.log(items)
+    displayingDataInTheGrid(items);
+}
+hi()

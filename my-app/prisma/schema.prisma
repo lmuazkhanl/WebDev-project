@@ -13,6 +13,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+
+model Seller {
+  sellerId           Int    @id @default(autoincrement())
+  username           String
+  password           String
+  company_name        String
+  bank_account_balance Int
+
+  Item Item[]
+}
+
 model Item {
   id          Int    @id @default(autoincrement())
   name        String
@@ -24,19 +35,18 @@ model Item {
   color       String
   description String
   quantity    Int
-  // sellername  String
 
   Seller   Seller @relation(fields: [sellerId], references: [sellerId])
   sellerId Int
 
-  purchaseHistory PurchaseHistory[]
+  PurchaseHistory PurchaseHistory[]
 }
 
 model PurchaseHistory {
   purchaseId       Int    @id @default(autoincrement())
   quantity         Int
 
-  item   Item @relation(fields: [id], references: [id])
+  Item   Item @relation(fields: [id], references: [id])
   id Int
 
   Customer        Customer[]
@@ -52,15 +62,5 @@ model Customer {
   money_balance    Int
 
   PurchaseHistory PurchaseHistory @relation(fields: [purchaseId], references: [purchaseId]) 
-  purchaseId             Int
-}
-
-model Seller {
-  sellerId           Int    @id @default(autoincrement())
-  username           String
-  password           String
-  company_name        String
-  bank_account_balance Int
-
-  item Item[]
+  purchaseId       Int
 }

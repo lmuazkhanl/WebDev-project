@@ -2,6 +2,15 @@
 //// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 //// ------------------------------------------------------
 
+Table Seller {
+  sellerId Int [pk, increment]
+  username String [not null]
+  password String [not null]
+  company_name String [not null]
+  bank_account_balance Int [not null]
+  Item Item [not null]
+}
+
 Table Item {
   id Int [pk, increment]
   name String [not null]
@@ -15,13 +24,13 @@ Table Item {
   quantity Int [not null]
   Seller Seller [not null]
   sellerId Int [not null]
-  purchaseHistory PurchaseHistory [not null]
+  PurchaseHistory PurchaseHistory [not null]
 }
 
 Table PurchaseHistory {
   purchaseId Int [pk, increment]
   quantity Int [not null]
-  item Item [not null]
+  Item Item [not null]
   id Int [not null]
   Customer Customer [not null]
 }
@@ -36,15 +45,6 @@ Table Customer {
   money_balance Int [not null]
   PurchaseHistory PurchaseHistory [not null]
   purchaseId Int [not null]
-}
-
-Table Seller {
-  sellerId Int [pk, increment]
-  username String [not null]
-  password String [not null]
-  company_name String [not null]
-  bank_account_balance Int [not null]
-  item Item [not null]
 }
 
 Ref: Item.sellerId > Seller.sellerId
