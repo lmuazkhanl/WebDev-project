@@ -13,12 +13,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model Seller {
-  sellerId           Int    @id @default(autoincrement())
-  username           String
-  password           String
-  company_name        String
+  sellerId             Int    @id @default(autoincrement())
+  username             String
+  password             String
+  company_name         String
   bank_account_balance Int
 
   Item Item[]
@@ -43,24 +42,25 @@ model Item {
 }
 
 model PurchaseHistory {
-  purchaseId       Int    @id @default(autoincrement())
-  quantity         Int
+  purchaseId   Int      @id @default(autoincrement())
+  quantity     Int
+  purchaseDate DateTime @default(now())
 
-  Item   Item @relation(fields: [id], references: [id])
-  id Int
+  Item Item @relation(fields: [id], references: [id])
+  id   Int
 
-  Customer        Customer[]
+  Customer Customer[]
 }
 
 model Customer {
-  customerId      Int    @id @default(autoincrement())
-  username        String
-  password        String
-  name            String
-  surname         String
+  customerId       Int    @id @default(autoincrement())
+  username         String
+  password         String
+  name             String
+  surname          String
   shipping_address String
   money_balance    Int
 
-  PurchaseHistory PurchaseHistory @relation(fields: [purchaseId], references: [purchaseId]) 
-  purchaseId       Int
+  PurchaseHistory PurchaseHistory @relation(fields: [purchaseId], references: [purchaseId])
+  purchaseId      Int
 }

@@ -30,6 +30,7 @@ Table Item {
 Table PurchaseHistory {
   purchaseId Int [pk, increment]
   quantity Int [not null]
+  purchaseDate DateTime [default: `now()`, not null]
   Item Item [not null]
   id Int [not null]
   Customer Customer [not null]
