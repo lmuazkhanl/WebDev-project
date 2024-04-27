@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import SuccessfulSellers from "./Statistics-Components/SuccessfulSellers";
 import MostPopularProducts from "./Statistics-Components/MostPopularProducts";
+import ProductTypes from "./Statistics-Components/ProductType";
 /* import './global.css' */
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
     <>
     <SuccessfulSellers/>
     <hr />
-    <MostPopularProducts/>
+    <ProductTypes />
     </>
   );
 }

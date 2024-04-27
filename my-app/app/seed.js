@@ -17,8 +17,8 @@ async function main() {
 
         for (const seller of sellers) await prisma.seller.create({ data: seller });
         for (const item of items) await prisma.item.create({ data: item });
-        for (const purchase of purchases) await prisma.purchase.create({ data: purchase });
         for (const customer of customers) await prisma.customer.create({ data: customer });
+        for (const purchase of purchases) await prisma.purchase.create({ data: purchase });
     } catch (error) {
         console.log(error);
         return { error: error.message };

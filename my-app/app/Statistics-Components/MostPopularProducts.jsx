@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import styles from "./MostPopularProducts.module.css";
+import styles from "./ProductType.module.css";
 
 const MostPopularProducts = () => {
   const [popularProducts, setPopularProducts] = useState([]);

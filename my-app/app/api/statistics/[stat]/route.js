@@ -9,8 +9,12 @@ export async function GET(request, { params }) {
 
     if (requestedStat === "most-successful-sellers") {
         data = await getMostSuccessfulSellers();
-    } else if (requestedStat === "most-popular-products") {
+    } /* else if (requestedStat === "most-popular-products") {
         data = await getMostPopularProducts();
+    }  */ else if (requestedStat === "product-types") {
+        data = await getProductTypes();
+    } else if (requestedStat === "top-customers") {
+        data = await getTopCustomers();
     }
 
     return Response.json(data, {
@@ -40,7 +44,7 @@ async function getMostSuccessfulSellers() {
     }));
 }
 
-async function getMostPopularProducts() {
+/* async function getMostPopularProducts() {
     const mostPopularProducts = await prisma.item.findMany({
         orderBy: {
             PurchaseHistory: {
@@ -68,7 +72,76 @@ async function getMostPopularProducts() {
         quantitySold: product.PurchaseHistory.reduce((total, purchase) => total + purchase.quantity, 0),
         moneyMade: product.PurchaseHistory.reduce((total, purchase) => total + purchase.quantity * product.price, 0),
     }));
+} */
+
+async function getProductTypes() {
+    const neverPurchasedTypes = await prisma.item.findMany({
+        where: {
+            Purchase: {
+                none: {},
+            },
+        },
+        select: {
+            type: true,
+        },
+        distinct: ["type"],
+    });
+
+    const popularProductTypes = await prisma.item.findMany({
+        orderBy: {
+            Purchase: {
+                _count: "desc",
+            },
+        },
+        take: 5,
+        select: {
+            type: true,
+            Purchase: {
+                select: {
+                    _count: true,
+                },
+            },
+        },
+    });
+
+    const formattedPopularProductTypes = popularProductTypes.map((product) => ({
+        name: product.type,
+        purchaseCount: product.Purchase._count,
+    }));
+
+    return {
+        neverPurchasedTypes: neverPurchasedTypes.map((item) => item.type),
+        popularProductTypes: formattedPopularProductTypes,
+    };
 }
 
-const date = await getMostPopularProducts();
-console.log(date);
+async function getTopCustomers() {
+    const topCustomers = await prisma.customer.findMany({
+        orderBy: {
+            Purchase: {
+                _count: "desc",
+            },
+        },
+        take: 5,
+        select: {
+            name: true,
+            surname: true,
+            Purchase: {
+                select: {
+                    _count: true,
+                    Item: {
+                        select: {
+                            price: true,
+                        },
+                    },
+                },
+            },
+        },
+    });
+
+    return topCustomers.map((customer) => ({
+        name: `${customer.name} ${customer.surname}`,
+        purchaseCount: customer.Purchase._count,
+        totalSpent: customer.Purchase.reduce((total, purchase) => total + purchase.Item.reduce((sum, item) => sum + item.price, 0), 0),
+    }));
+}
