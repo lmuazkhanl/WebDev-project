@@ -139,7 +139,7 @@
 		"gender": "male",
 		"description": "Fine Blue Suedes that can go with any formal dressing",
 		"color": "Beige",
-		"quantity": 25,
+		"quantity": 30,
 		"sellerId": 3
 	},
 	{
@@ -503,7 +503,7 @@
 		"gender": "female",
 		"description": "stylish black heels for females for parties",
 		"color": "Black",
-		"quantity": 60,
+		"quantity": 50,
 		"sellerId": 5
 	},
 	{
@@ -516,7 +516,7 @@
 		"gender": "female",
 		"description": "stylish golden heels for females for parties",
 		"color": "Pink",
-		"quantity": 60,
+		"quantity": 70,
 		"sellerId": 6
 	}
 ]

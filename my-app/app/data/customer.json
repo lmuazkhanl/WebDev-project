@@ -6,8 +6,7 @@
 		"name": "John",
 		"surname": "Doe",
 		"shipping_address": "123 Glitter St",
-		"money_balance": 1000,
-		"purchaseId": 1
+		"money_balance": 3000
 	},
 	{
 		"customerId": 2,
@@ -16,8 +15,7 @@
 		"name": "Jane",
 		"surname": "Smith",
 		"shipping_address": "456 Sunshine Ave",
-		"money_balance": 1500,
-		"purchaseId": 2
+		"money_balance": 3000
 	},
 	{
 		"customerId": 3,
@@ -26,8 +24,7 @@
 		"name": "Alice",
 		"surname": "Johnson",
 		"shipping_address": "789 Rainbow Rd",
-		"money_balance": 1200,
-		"purchaseId": 3
+		"money_balance": 3000
 	},
 	{
 		"customerId": 4,
@@ -36,8 +33,7 @@
 		"name": "Bob",
 		"surname": "Brown",
 		"shipping_address": "1010 Cloud Blvd",
-		"money_balance": 2000,
-		"purchaseId": 4
+		"money_balance": 2000
 	},
 	{
 		"customerId": 5,
@@ -46,8 +42,7 @@
 		"name": "Carol",
 		"surname": "Williams",
 		"shipping_address": "1111 Star St",
-		"money_balance": 800,
-		"purchaseId": 5
+		"money_balance": 3000
 	},
 	{
 		"customerId": 6,
@@ -56,8 +51,7 @@
 		"name": "David",
 		"surname": "Davis",
 		"shipping_address": "1212 Moon Ave",
-		"money_balance": 3000,
-		"purchaseId": 6
+		"money_balance": 3000
 	},
 	{
 		"customerId": 7,
@@ -66,8 +60,7 @@
 		"name": "Emma",
 		"surname": "Anderson",
 		"shipping_address": "1313 Sun St",
-		"money_balance": 1600,
-		"purchaseId": 7
+		"money_balance": 3000
 	},
 	{
 		"customerId": 8,
@@ -76,8 +69,7 @@
 		"name": "Frank",
 		"surname": "White",
 		"shipping_address": "1414 Cloud Rd",
-		"money_balance": 1900,
-		"purchaseId": 8
+		"money_balance": 1900
 	},
 	{
 		"customerId": 9,
@@ -86,18 +78,16 @@
 		"name": "Grace",
 		"surname": "Martinez",
 		"shipping_address": "1515 Rainbow Blvd",
-		"money_balance": 2200,
-		"purchaseId": 9
+		"money_balance": 2200
 	},
 	{
 		"customerId": 10,
-		"username": "henry",
-		"password": "henry123",
-		"name": "Henry",
-		"surname": "Garcia",
+		"username": "lia",
+		"password": "lia123",
+		"name": "Lia",
+		"surname": "Thomas",
 		"shipping_address": "1616 Star Rd",
-		"money_balance": 1300,
-		"purchaseId": 10
+		"money_balance": 3500
 	},
 	{
 		"customerId": 11,
@@ -106,8 +96,7 @@
 		"name": "Ryan",
 		"surname": "Gosling",
 		"shipping_address": "1616 Star Rd",
-		"money_balance": 1200,
-		"purchaseId": 11
+		"money_balance": 1200
 	},
 	{
 		"customerId": 12,
@@ -116,8 +105,7 @@
 		"name": "Denzel",
 		"surname": "Washington",
 		"shipping_address": "72 Walnut Avenue",
-		"money_balance": 1300,
-		"purchaseId": 12
+		"money_balance": 1300
 	},
 	{
 		"customerId": 13,
@@ -126,8 +114,7 @@
 		"name": "Leo",
 		"surname": "Mess",
 		"shipping_address": "1000 Spruce Street",
-		"money_balance": 1000,
-		"purchaseId": 13
+		"money_balance": 3800
 	},
 	{
 		"customerId": 14,
@@ -136,8 +123,7 @@
 		"name": "Cristiano",
 		"surname": "Ronaldo",
 		"shipping_address": "123 Main St",
-		"money_balance": 1500,
-		"purchaseId": 14
+		"money_balance": 3000
 	},
 	{
 		"customerId": 15,
@@ -146,8 +132,7 @@
 		"name": "Xabi",
 		"surname": "Alonso",
 		"shipping_address": "1818 Willow Ave",
-		"money_balance": 3500,
-		"purchaseId": 15
+		"money_balance": 3500
 	},
 	{
 		"customerId": 16,
@@ -156,7 +141,42 @@
 		"name": "Frank",
 		"surname": "Lampard",
 		"shipping_address": "188 Street Ave",
-		"money_balance": 900,
-		"purchaseId": 16
+		"money_balance": 5000
+	},
+	{
+		"customerId": 17,
+		"username": "emmy",
+		"password": "watson123",
+		"name": "Emma",
+		"surname": "Watson",
+		"shipping_address": "188 Street Ave",
+		"money_balance": 3200
+	},
+	{
+		"customerId": 18,
+		"username": "aisha",
+		"password": "aisha123",
+		"name": "Aisha",
+		"surname": "Ali",
+		"shipping_address": "188 Street Ave",
+		"money_balance": 1500
+	},
+	{
+		"customerId": 19,
+		"username": "laiba",
+		"password": "laiba123",
+		"name": "Laiba",
+		"surname": "Ahmed",
+		"shipping_address": "188 Street Ave",
+		"money_balance": 4900
+	},
+	{
+		"customerId": 20,
+		"username": "zohra",
+		"password": "zohra123",
+		"name": "Zohra",
+		"surname": "Khan",
+		"shipping_address": "188 Street Ave",
+		"money_balance": 4500
 	}
 ]
