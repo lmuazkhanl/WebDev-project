@@ -4,6 +4,7 @@ import SuccessfulSellers from "./Statistics-Components/SuccessfulSellers";
 import MostPopularProducts from "./Statistics-Components/MostPopularProducts";
 import ProductTypes from "./Statistics-Components/ProductType";
 import SalesOverYears from "./Statistics-Components/SalesOverYears";
+import TopCustomers from "./Statistics-Components/TopCustomers";
 /* import './global.css' */
 
 export default function Home() {
@@ -14,6 +15,8 @@ export default function Home() {
     <SalesOverYears/>
     <hr />
     <MostPopularProducts/>
+    <hr />
+    <TopCustomers/>
     
     </>
   );

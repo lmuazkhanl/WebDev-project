@@ -1,28 +1,27 @@
-"use client";
-
+"use client"
 import React, { useState, useEffect } from "react";
 import styles from "./TopCustomers.module.css";
 
-const TopCustomers = () => {
+function TopCustomers() {
   const [topCustomers, setTopCustomers] = useState([]);
 
   useEffect(() => {
+    async function fetchTopCustomers() {
+      try {
+        const response = await fetch("/api/statistics/top-customers");
+        if (response.ok) {
+          const data = await response.json();
+          setTopCustomers(data);
+        } else {
+          console.error("Failed to fetch data:", response.status);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+
     fetchTopCustomers();
   }, []);
-
-  const fetchTopCustomers = async () => {
-    try {
-      const response = await fetch("/api/statistics/top-customers");
-      if (response.ok) {
-        const data = await response.json();
-        setTopCustomers(data);
-      } else {
-        console.error("Failed to fetch data:", response.status);
-      }
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
 
   return (
     <div className={styles.container}>
@@ -30,23 +29,25 @@ const TopCustomers = () => {
       <table className={styles.table}>
         <thead>
           <tr>
+            <th>Customer ID</th>
             <th>Customer Name</th>
+            <th>Money Balance</th>
             <th>Number of Purchases</th>
-            <th>Total Money Spent</th>
           </tr>
         </thead>
         <tbody>
           {topCustomers.map((customer, index) => (
             <tr key={index}>
+              <td>{customer.id}</td>
               <td>{customer.name}</td>
+              <td>{customer.money_balance}</td>
               <td>{customer.purchaseCount}</td>
-              <td>${customer.totalSpent.toFixed(2)}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
   );
-};
+}
 
 export default TopCustomers;

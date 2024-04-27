@@ -12,12 +12,12 @@ export async function GET(request, { params }) {
     } else if (requestedStat === "most-popular-products") {
         data = await getMostPopularProducts();
     } else if (requestedStat === "sales-over-years") {
+        data = await getSalesOverYears();
+    } else if (requestedStat === "top-customers") {
         /* else if (requestedStat === "product-types") {
         data = await getProductTypes();
-    } else if (requestedStat === "top-customers") {
+    } */
         data = await getTopCustomers();
-    }*/
-        data = await getSalesOverYears();
     }
 
     return Response.json(data, {
@@ -55,7 +55,7 @@ async function getMostPopularProducts() {
         take: 5,
     });
 
-    /* Prisma does not support sorting by an aggregation result directly in the query, Therefore have to use JS code  */
+    /* Prisma does not support sorting by an aggregation result directly in the query, Therefore have to use JS  */
     mostPopularProducts.sort((a, b) => {
         const quantitySoldA = a.Purchase.reduce((total, purchase) => total + purchase.quantity, 0);
         const quantitySoldB = b.Purchase.reduce((total, purchase) => total + purchase.quantity, 0);
@@ -104,9 +104,6 @@ async function getSalesOverYears() {
     return formattedData;
 }
 
-let data = await getSalesOverYears();
-console.log(data);
-
 /* async function getProductTypes() {
     const neverPurchasedTypes = await prisma.item.findMany({
         where: {
@@ -147,7 +144,7 @@ console.log(data);
         popularProductTypes: formattedPopularProductTypes,
     };
 }
-
+*/
 async function getTopCustomers() {
     const topCustomers = await prisma.customer.findMany({
         orderBy: {
@@ -156,27 +153,18 @@ async function getTopCustomers() {
             },
         },
         take: 5,
-        select: {
-            name: true,
-            surname: true,
-            Purchase: {
-                select: {
-                    _count: true,
-                    Item: {
-                        select: {
-                            price: true,
-                        },
-                    },
-                },
-            },
+        include: {
+            Purchase: true,
         },
     });
 
     return topCustomers.map((customer) => ({
+        id: customer.customerId,
         name: `${customer.name} ${customer.surname}`,
-        purchaseCount: customer.Purchase._count,
-        totalSpent: customer.Purchase.reduce((total, purchase) => total + purchase.Item.reduce((sum, item) => sum + item.price, 0), 0),
+        money_balance: customer.money_balance,
+        purchaseCount: customer.Purchase.length,
     }));
 }
 
-*/
+let data = await getTopCustomers();
+console.log(data);
