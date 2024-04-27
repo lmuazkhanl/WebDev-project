@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import styles from "./ProductType.module.css";
+import styles from "./MostPopularProducts.module.css";
 
 const MostPopularProducts = () => {
   const [popularProducts, setPopularProducts] = useState([]);
@@ -26,7 +26,7 @@ const MostPopularProducts = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Most Popular Products of All Time (Top 5)</h1>
+      <h1>Most Popular Products</h1>
       <table className={styles.table}>
         <thead>
           <tr>

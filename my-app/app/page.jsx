@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import SuccessfulSellers from "./Statistics-Components/SuccessfulSellers";
 import MostPopularProducts from "./Statistics-Components/MostPopularProducts";
 import ProductTypes from "./Statistics-Components/ProductType";
+import SalesOverYears from "./Statistics-Components/SalesOverYears";
 /* import './global.css' */
 
 export default function Home() {
@@ -10,7 +11,10 @@ export default function Home() {
     <>
     <SuccessfulSellers/>
     <hr />
-    <ProductTypes />
+    <SalesOverYears/>
+    <hr />
+    <MostPopularProducts/>
+    
     </>
   );
 }

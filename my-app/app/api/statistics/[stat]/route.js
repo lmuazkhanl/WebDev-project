@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({ errorFormat: "minimal" });
 
 export async function GET(request, { params }) {
     const requestedStat = params.stat;
@@ -9,12 +9,15 @@ export async function GET(request, { params }) {
 
     if (requestedStat === "most-successful-sellers") {
         data = await getMostSuccessfulSellers();
-    } /* else if (requestedStat === "most-popular-products") {
+    } else if (requestedStat === "most-popular-products") {
         data = await getMostPopularProducts();
-    }  */ else if (requestedStat === "product-types") {
+    } else if (requestedStat === "sales-over-years") {
+        /* else if (requestedStat === "product-types") {
         data = await getProductTypes();
     } else if (requestedStat === "top-customers") {
         data = await getTopCustomers();
+    }*/
+        data = await getSalesOverYears();
     }
 
     return Response.json(data, {
@@ -44,37 +47,67 @@ async function getMostSuccessfulSellers() {
     }));
 }
 
-/* async function getMostPopularProducts() {
+async function getMostPopularProducts() {
     const mostPopularProducts = await prisma.item.findMany({
-        orderBy: {
-            PurchaseHistory: {
-                _sum: {
-                    quantity: "desc",
-                },
-            },
+        include: {
+            Purchase: true,
         },
         take: 5,
-        select: {
-            name: true,
-            image: true,
-            price: true,
-            PurchaseHistory: {
-                select: {
-                    quantity: true,
-                },
-            },
-        },
+    });
+
+    /* Prisma does not support sorting by an aggregation result directly in the query, Therefore have to use JS code  */
+    mostPopularProducts.sort((a, b) => {
+        const quantitySoldA = a.Purchase.reduce((total, purchase) => total + purchase.quantity, 0);
+        const quantitySoldB = b.Purchase.reduce((total, purchase) => total + purchase.quantity, 0);
+        return quantitySoldB - quantitySoldA;
     });
 
     return mostPopularProducts.map((product) => ({
         name: product.name,
         image: product.image,
-        quantitySold: product.PurchaseHistory.reduce((total, purchase) => total + purchase.quantity, 0),
-        moneyMade: product.PurchaseHistory.reduce((total, purchase) => total + purchase.quantity * product.price, 0),
+        quantitySold: product.Purchase.reduce((total, purchase) => total + purchase.quantity, 0),
+        moneyMade: product.Purchase.reduce((total, purchase) => total + purchase.quantity * product.price, 0),
     }));
-} */
+}
 
-async function getProductTypes() {
+async function getSalesOverYears() {
+    const salesData = await prisma.purchase.findMany({
+        select: {
+            purchaseDate: true,
+            quantity: true,
+        },
+        orderBy: {
+            purchaseDate: "asc",
+        },
+    });
+
+    // Not possible to extract year in Prisma, therefore have to use JS code
+
+    const totalQuantitiesPerYear = {};
+
+    salesData.forEach((data) => {
+        // Extract the year from the purchaseDate
+        const year = new Date(data.purchaseDate).getFullYear();
+
+        if (!totalQuantitiesPerYear[year]) {
+            totalQuantitiesPerYear[year] = 0;
+        }
+
+        totalQuantitiesPerYear[year] += data.quantity;
+    });
+
+    const formattedData = Object.keys(totalQuantitiesPerYear).map((year) => ({
+        year: parseInt(year),
+        totalQuantity: totalQuantitiesPerYear[year],
+    }));
+
+    return formattedData;
+}
+
+let data = await getSalesOverYears();
+console.log(data);
+
+/* async function getProductTypes() {
     const neverPurchasedTypes = await prisma.item.findMany({
         where: {
             Purchase: {
@@ -145,3 +178,5 @@ async function getTopCustomers() {
         totalSpent: customer.Purchase.reduce((total, purchase) => total + purchase.Item.reduce((sum, item) => sum + item.price, 0), 0),
     }));
 }
+
+*/
