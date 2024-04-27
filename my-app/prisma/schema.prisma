@@ -35,21 +35,21 @@ model Item {
   description String
   quantity    Int
 
-  Seller   Seller @relation(fields: [sellerId], references: [sellerId])
+  Seller   Seller     @relation(fields: [sellerId], references: [sellerId])
   sellerId Int
-
-  PurchaseHistory PurchaseHistory[]
+  Purchase Purchase[]
 }
 
-model PurchaseHistory {
+model Purchase {
   purchaseId   Int      @id @default(autoincrement())
   quantity     Int
   purchaseDate DateTime @default(now())
 
-  Item Item @relation(fields: [id], references: [id])
-  id   Int
+  Item   Item @relation(fields: [itemId], references: [id])
+  itemId Int
 
-  Customer Customer[]
+  Customer   Customer @relation(fields: [customerId], references: [customerId])
+  customerId Int
 }
 
 model Customer {
@@ -61,6 +61,5 @@ model Customer {
   shipping_address String
   money_balance    Int
 
-  PurchaseHistory PurchaseHistory @relation(fields: [purchaseId], references: [purchaseId])
-  purchaseId      Int
+  Purchase Purchase[]
 }

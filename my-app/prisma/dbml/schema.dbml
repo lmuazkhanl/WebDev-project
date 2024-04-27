@@ -24,16 +24,17 @@ Table Item {
   quantity Int [not null]
   Seller Seller [not null]
   sellerId Int [not null]
-  PurchaseHistory PurchaseHistory [not null]
+  Purchase Purchase [not null]
 }
 
-Table PurchaseHistory {
+Table Purchase {
   purchaseId Int [pk, increment]
   quantity Int [not null]
   purchaseDate DateTime [default: `now()`, not null]
   Item Item [not null]
-  id Int [not null]
+  itemId Int [not null]
   Customer Customer [not null]
+  customerId Int [not null]
 }
 
 Table Customer {
@@ -44,12 +45,11 @@ Table Customer {
   surname String [not null]
   shipping_address String [not null]
   money_balance Int [not null]
-  PurchaseHistory PurchaseHistory [not null]
-  purchaseId Int [not null]
+  Purchase Purchase [not null]
 }
 
 Ref: Item.sellerId > Seller.sellerId
 
-Ref: PurchaseHistory.id > Item.id
+Ref: Purchase.itemId > Item.id
 
-Ref: Customer.purchaseId > PurchaseHistory.purchaseId
+Ref: Purchase.customerId > Customer.customerId
