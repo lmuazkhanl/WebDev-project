@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import {
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -10,21 +10,21 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import styles from "./SalesOverYears.module.css";
+import styles from "./AveragePricePerType.module.css";
 
-function SalesOverYears() {
-  const [salesData, setSalesData] = useState([]);
+const AveragePricePerType = () => {
+  const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
-    fetchSalesData();
+    fetchData();
   }, []);
 
-  const fetchSalesData = async () => {
+  const fetchData = async () => {
     try {
-      const response = await fetch("/api/statistics/sales-over-years");
+      const response = await fetch("/api/statistics/average-price-per-type");
       if (response.ok) {
         const data = await response.json();
-        setSalesData(data);
+        setChartData(data);
       } else {
         console.error("Failed to fetch data:", response.status);
       }
@@ -35,23 +35,15 @@ function SalesOverYears() {
 
   return (
     <div className={styles.container}>
-      <h1>Sales Over Years</h1>
+      <h1 style={{ color: "#808080" }}>Average Price Per Product Type</h1>
       <div className={styles.chartContainer}>
-        <ResponsiveContainer width="100%" height={400}>
-          <LineChart
-            data={salesData}
-            margin={{
-              top: 20,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
+        <ResponsiveContainer aspect={2}>
+          <BarChart data={chartData}>
             <CartesianGrid strokeDasharray="3 3" stroke="#808080" />
-            <XAxis dataKey="year" stroke="#808080" />
+            <XAxis dataKey="itemType" stroke="#808080" />
             <YAxis
               label={{
-                value: "Products Sold",
+                value: "Average Price",
                 angle: -90,
                 position: "insideLeft",
                 stroke: "#808080",
@@ -60,18 +52,17 @@ function SalesOverYears() {
             />
             <Tooltip labelStyle={{ color: "#808080" }} />
             <Legend wrapperStyle={{ color: "#808080" }} />
-            <Line
-              type="monotone"
-              dataKey="totalQuantity"
-              stroke="#808080"
-              strokeWidth={2}
-              dot={{ stroke: "#808080", strokeWidth: 2 }}
+            <Bar
+              dataKey="averagePrice"
+              fill="#808080"
+              barSize={20}
+              radius={5}
             />
-          </LineChart>
+          </BarChart>
         </ResponsiveContainer>
       </div>
     </div>
   );
-}
+};
 
-export default SalesOverYears;
+export default AveragePricePerType;

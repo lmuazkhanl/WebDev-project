@@ -14,10 +14,9 @@ export async function GET(request, { params }) {
     } else if (requestedStat === "sales-over-years") {
         data = await getSalesOverYears();
     } else if (requestedStat === "top-customers") {
-        /* else if (requestedStat === "product-types") {
-        data = await getProductTypes();
-    } */
         data = await getTopCustomers();
+    } else if (requestedStat === "average-price-per-type") {
+        data = await getAveragePricePerType();
     }
 
     return Response.json(data, {
@@ -104,47 +103,6 @@ async function getSalesOverYears() {
     return formattedData;
 }
 
-/* async function getProductTypes() {
-    const neverPurchasedTypes = await prisma.item.findMany({
-        where: {
-            Purchase: {
-                none: {},
-            },
-        },
-        select: {
-            type: true,
-        },
-        distinct: ["type"],
-    });
-
-    const popularProductTypes = await prisma.item.findMany({
-        orderBy: {
-            Purchase: {
-                _count: "desc",
-            },
-        },
-        take: 5,
-        select: {
-            type: true,
-            Purchase: {
-                select: {
-                    _count: true,
-                },
-            },
-        },
-    });
-
-    const formattedPopularProductTypes = popularProductTypes.map((product) => ({
-        name: product.type,
-        purchaseCount: product.Purchase._count,
-    }));
-
-    return {
-        neverPurchasedTypes: neverPurchasedTypes.map((item) => item.type),
-        popularProductTypes: formattedPopularProductTypes,
-    };
-}
-*/
 async function getTopCustomers() {
     const topCustomers = await prisma.customer.findMany({
         orderBy: {
@@ -166,5 +124,19 @@ async function getTopCustomers() {
     }));
 }
 
-let data = await getTopCustomers();
-console.log(data);
+async function getAveragePricePerType() {
+    const itemTypeAveragePrice = await prisma.item.groupBy({
+        by: ["type"],
+        _avg: {
+            price: true,
+        },
+    });
+
+    return itemTypeAveragePrice.map(({ type, _avg: { price } }) => ({
+        itemType: type,
+        averagePrice: price,
+    }));
+}
+/* 
+let data = await getProductTypes();
+console.log(data); */
