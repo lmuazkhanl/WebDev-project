@@ -25,3 +25,8 @@
     max-width: 100px;
     max-height: 100px;
 }
+
+.table .quantitySold,
+.table .moneyMade {
+    color: green;
+}

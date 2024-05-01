@@ -27,13 +27,13 @@ function SuccessfulSellers() {
     };
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id="Successful-Sellers">
             <h1>Most Successful Sellers</h1>
             <table className={styles.table}>
                 <thead>
                     <tr>
                         <th>Seller Name</th>
-                        <th>Items Sold</th>
+                        <th># Items</th>
                         <th>Money Made</th>
                     </tr>
                 </thead>
@@ -41,8 +41,8 @@ function SuccessfulSellers() {
                     {successfulSellers.map((seller, index) => (
                         <tr key={index}>
                             <td>{seller.username}</td>
-                            <td>{seller.itemsSold}</td>
-                            <td>${seller.moneyMade}</td>
+                            <td>{seller.itemsUploaded}</td>
+                            <td className={styles.money}>${seller.moneyMade}</td>
                         </tr>
                     ))}
                 </tbody>

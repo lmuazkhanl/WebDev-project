@@ -47,8 +47,8 @@ const MostPopularProducts = () => {
                 />
               </td>
               <td>{product.name}</td>
-              <td>{product.quantitySold}</td>
-              <td>${product.moneyMade || 0}</td>
+              <td className={styles.quantitySold}>{product.quantitySold}</td>
+              <td className={styles.moneyMade}>${product.moneyMade || 0}</td>
             </tr>
           ))}
         </tbody>

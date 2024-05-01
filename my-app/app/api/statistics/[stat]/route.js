@@ -37,13 +37,13 @@ async function getMostSuccessfulSellers() {
         },
         take: 5,
         include: {
-            Item: true, // have to explicitly include it
+            Item: true,
         },
     });
 
     return mostSuccessfulSellers.map((seller) => ({
         username: seller.username,
-        itemsSold: seller.Item.length,
+        itemsUploaded: seller.Item.length,
         moneyMade: seller.bank_account_balance,
     }));
 }
@@ -57,6 +57,7 @@ async function getMostPopularProducts() {
     });
 
     /* Prisma does not support sorting by an aggregation result directly in the query, Therefore have to use JS  */
+
     mostPopularProducts.sort((a, b) => {
         const quantitySoldA = a.Purchase.reduce((total, purchase) => total + purchase.quantity, 0);
         const quantitySoldB = b.Purchase.reduce((total, purchase) => total + purchase.quantity, 0);
@@ -87,7 +88,6 @@ async function getSalesOverYears() {
     const totalQuantitiesPerYear = {};
 
     salesData.forEach((data) => {
-        // Extract the year from the purchaseDate
         const year = new Date(data.purchaseDate).getFullYear();
 
         if (!totalQuantitiesPerYear[year]) {
