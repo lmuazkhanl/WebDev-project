@@ -35,7 +35,7 @@ const AveragePricePerType = () => {
 
   return (
     <div className={styles.container}>
-      <h1 style={{ color: "#808080" }}>Average Price Per Product Type</h1>
+      <h1 className={styles.title}>Average Price Per Product Type</h1>
       <div className={styles.chartContainer}>
         <ResponsiveContainer aspect={2}>
           <BarChart data={chartData}>

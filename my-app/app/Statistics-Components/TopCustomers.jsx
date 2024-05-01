@@ -31,7 +31,7 @@ function TopCustomers() {
           <tr>
             <th>Customer ID</th>
             <th>Customer Name</th>
-            <th>Money Balance</th>
+            <th>Balance</th>
             <th>Number of Purchases</th>
           </tr>
         </thead>

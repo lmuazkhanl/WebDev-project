@@ -35,7 +35,7 @@ function SalesOverYears() {
 
   return (
     <div className={styles.container}>
-      <h1>Sales Over Years</h1>
+      <h1 className={styles.title}>Sales Over Years</h1>
       <div className={styles.chartContainer}>
         <ResponsiveContainer width="100%" height={400}>
           <LineChart
