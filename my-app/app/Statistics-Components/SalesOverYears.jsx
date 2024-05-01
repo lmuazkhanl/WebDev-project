@@ -9,7 +9,7 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-} from "recharts";
+} from "recharts"; // using recharts to create the chart
 import styles from "./SalesOverYears.module.css";
 
 function SalesOverYears() {

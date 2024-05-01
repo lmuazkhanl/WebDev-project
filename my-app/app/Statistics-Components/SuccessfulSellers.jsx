@@ -7,13 +7,11 @@ function SuccessfulSellers() {
     const [successfulSellers, setSuccessfulSellers] = useState([]);
 
     useEffect(() => {
-        // Fetch data from API to get most successful sellers
         fetchSuccessfulSellers();
     }, []);
 
     const fetchSuccessfulSellers = async () => {
         try {
-            // Fetch data from API
             const response = await fetch('/api/statistics/most-successful-sellers');
             if (response.ok) {
                 const data = await response.json();
