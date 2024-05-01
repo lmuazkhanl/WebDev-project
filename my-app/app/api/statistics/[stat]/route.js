@@ -17,6 +17,8 @@ export async function GET(request, { params }) {
         data = await getTopCustomers();
     } else if (requestedStat === "average-price-per-type") {
         data = await getAveragePricePerType();
+    } else if (requestedStat === "low-inventory-items") {
+        data = await getLowInventoryItems();
     }
 
     return Response.json(data, {
@@ -137,6 +139,24 @@ async function getAveragePricePerType() {
         averagePrice: price,
     }));
 }
-/* 
-let data = await getProductTypes();
-console.log(data); */
+
+async function getLowInventoryItems() {
+    const lowInventoryItems = await prisma.item.findMany({
+        where: {
+            quantity: {
+                lte: 50, // get items where quantity is less than 50
+            },
+        },
+        include: {
+            Seller: {
+                select: {
+                    username: true,
+                },
+            },
+        },
+        orderBy: {
+            quantity: "asc",
+        },
+    });
+    return lowInventoryItems;
+}
