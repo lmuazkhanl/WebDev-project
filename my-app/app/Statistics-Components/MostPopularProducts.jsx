@@ -25,7 +25,7 @@ const MostPopularProducts = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="Popular-Products">
       <h1>Most Popular Products</h1>
       <table className={styles.table}>
         <thead>

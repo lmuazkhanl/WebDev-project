@@ -24,7 +24,7 @@ const LowInventoryItems = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="Inventory-Items">
       <h1>Low Inventory Items</h1>
       <table className={styles.table}>
         <thead>

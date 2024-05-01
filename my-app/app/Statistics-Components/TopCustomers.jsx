@@ -24,7 +24,7 @@ function TopCustomers() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="Top-Customers">
       <h1>Customers with Most Purchases</h1>
       <table className={styles.table}>
         <thead>

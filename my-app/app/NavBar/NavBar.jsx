@@ -11,34 +11,57 @@ const NavBar = () => {
     setShowMenu(!showMenu);
   };
 
+  const scrollToSection = (sectionId,event) => {
+    event.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const headerHeight = document.querySelector('header').offsetHeight;
+      window.scrollTo({
+        top: section.offsetTop - headerHeight,
+        behavior: 'smooth',
+      });
+    }
+    setShowMenu(false);
+  };
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
         <Link href="/">
-          <img src="/Images/logo.png" alt="CLOTH logo" className={styles.logo_img} />
+          <img src="/Images/Logo-Statistics.png" alt="CLOTH logo" className={styles.logo_img} />
         </Link>
 
         <div className={`${styles.nav_links} ${showMenu ? styles.show_menu : ''}`} id="nav_links">
-          <ul >
+          <ul>
             <li>
-              <Link href="/mens_section" className={styles.nav_link} id="menSec">
-                Men
-              </Link>
+              <a href="#" className={styles.nav_link} onClick={(event) => scrollToSection('Successful-Sellers',event)}>
+                Successful Sellers 
+              </a>
             </li>
             <li>
-              <Link href="/women_section" className={styles.nav_link} id="womenSec">
-                Women
-              </Link>
+              <a href="#" className={styles.nav_link} onClick={(event) => scrollToSection('Sales-Over-Years',event)}>
+                Sales over Years
+              </a>
             </li>
             <li>
-              <Link href="/about" className={styles.nav_link}>
-                About
-              </Link>
+              <a href="#" className={styles.nav_link} onClick={(event) => scrollToSection('Popular-Products',event)}>
+                Popular Products
+              </a>
             </li>
             <li>
-              <Link href="/contact" className={styles.nav_link}>
-                Contact Us
-              </Link>
+              <a href="#" className={styles.nav_link} onClick={(event) => scrollToSection('Top-Customers',event)}>
+                Top Customers
+              </a>
+            </li>
+            <li>
+              <a href="#" className={styles.nav_link} onClick={(event) => scrollToSection('Average-Product-Type-Price',event)}>
+                Average Product Type Price
+              </a>
+            </li>
+            <li>
+              <a href="#" className={styles.nav_link} onClick={(event) => scrollToSection('Inventory-Items',event)}>
+                Low Inventory Items
+              </a>
             </li>
           </ul>
 
@@ -71,4 +94,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;  
+export default NavBar;

@@ -34,7 +34,7 @@ const AveragePricePerType = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="Average-Product-Type-Price">
       <h1 className={styles.title}>Average Price Per Product Type</h1>
       <div className={styles.chartContainer}>
         <ResponsiveContainer aspect={2}>
