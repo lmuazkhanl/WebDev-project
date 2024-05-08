@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		// 	console.log(localStorage.getItem("items"));
 		// }
 		try {
-			const response = await fetch("http://localhost:3000/api/products/{id}");
+			const response = await fetch("http://localhost:3000/api/products");
 			const data = await response.json();
 			return data;
 		} catch (error) {
@@ -62,7 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		localStorage.setItem("searchQuery", searchQuery);
 
-		const items = JSON.parse(localStorage.getItem("items"));
+		const items = fetchItems();
+		// const items = JSON.parse(localStorage.getItem("items"));
 
 		// Filter items based on search query
 		const filteredItems = items.filter((item) => {
@@ -80,3 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		displayItemsSearchPage(filteredItems, searchQuery);
 	});
 });
+
+async function findProductById(productId) {
+	const data = await fetchItems();
+	const product = data.find((item) => item.id == productId);
+	return product;
+}
