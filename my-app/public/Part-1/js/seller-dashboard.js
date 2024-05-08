@@ -117,10 +117,11 @@ function addProductStock(event) {
 		});
 
 		// Get existing stock from local storage
+		// stock = JSON.parse(localStorage.getItem("items")) || [];
+
 		async function updateStockFromAPI() {
 			try {
 				stock = await fetchDataFromAPI();
-				// Now you can use the 'stock' variable here
 				console.log(stock);
 			} catch (error) {
 				console.error("Error fetching data:", error);
@@ -128,7 +129,6 @@ function addProductStock(event) {
 			}
 		}
 		updateStockFromAPI();
-		// stock = JSON.parse(localStorage.getItem("items")) || [];
 
 		// Add new product to stock
 		stock.unshift(product);

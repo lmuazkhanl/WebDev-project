@@ -6,7 +6,7 @@ export async function GET(request, { params }) {
 	const product = await productsRepo.getProduct(productId);
 
 	// return Response.json({ search: product }, { status: 200 });
-	return new Response(JSON.stringify(products), {
+	return new Response(JSON.stringify(product), {
 		headers: {
 			"Content-Type": "application/json",
 			"Access-Control-Allow-Origin": "*",
@@ -21,7 +21,7 @@ export async function PUT(request, { params }) {
 
 	const message = await productsRepo.updateProduct(productUpdate, accountNo);
 	// return Response.json(message, { status: 200 });
-	return new Response(JSON.stringify(newProduct), {
+	return new Response(JSON.stringify(message), {
 		headers: {
 			"Content-Type": "application/json",
 			"Access-Control-Allow-Origin": "*",
