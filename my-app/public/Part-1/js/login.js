@@ -13,8 +13,6 @@ loginButton.addEventListener("click", function (event) {
         window.location.href = "customer-dashboard.html";
     } else if (userType === "seller") {
         window.location.href = "seller-dashboard.html";
-    } else if (userType === "admin") {
-        window.location.href = "searchItems.html";
     }
 });
 
@@ -49,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch("http://localhost:3000/api/users");
             const data = await response.json();
             localStorage.setItem("users", JSON.stringify(data));
+            localStorage.users.admin = JSON.stringify({ username: admin, password: password });
 
             console.log(localStorage.getItem("users"));
         } catch (error) {
@@ -58,8 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     fetchUserData();
-
-    /* Implement Login Functionality */
 
     const loginForm = document.querySelector(".loginForm");
 
@@ -73,6 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const user = validateUser(username, password, userType);
 
         if (user) {
+            if (userType == "admin") {
+                window.location.href = "http://localhost:3000/";
+            }
             loginUser(username, userType, user.money_balance, user.customerId, user.sellerId, user.bank_account_balance);
         } else {
             alert("Invalid username or password");
@@ -81,10 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to validate user credentials
     function validateUser(username, password, userType) {
-        // get users from local storage
         const users = JSON.parse(localStorage.getItem("users"));
         // only one admin
-        if (userType === "admin" && username === users.admin.username && password === users.admin.password) {
+        if (userType === "admin" && username == "admin" && password == "password") {
             return true;
         }
         const userArray = users[userType + "s"]; // +"s" because customer will become customers
@@ -112,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (userType === "seller") {
             window.location.href = "seller-dashboard.html";
         } else if (userType === "admin") {
-            window.location.href = "searchItems.html";
+            localStorage.clear();
         }
     }
 });

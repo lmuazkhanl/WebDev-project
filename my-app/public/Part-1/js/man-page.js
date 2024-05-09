@@ -57,17 +57,25 @@ async function displayingDataInTheGrid() {
             const productId = this.dataset.productId;
             const product = findProductById(productId);
 
-            if (product) {
-                const cartItem = {
-                    product_id: productId,
-                    quantity: 1, // Set initial quantity to 1
-                    price: product.price, // Add the price of the product to the cart
-                };
+            const sessionData = JSON.parse(localStorage.getItem("session"));
+            console.log(sessionData);
 
-                addToCart(cartItem);
-                alert("Item added to cart successfully!");
+            // Check if user is logged in and is a customer
+            if (sessionData && sessionData.userType === "customer" && sessionData.loggedIn) {
+                if (product) {
+                    const cartItem = {
+                        product_id: productId,
+                        quantity: 1, // Set initial quantity to 1
+                        price: product.price, // Add the price of the product to the cart
+                    };
+
+                    addToCart(cartItem);
+                    alert("Item added to cart successfully!");
+                } else {
+                    alert("Product not found!");
+                }
             } else {
-                alert("Product not found!");
+                alert("Please log in as a customer to add items to the cart.");
             }
         });
     });

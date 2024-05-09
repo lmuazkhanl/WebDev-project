@@ -75,7 +75,7 @@ const NavBar = () => {
         </div>
 
         <div className={styles.nav_buttons}>
-          <Link href="/login" className={styles.nav_button}>
+          <Link href="http://127.0.0.1:5500/public/Part-1/index.html" className={styles.nav_button}>
             <img src="/images/svj/user-round.svg" className={styles.nav_button} alt="login" />
           </Link>
 

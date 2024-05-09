@@ -53,6 +53,7 @@ function displayingDataInTheGrid(localSavedData) {
     addToCartButtons.forEach((button) => {
         button.addEventListener("click", function () {
             const sessionData = JSON.parse(localStorage.getItem("session"));
+            console.log(sessionData);
 
             // Check if user is logged in and is a customer
             if (sessionData && sessionData.userType === "customer" && sessionData.loggedIn) {
@@ -90,18 +91,27 @@ function findProductById(productId) {
 
 // Function to add item to cart
 function addToCart(item) {
-    let carts = JSON.parse(localStorage.getItem("cart")) || [];
-    let existingItemIndex = carts.findIndex((cartItem) => cartItem.product_id === item.product_id);
+    const sessionData = JSON.parse(localStorage.getItem("session"));
+    console.log(sessionData);
 
-    if (existingItemIndex !== -1) {
-        carts[existingItemIndex].quantity += 1;
+    // Check if user is logged in and is a customer
+    if (sessionData && sessionData.userType === "customer" && sessionData.loggedIn) {
+        console.log(sessionData);
+        let carts = JSON.parse(localStorage.getItem("cart")) || [];
+        let existingItemIndex = carts.findIndex((cartItem) => cartItem.product_id === item.product_id);
+
+        if (existingItemIndex !== -1) {
+            carts[existingItemIndex].quantity += 1;
+        } else {
+            carts.push(item);
+        }
+
+        localStorage.setItem("cart", JSON.stringify(carts));
+
+        initApp();
     } else {
-        carts.push(item);
+        alert("sign in us a customer");
     }
-
-    localStorage.setItem("cart", JSON.stringify(carts));
-
-    initApp();
 }
 async function call() {
     const response = await fetch(`http://localhost:3000/api/products`);
