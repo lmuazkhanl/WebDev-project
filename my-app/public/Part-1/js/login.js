@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const user = validateUser(username, password, userType);
 
         if (user) {
-            loginUser(username, userType, user.money_balance);
+            loginUser(username, userType, user.money_balance, user.customerId, user.sellerId, user.bank_account_balance);
         } else {
             alert("Invalid username or password");
         }
@@ -94,13 +94,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Function to handle user login
-    function loginUser(username, userType, moneyBalance) {
+    function loginUser(username, userType, moneyBalance, customerId, sellerId, bank_account_balance) {
         // create session
         const session = {
             username: username,
             userType: userType,
             loggedIn: true,
             money_balance: moneyBalance,
+            customerId: customerId,
+            sellerId: sellerId,
+            sellerBalance: bank_account_balance,
         };
         localStorage.setItem("session", JSON.stringify(session));
 

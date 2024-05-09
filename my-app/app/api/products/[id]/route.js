@@ -1,31 +1,43 @@
 import ProductsRepo from "@/app/repo/products-repo";
+
 const productsRepo = new ProductsRepo();
 
 export async function GET(request, { params }) {
-	const productId = params.id;
-	const product = await productsRepo.getProduct(productId);
+    const productId = params.id;
+    let product = await productsRepo.getProduct(productId);
 
-	// return Response.json({ search: product }, { status: 200 });
-	return new Response(JSON.stringify(product), {
-		headers: {
-			"Content-Type": "application/json",
-			"Access-Control-Allow-Origin": "*",
-		},
-		status: 200,
-	});
+    const { searchParams } = new URL(request.url);
+    const requestedStat = searchParams.get("stat");
+
+    if (requestedStat === "quantity") {
+        const quantitySold = await productsRepo.getProductQuantitySold(productId);
+        product = quantitySold;
+    } else if (requestedStat === "customers") {
+        const customersList = await productsRepo.getProductCustomersList(productId);
+        product = customersList;
+    }
+
+    return new Response(JSON.stringify(product), {
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+        },
+        status: 200,
+    });
 }
 
 export async function PUT(request, { params }) {
-	const productUpdate = await request.json();
-	const accountNo = params.id;
+    const id = parseInt(params.id);
+    const updatedData = await request.json();
+    const updatedItem = await productsRepo.updateProduct(id, updatedData);
 
-	const message = await productsRepo.updateProduct(productUpdate, accountNo);
-	// return Response.json(message, { status: 200 });
-	return new Response(JSON.stringify(message), {
-		headers: {
-			"Content-Type": "application/json",
-			"Access-Control-Allow-Origin": "*",
-		},
-		status: 201,
-	});
+    return new Response(JSON.stringify(updatedItem), {
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*", // Allow requests from all origins
+            "Access-Control-Allow-Methods": "PUT", // Allow PUT method
+            "Access-Control-Allow-Headers": "Content-Type", // Allow Content-Type header
+        },
+        status: 200,
+    });
 }

@@ -1,0 +1,22 @@
+/* import ProductsRepo from "@/app/repo/products-repo";
+
+const productsRepo = new ProductsRepo();
+
+export async function GET(request) {
+    const { searchParams } = new URL(request.url);
+    const type = searchParams.get("stat");
+
+    if(stat == sellerBalance)
+
+    let products = await productsRepo.getProducts(type);
+
+    // Add CORS headers to the response
+    return new Response(JSON.stringify(products), {
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+        },
+        status: 200,
+    });
+}
+ */
