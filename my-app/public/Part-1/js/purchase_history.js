@@ -37,33 +37,35 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("User not found");
     }
 
-    var items = JSON.parse(localStorage.getItem("items"));
+    const customerId = session.customerId;
+    const apiUrl = `http://localhost:3000/api/customers/${customerId}?stat=purchaseHistory`;
 
-    var userPurchaseHistory = [];
-    items.forEach(function (item) {
-        item.purchaseHistory.forEach(function (purchase) {
-            if (purchase.customer === session.username) {
-                userPurchaseHistory.push({
-                    itemName: item.name,
-                    quantity: purchase.quantity,
-                    image: item.image,
-                });
+    // Fetch user's purchase history from the API
+    fetch(apiUrl)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Failed to fetch user purchase history");
             }
+            return response.json();
+        })
+        .then((userPurchaseHistory) => {
+            // Render user's purchase history
+            userPurchaseHistory.forEach((purchase) => {
+                const purchaseHistoryItem = document.createElement("div");
+                purchaseHistoryItem.classList.add("purchase-history-item");
+                purchaseHistoryItem.innerHTML = `
+          <img src="${purchase.image}" alt="${purchase.itemName}">
+          <div>
+              <p>Item: ${purchase.itemName}</p>
+              <p>Quantity: ${purchase.quantity}</p>
+          </div>
+      `;
+                purchaseHistoryContainer.appendChild(purchaseHistoryItem);
+            });
+        })
+        .catch((error) => {
+            console.error("Error fetching user purchase history:", error);
         });
-    });
-
-    userPurchaseHistory.forEach(function (purchase) {
-        var purchaseHistoryItem = document.createElement("div");
-        purchaseHistoryItem.classList.add("purchase-history-item");
-        purchaseHistoryItem.innerHTML = `
-            <img src="${purchase.image}" alt="${purchase.itemName}">
-            <div>
-                <p>Item: ${purchase.itemName}</p>
-                <p>Quantity: ${purchase.quantity}</p>
-            </div>
-        `;
-        purchaseHistoryContainer.appendChild(purchaseHistoryItem);
-    });
 
     var logoutBtn = document.getElementById("logout-btn");
     logoutBtn.addEventListener("click", function () {

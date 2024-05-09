@@ -2,6 +2,15 @@ import ProductsRepo from "@/app/repo/products-repo";
 
 const productsRepo = new ProductsRepo();
 
+import express from "express";
+const app = express();
+
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 export async function GET(request, { params }) {
     const productId = params.id;
     let product = await productsRepo.getProduct(productId);
@@ -26,7 +35,7 @@ export async function GET(request, { params }) {
     });
 }
 
-export async function PUT(request, { params }) {
+export async function POST(request, { params }) {
     const id = parseInt(params.id);
     const updatedData = await request.json();
     const updatedItem = await productsRepo.updateProduct(id, updatedData);

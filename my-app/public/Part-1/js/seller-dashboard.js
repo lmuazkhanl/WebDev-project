@@ -255,7 +255,8 @@ async function updateItem(itemId, newQuantity) {
     console.log(updatedItem);
 
     const response = await fetch(`http://localhost:3000/api/products/${itemId}`, {
-        method: "PUT",
+        method: "POST",
+        mode: "no-cors",
         headers: {
             "Content-Type": "application/json",
         },

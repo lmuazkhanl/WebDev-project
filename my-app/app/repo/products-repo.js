@@ -5,6 +5,24 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export default class productsRepo {
+    async getPurchaseHistory(customerId) {
+        customerId = parseInt(customerId);
+        const result = await prisma.purchase.findMany({
+            where: {
+                customerId,
+            },
+            include: {
+                Item: true,
+            },
+        });
+
+        return result.map((purchase) => ({
+            itemName: purchase.Item.name,
+            quantity: purchase.quantity,
+            image: purchase.Item.image,
+        }));
+    }
+
     async getProductQuantitySold(productId) {
         productId = parseInt(productId);
 
