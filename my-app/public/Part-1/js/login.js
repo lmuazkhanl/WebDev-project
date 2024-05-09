@@ -46,13 +46,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* put data from users.json into localStorage */
     async function fetchUserData() {
-        if (!localStorage.getItem("users")) {
-            const response = await fetch("data/users.json");
-            const usersData = await response.json();
-            localStorage.setItem("users", JSON.stringify(usersData));
-        }
+        try {
+            const response = await fetch("http://localhost:3000/api/users");
+            const data = await response.json();
+            localStorage.setItem("users", JSON.stringify(data));
 
-        console.log(localStorage.getItem("users"));
+            console.log(localStorage.getItem("users"));
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            return [];
+        }
     }
 
     fetchUserData();
