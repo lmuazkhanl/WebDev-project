@@ -1,13 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 	/* put data from items.json into localStorage whenever page is loaded*/
 	async function fetchItems() {
-		// if (!localStorage.getItem("items")) {
-		// 	const response = await fetch("data/items.json");
-		// 	const itemsData = await response.json();
-		// 	localStorage.setItem("items", JSON.stringify(itemsData));
-
-		// 	console.log(localStorage.getItem("items"));
-		// }
 		try {
 			const response = await fetch("http://localhost:3000/api/products");
 			const data = await response.json();

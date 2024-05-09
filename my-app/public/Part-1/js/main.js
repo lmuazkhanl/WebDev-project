@@ -15,45 +15,7 @@ navClose.addEventListener("click", () => {
 	navLinks.classList.remove("show_menu");
 });
 
-// async function loadData() {
-//     const response = await fetch("data/products.json");
-//     const usersData = await response.json();
-//     localStorage.setItem("products", JSON.stringify(usersData));
-//     add.addEventListener("click", loadData);
-//     async function loadData() {
-//         const response = await fetch("data/items.json");
-//         const usersData = await response.json();
-//         localStorage.setItem("products", JSON.stringify(usersData));
-
-//         console.log(localStorage.getItem("users"));
-//     }
-
-//     // loadData();
-//     // womenSec;
-// }
-/*
-    show and hide the search bar
-
-const searchContainer = document.querySelector(".search_container");
- searchCloseButton = document.getElementById("search_close_button");
- searchNavButton = document.querySelector("nav .search_button");
-
-searchNavButton.addEventListener("click", () => {
-  searchContainer.classList.remove("search_hidden");
-  searchNavButton.style.fill = "white";
-  setTimeout(() => {
-    searchContainer.style.height = "100%";
-  }, 10);
-});
-
-searchCloseButton.addEventListener("click", () => {
-  searchContainer.style.height = "0";
-  searchNavButton.style.fill = "black";
-  setTimeout(() => {
-    searchContainer.classList.add("search_hidden");
-  }, 500);
-});*/
-
+// function to fetch data from API
 async function fetchDataFromAPI() {
 	try {
 		const response = await fetch("http://localhost:3000/api/products");
