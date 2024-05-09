@@ -29,3 +29,21 @@ export async function GET(request, { params }) {
         status: 200,
     });
 }
+
+export async function POST(request, { params }) {
+    const customerId = params.id;
+    let response = {};
+
+    const { searchParams } = new URL(request.url);
+    const money = searchParams.get("customerBalance");
+
+    response = await productsRepo.updateCustomerMoney(customerId, money);
+
+    return new Response(JSON.stringify(response), {
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+        },
+        status: 200,
+    });
+}

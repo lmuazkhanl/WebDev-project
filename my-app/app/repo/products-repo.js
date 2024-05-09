@@ -98,6 +98,15 @@ export default class productsRepo {
         });
     }
 
+    async addTransaction(transaction) {
+        transaction.itemId = parseInt(transaction.itemId);
+        return prisma.purchase.create({
+            data: {
+                ...transaction,
+            },
+        });
+    }
+
     async updateProduct(id, item) {
         id = parseInt(id);
         const existingItem = await prisma.item.findUnique({
@@ -124,5 +133,23 @@ export default class productsRepo {
         const sellers = await prisma.seller.findMany();
 
         return { customers, sellers };
+    }
+
+    async updateCustomerMoney(customerId, newMoneyBalance) {
+        try {
+            const updatedCustomer = await prisma.customer.update({
+                where: {
+                    id: customerId,
+                },
+                data: {
+                    money_balance: newMoneyBalance,
+                },
+            });
+            console.log(`Money balance updated for customer ${customerId}`);
+            return updatedCustomer;
+        } catch (error) {
+            console.error(`Error updating money balance for customer ${customerId}:`, error);
+            throw error;
+        }
     }
 }

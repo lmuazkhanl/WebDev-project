@@ -3,6 +3,7 @@ async function fetchDataFromAPI() {
     try {
         const response = await fetch("http://localhost:3000/api/products");
         const data = await response.json();
+
         return data;
     } catch (error) {
         console.error("Error fetching data:", error);
@@ -81,8 +82,8 @@ function displayingDataInTheGrid(localSavedData) {
 // setAccounts(await response.json())
 
 // Function to find product by ID
-async function findProductById(productId) {
-    const data = await fetchDataFromAPI();
+function findProductById(productId) {
+    const data = JSON.parse(localStorage.items);
     const product = data.find((item) => item.id == productId);
     return product;
 }
@@ -105,6 +106,8 @@ function addToCart(item) {
 async function call() {
     const response = await fetch(`http://localhost:3000/api/products`);
     const items = await response.json();
+    console.log(items);
+    localStorage.items = JSON.stringify(items);
     displayingDataInTheGrid(items);
 }
 call();

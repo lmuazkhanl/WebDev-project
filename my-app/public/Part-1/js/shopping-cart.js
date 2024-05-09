@@ -29,7 +29,7 @@ checkoutButton.addEventListener("click", () => {
     if (carts.length <= 0) {
         alert("Add an item to continue");
     } else {
-        location.replace("../checkout.html");
+        window.location.href = "checkout.html";
     }
 });
 
@@ -115,8 +115,7 @@ const addCartToHTML = () => {
     const items = JSON.parse(localStorage.getItem("items"));
     console.log(items.find((item) => item.id === parseInt(productId)));
     return items.find((item) => item.id === parseInt(productId));
-};
- */
+}; */
 
 const spanUpdate = () => {
     let carts = JSON.parse(localStorage.getItem("cart")) || [];
