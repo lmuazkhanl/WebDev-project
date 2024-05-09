@@ -100,6 +100,25 @@ export default class productsRepo {
 
     async addTransaction(transaction) {
         transaction.itemId = parseInt(transaction.itemId);
+
+        // Calculate total price of the transaction
+        const item = await prisma.item.findUnique({
+            where: { id: transaction.itemId },
+            select: { price: true, sellerId: true },
+        });
+        const totalPrice = transaction.quantity * item.price;
+
+        // Update seller's bank account balance
+        await prisma.seller.update({
+            where: { sellerId: item.sellerId },
+            data: {
+                bank_account_balance: {
+                    increment: totalPrice, // Increment seller's balance by the total price
+                },
+            },
+        });
+
+        // Create the new transaction record
         return prisma.purchase.create({
             data: {
                 ...transaction,
@@ -136,10 +155,11 @@ export default class productsRepo {
     }
 
     async updateCustomerMoney(customerId, newMoneyBalance) {
+        customerId = parseInt(customerId);
         try {
             const updatedCustomer = await prisma.customer.update({
                 where: {
-                    id: customerId,
+                    customerId: customerId,
                 },
                 data: {
                     money_balance: newMoneyBalance,

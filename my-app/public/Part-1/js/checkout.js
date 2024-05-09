@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Deduct the total price from the user's balance
         session.money_balance -= totalCartPrice;
+        console.log(totalCartPrice);
         localStorage.setItem("session", JSON.stringify(session));
 
         // Proceed with the order
@@ -108,8 +109,42 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
         });
 
+        const updateMoneyURL = `http://localhost:3000/api/customers/${session.customerId}?stat=${session.money_balance}`;
+        fetch(updateMoneyURL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then((response) => {
+                if (response.ok) {
+                    console.log("Money balance updated successfully");
+                } else {
+                    console.error("Failed to update money balance");
+                }
+            })
+            .catch((error) => {
+                console.error("Error updating money balance:", error);
+            });
+
         // Clear the cart after successful order
         localStorage.removeItem("cart");
+
+        async function fetchUserData() {
+            try {
+                const response = await fetch("http://localhost:3000/api/users");
+                const data = await response.json();
+                localStorage.setItem("users", JSON.stringify(data));
+
+                console.log(localStorage.getItem("users"));
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                return [];
+            }
+        }
+
+        fetchUserData();
 
         alert("Order submitted successfully!");
         window.location.href = "index.html";

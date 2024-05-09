@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
         formContainer.style.backgroundImage = backgroundImage;
     }
 
-    /* put data from users.json into localStorage */
     async function fetchUserData() {
         try {
             const response = await fetch("http://localhost:3000/api/users");

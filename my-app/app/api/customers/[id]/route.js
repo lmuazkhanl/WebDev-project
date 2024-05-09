@@ -20,7 +20,10 @@ export async function GET(request, { params }) {
 
     if (requestedStat == "purchaseHistory") {
         response = await productsRepo.getPurchaseHistory(customerId);
+    } else {
+        response = await productsRepo.updateCustomerMoney(customerId, parseInt(requestedStat));
     }
+
     return new Response(JSON.stringify(response), {
         headers: {
             "Content-Type": "application/json",
@@ -35,9 +38,13 @@ export async function POST(request, { params }) {
     let response = {};
 
     const { searchParams } = new URL(request.url);
-    const money = searchParams.get("customerBalance");
+    const requestedStat = searchParams.get("stat");
 
-    response = await productsRepo.updateCustomerMoney(customerId, money);
+    if (requestedStat == "purchaseHistory") {
+        response = await productsRepo.getPurchaseHistory(customerId);
+    } else {
+        response = await productsRepo.updateCustomerMoney(customerId, parseInt(requestedStat));
+    }
 
     return new Response(JSON.stringify(response), {
         headers: {
